@@ -1784,6 +1784,9 @@ function is_service_enabled {
     local enabled=1
     local services=$@
     local service
+    echo "woof"
+    echo "$service"
+    echo "$ENABLED_SERVICES"
     for service in ${services}; do
         [[ ,${ENABLED_SERVICES}, =~ ,${service}, ]] && enabled=0
 

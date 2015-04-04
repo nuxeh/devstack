@@ -32,14 +32,17 @@ REGION_NAME=${REGION_NAME:-RegionOne}
 #  enable_service s-proxy s-object s-container s-account
 # In order to enable Neutron (a single node setup) add the following
 # settings in `` localrc``:
-#  disable_service n-net
-#  enable_service q-svc
-#  enable_service q-agt
-#  enable_service q-dhcp
-#  enable_service q-l3
-#  enable_service q-meta
+ disable_service n-net
+ enable_service q-svc
+ enable_service q-agt
+ enable_service q-dhcp
+ enable_service q-l3
+ enable_service q-meta
 #  # Optional, to enable tempest configuration as part of devstack
 #  enable_service tempest
+
+#ENABLED_SERVICES += neutron,q-meta,q-l3,q-dhcp,q-agt,q-svc
+#ENABLED_SERVICES -= n-net
 
 # this allows us to pass ENABLED_SERVICES
 if [[ -z "$ENABLED_SERVICES" ]]; then
@@ -425,7 +428,7 @@ SPICE_BRANCH=${SPICE_BRANCH:-master}
 # drop back to **qemu** if we are unable to load the kvm module.  ``stack.sh`` can
 # also install an **LXC**, **OpenVZ** or **XenAPI** based system.  If xenserver-core
 # is installed, the default will be XenAPI
-DEFAULT_VIRT_DRIVER=libvirt
+DEFAULT_VIRT_DRIVER=ironic
 is_package_installed xenserver-core && DEFAULT_VIRT_DRIVER=xenserver
 VIRT_DRIVER=${VIRT_DRIVER:-$DEFAULT_VIRT_DRIVER}
 case "$VIRT_DRIVER" in
