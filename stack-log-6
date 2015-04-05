@@ -1,0 +1,2366 @@
+woof
+
+
+woof
+
+
+woof
+
+q-svc
+woof
+
+q-svc,q-agt
+woof
+
+q-svc,q-agt,q-dhcp
+woof
+
+q-svc,q-agt,q-dhcp,q-l3
+2015-04-04 14:16:22.342 | ++ trueorfalse False
+2015-04-04 14:16:22.342 | + OFFLINE=False
+2015-04-04 14:16:22.342 | ++ trueorfalse False
+2015-04-04 14:16:22.342 | + ERROR_ON_CLONE=False
+2015-04-04 14:16:22.342 | ++ trueorfalse True
+2015-04-04 14:16:22.342 | + ENABLE_DEBUG_LOG_LEVEL=True
+2015-04-04 14:16:22.342 | + FLOATING_RANGE=172.24.4.0/24
+2015-04-04 14:16:22.343 | + FIXED_RANGE=10.0.0.0/24
+2015-04-04 14:16:22.343 | + FIXED_NETWORK_SIZE=256
+2015-04-04 14:16:22.343 | ++ get_default_host_ip 10.0.0.0/24 172.24.4.0/24 '' ''
+2015-04-04 14:16:22.343 | ++ local fixed_range=10.0.0.0/24
+2015-04-04 14:16:22.343 | ++ local floating_range=172.24.4.0/24
+2015-04-04 14:16:22.343 | ++ local host_ip_iface=
+2015-04-04 14:16:22.343 | ++ local host_ip=
+2015-04-04 14:16:22.343 | +++ ip route
+2015-04-04 14:16:22.343 | +++ sed -n '/^default/{ s/.*dev \(\w\+\)\s\+.*/\1/; p; }'
+2015-04-04 14:16:22.343 | +++ head -1
+2015-04-04 14:16:22.343 | ++ host_ip_iface=eth1
+2015-04-04 14:16:22.343 | ++ '[' -z '' -o '' == dhcp ']'
+2015-04-04 14:16:22.343 | ++ host_ip=
+2015-04-04 14:16:22.343 | +++ LC_ALL=C
+2015-04-04 14:16:22.343 | +++ ip -f inet addr show eth1
+2015-04-04 14:16:22.344 | +++ awk '/inet/ {split($2,parts,"/");  print parts[1]}'
+2015-04-04 14:16:22.344 | ++ local host_ips=10.0.11.157
+2015-04-04 14:16:22.344 | ++ local ip
+2015-04-04 14:16:22.344 | ++ for ip in '$host_ips'
+2015-04-04 14:16:22.344 | ++ address_in_net 10.0.11.157 10.0.0.0/24
+2015-04-04 14:16:22.344 | ++ local ip=10.0.11.157
+2015-04-04 14:16:22.344 | ++ local range=10.0.0.0/24
+2015-04-04 14:16:22.344 | ++ local masklen=24
+2015-04-04 14:16:22.344 | ++++ cidr2netmask 24
+2015-04-04 14:16:22.344 | ++++ local 'maskpat=255 255 255 255'
+2015-04-04 14:16:22.344 | ++++ local 'maskdgt=254 252 248 240 224 192 128'
+2015-04-04 14:16:22.344 | ++++ set -- 255 255 255
+2015-04-04 14:16:22.344 | ++++ echo 255.255.255.0
+2015-04-04 14:16:22.345 | +++ maskip 10.0.0.0 255.255.255.0
+2015-04-04 14:16:22.345 | +++ local ip=10.0.0.0
+2015-04-04 14:16:22.345 | +++ local mask=255.255.255.0
+2015-04-04 14:16:22.345 | +++ local l=10.0.0
+2015-04-04 14:16:22.345 | +++ local r=0.0.0
+2015-04-04 14:16:22.345 | +++ local n=255.255.255
+2015-04-04 14:16:22.345 | +++ local m=255.255.0
+2015-04-04 14:16:22.345 | +++ local subnet=10.0.0.0
+2015-04-04 14:16:22.345 | +++ echo 10.0.0.0
+2015-04-04 14:16:22.345 | ++ local network=10.0.0.0
+2015-04-04 14:16:22.345 | ++++ cidr2netmask 24
+2015-04-04 14:16:22.345 | ++++ local 'maskpat=255 255 255 255'
+2015-04-04 14:16:22.345 | ++++ local 'maskdgt=254 252 248 240 224 192 128'
+2015-04-04 14:16:22.345 | ++++ set -- 255 255 255
+2015-04-04 14:16:22.346 | ++++ echo 255.255.255.0
+2015-04-04 14:16:22.346 | +++ maskip 10.0.11.157 255.255.255.0
+2015-04-04 14:16:22.346 | +++ local ip=10.0.11.157
+2015-04-04 14:16:22.346 | +++ local mask=255.255.255.0
+2015-04-04 14:16:22.346 | +++ local l=10.0.11
+2015-04-04 14:16:22.346 | +++ local r=0.11.157
+2015-04-04 14:16:22.346 | +++ local n=255.255.255
+2015-04-04 14:16:22.346 | +++ local m=255.255.0
+2015-04-04 14:16:22.346 | +++ local subnet=10.0.11.0
+2015-04-04 14:16:22.346 | +++ echo 10.0.11.0
+2015-04-04 14:16:22.346 | ++ local subnet=10.0.11.0
+2015-04-04 14:16:22.346 | ++ [[ 10.0.0.0 == 10.0.11.0 ]]
+2015-04-04 14:16:22.347 | ++ address_in_net 10.0.11.157 172.24.4.0/24
+2015-04-04 14:16:22.347 | ++ local ip=10.0.11.157
+2015-04-04 14:16:22.347 | ++ local range=172.24.4.0/24
+2015-04-04 14:16:22.347 | ++ local masklen=24
+2015-04-04 14:16:22.347 | ++++ cidr2netmask 24
+2015-04-04 14:16:22.347 | ++++ local 'maskpat=255 255 255 255'
+2015-04-04 14:16:22.347 | ++++ local 'maskdgt=254 252 248 240 224 192 128'
+2015-04-04 14:16:22.347 | ++++ set -- 255 255 255
+2015-04-04 14:16:22.347 | ++++ echo 255.255.255.0
+2015-04-04 14:16:22.347 | +++ maskip 172.24.4.0 255.255.255.0
+2015-04-04 14:16:22.348 | +++ local ip=172.24.4.0
+2015-04-04 14:16:22.348 | +++ local mask=255.255.255.0
+2015-04-04 14:16:22.348 | +++ local l=172.24.4
+2015-04-04 14:16:22.348 | +++ local r=24.4.0
+2015-04-04 14:16:22.348 | +++ local n=255.255.255
+2015-04-04 14:16:22.348 | +++ local m=255.255.0
+2015-04-04 14:16:22.348 | +++ local subnet=172.24.4.0
+2015-04-04 14:16:22.348 | +++ echo 172.24.4.0
+2015-04-04 14:16:22.348 | ++ local network=172.24.4.0
+2015-04-04 14:16:22.349 | ++++ cidr2netmask 24
+2015-04-04 14:16:22.349 | ++++ local 'maskpat=255 255 255 255'
+2015-04-04 14:16:22.349 | ++++ local 'maskdgt=254 252 248 240 224 192 128'
+2015-04-04 14:16:22.349 | ++++ set -- 255 255 255
+2015-04-04 14:16:22.349 | ++++ echo 255.255.255.0
+2015-04-04 14:16:22.349 | +++ maskip 10.0.11.157 255.255.255.0
+2015-04-04 14:16:22.349 | +++ local ip=10.0.11.157
+2015-04-04 14:16:22.349 | +++ local mask=255.255.255.0
+2015-04-04 14:16:22.349 | +++ local l=10.0.11
+2015-04-04 14:16:22.349 | +++ local r=0.11.157
+2015-04-04 14:16:22.349 | +++ local n=255.255.255
+2015-04-04 14:16:22.349 | +++ local m=255.255.0
+2015-04-04 14:16:22.349 | +++ local subnet=10.0.11.0
+2015-04-04 14:16:22.349 | +++ echo 10.0.11.0
+2015-04-04 14:16:22.350 | ++ local subnet=10.0.11.0
+2015-04-04 14:16:22.350 | ++ [[ 172.24.4.0 == 10.0.11.0 ]]
+2015-04-04 14:16:22.350 | ++ host_ip=10.0.11.157
+2015-04-04 14:16:22.350 | ++ break
+2015-04-04 14:16:22.350 | ++ echo 10.0.11.157
+2015-04-04 14:16:22.350 | + HOST_IP=10.0.11.157
+2015-04-04 14:16:22.350 | + '[' 10.0.11.157 == '' ']'
+2015-04-04 14:16:22.350 | + SERVICE_HOST=10.0.11.157
+2015-04-04 14:16:22.350 | ++ trueorfalse False
+2015-04-04 14:16:22.350 | + SYSLOG=False
+2015-04-04 14:16:22.350 | + SYSLOG_HOST=10.0.11.157
+2015-04-04 14:16:22.350 | + SYSLOG_PORT=516
+2015-04-04 14:16:22.350 | ++ trueorfalse True
+2015-04-04 14:16:22.351 | + LOG_COLOR=True
+2015-04-04 14:16:22.351 | + SSL_BUNDLE_FILE=/opt/stack/data/ca-bundle.pem
+2015-04-04 14:16:22.351 | + rm -f /opt/stack/data/ca-bundle.pem
+2015-04-04 14:16:22.351 | + source /home/ubuntu/devstack/lib/database
+2015-04-04 14:16:22.351 | woof
+2015-04-04 14:16:22.351 | 
+2015-04-04 14:16:22.351 | q-svc,q-agt,q-dhcp,q-l3,q-meta
+2015-04-04 14:16:22.351 | woof
+2015-04-04 14:16:22.351 | 
+2015-04-04 14:16:22.351 | q-svc,q-agt,q-dhcp,q-l3,q-meta
+2015-04-04 14:16:22.351 | + source /home/ubuntu/devstack/lib/rpc_backend
+2015-04-04 14:16:22.355 | + check_rpc_backend
+2015-04-04 14:16:22.355 | + local c svc
+2015-04-04 14:16:22.355 | + local rpc_needed=1
+2015-04-04 14:16:22.356 | ++ grep -rl iniset_rpc_backend /home/ubuntu/devstack/lib/
+2015-04-04 14:16:22.356 | ++ awk -F/ '{print $NF}'
+2015-04-04 14:16:22.359 | + rpc_candidates='sahara
+2015-04-04 14:16:22.359 | neutron
+2015-04-04 14:16:22.359 | heat
+2015-04-04 14:16:22.359 | rpc_backend
+2015-04-04 14:16:22.359 | nova
+2015-04-04 14:16:22.359 | ceilometer
+2015-04-04 14:16:22.359 | glance
+2015-04-04 14:16:22.359 | ironic
+2015-04-04 14:16:22.359 | cinder'
+2015-04-04 14:16:22.359 | + for c in '${rpc_candidates}'
+2015-04-04 14:16:22.359 | + is_service_enabled sahara
+2015-04-04 14:16:22.362 | woof
+2015-04-04 14:16:22.362 | 
+2015-04-04 14:16:22.362 | q-svc,q-agt,q-dhcp,q-l3,q-meta
+2015-04-04 14:16:22.362 | + return 1
+2015-04-04 14:16:22.363 | + for c in '${rpc_candidates}'
+2015-04-04 14:16:22.363 | + is_service_enabled neutron
+2015-04-04 14:16:22.365 | woof
+2015-04-04 14:16:22.365 | 
+2015-04-04 14:16:22.366 | q-svc,q-agt,q-dhcp,q-l3,q-meta
+2015-04-04 14:16:22.366 | + return 0
+2015-04-04 14:16:22.366 | + rpc_needed=0
+2015-04-04 14:16:22.366 | + break
+2015-04-04 14:16:22.366 | + local rpc_backend_cnt=0
+2015-04-04 14:16:22.366 | + for svc in qpid zeromq rabbit
+2015-04-04 14:16:22.367 | + is_service_enabled qpid
+2015-04-04 14:16:22.369 | woof
+2015-04-04 14:16:22.369 | 
+2015-04-04 14:16:22.369 | q-svc,q-agt,q-dhcp,q-l3,q-meta
+2015-04-04 14:16:22.370 | + return 1
+2015-04-04 14:16:22.370 | + true
+2015-04-04 14:16:22.370 | + for svc in qpid zeromq rabbit
+2015-04-04 14:16:22.370 | + is_service_enabled zeromq
+2015-04-04 14:16:22.373 | woof
+2015-04-04 14:16:22.373 | 
+2015-04-04 14:16:22.373 | q-svc,q-agt,q-dhcp,q-l3,q-meta
+2015-04-04 14:16:22.373 | + return 1
+2015-04-04 14:16:22.373 | + true
+2015-04-04 14:16:22.374 | + for svc in qpid zeromq rabbit
+2015-04-04 14:16:22.374 | + is_service_enabled rabbit
+2015-04-04 14:16:22.376 | woof
+2015-04-04 14:16:22.376 | 
+2015-04-04 14:16:22.376 | q-svc,q-agt,q-dhcp,q-l3,q-meta
+2015-04-04 14:16:22.377 | + return 1
+2015-04-04 14:16:22.377 | + true
+2015-04-04 14:16:22.377 | + '[' 0 -gt 1 ']'
+2015-04-04 14:16:22.377 | + '[' 0 == 0 ']'
+2015-04-04 14:16:22.377 | + '[' 0 == 0 ']'
+2015-04-04 14:16:22.377 | + echo 'ERROR: at least one rpc backend must be enabled,'
+2015-04-04 14:16:22.378 | ERROR: at least one rpc backend must be enabled,
+2015-04-04 14:16:22.378 | + echo '       set one of '\''rabbit'\'', '\''qpid'\'', '\''zeromq'\'''
+2015-04-04 14:16:22.378 |        set one of 'rabbit', 'qpid', 'zeromq'
+2015-04-04 14:16:22.378 | + echo '       via ENABLED_SERVICES.'
+2015-04-04 14:16:22.378 |        via ENABLED_SERVICES.
+2015-04-04 14:16:22.378 | + is_service_enabled qpid
+2015-04-04 14:16:22.381 | woof
+2015-04-04 14:16:22.381 | 
+2015-04-04 14:16:22.381 | q-svc,q-agt,q-dhcp,q-l3,q-meta
+2015-04-04 14:16:22.381 | + return 1
+2015-04-04 14:16:22.382 | ++ trueorfalse False
+2015-04-04 14:16:22.385 | + USE_SSL=False
+2015-04-04 14:16:22.385 | + SSL_ENABLED_SERVICES=key,nova,cinder,glance,s-proxy,neutron
+2015-04-04 14:16:22.386 | + is_service_enabled tls-proxy
+2015-04-04 14:16:22.389 | woof
+2015-04-04 14:16:22.389 | 
+2015-04-04 14:16:22.389 | q-svc,q-agt,q-dhcp,q-l3,q-meta
+2015-04-04 14:16:22.389 | + return 1
+2015-04-04 14:16:22.389 | + source /home/ubuntu/devstack/lib/apache
+2015-04-04 14:16:22.396 | + source /home/ubuntu/devstack/lib/tls
+2015-04-04 14:16:22.396 | ++ is_service_enabled tls-proxy
+2015-04-04 14:16:22.399 | woof
+2015-04-04 14:16:22.399 | 
+2015-04-04 14:16:22.399 | q-svc,q-agt,q-dhcp,q-l3,q-meta
+2015-04-04 14:16:22.399 | ++ return 1
+2015-04-04 14:16:22.399 | +++ hostname -f
+2015-04-04 14:16:22.404 | ++ DEVSTACK_HOSTNAME=localhost
+2015-04-04 14:16:22.404 | ++ DEVSTACK_CERT_NAME=devstack-cert
+2015-04-04 14:16:22.404 | ++ DEVSTACK_CERT=/opt/stack/data/devstack-cert.pem
+2015-04-04 14:16:22.404 | ++ ROOT_CA_DIR=/opt/stack/data/CA/root-ca
+2015-04-04 14:16:22.404 | ++ INT_CA_DIR=/opt/stack/data/CA/int-ca
+2015-04-04 14:16:22.404 | ++ ORG_NAME=OpenStack
+2015-04-04 14:16:22.404 | ++ ORG_UNIT_NAME=DevStack
+2015-04-04 14:16:22.404 | ++ STUD_PROTO=--tls
+2015-04-04 14:16:22.405 | ++ STUD_CIPHERS='TLSv1+HIGH:!DES:!aNULL:!eNULL:@STRENGTH'
+2015-04-04 14:16:22.405 | ++ OPENSSL=/usr/bin/openssl
+2015-04-04 14:16:22.405 | + source /home/ubuntu/devstack/lib/infra
+2015-04-04 14:16:22.407 | + source /home/ubuntu/devstack/lib/oslo
+2015-04-04 14:16:22.411 | + source /home/ubuntu/devstack/lib/stackforge
+2015-04-04 14:16:22.414 | + source /home/ubuntu/devstack/lib/horizon
+2015-04-04 14:16:22.417 | + source /home/ubuntu/devstack/lib/keystone
+2015-04-04 14:16:22.426 | woof
+2015-04-04 14:16:22.426 | 
+2015-04-04 14:16:22.426 | q-svc,q-agt,q-dhcp,q-l3,q-meta
+2015-04-04 14:16:22.431 | + source /home/ubuntu/devstack/lib/glance
+2015-04-04 14:16:22.441 | woof
+2015-04-04 14:16:22.441 | 
+2015-04-04 14:16:22.441 | q-svc,q-agt,q-dhcp,q-l3,q-meta
+2015-04-04 14:16:22.441 | + source /home/ubuntu/devstack/lib/nova
+2015-04-04 14:16:22.446 | woof
+2015-04-04 14:16:22.446 | 
+2015-04-04 14:16:22.446 | q-svc,q-agt,q-dhcp,q-l3,q-meta
+2015-04-04 14:16:22.461 | woof
+2015-04-04 14:16:22.461 | 
+2015-04-04 14:16:22.461 | q-svc,q-agt,q-dhcp,q-l3,q-meta
+2015-04-04 14:16:22.472 | + source /home/ubuntu/devstack/lib/cinder
+2015-04-04 14:16:22.477 | woof
+2015-04-04 14:16:22.478 | 
+2015-04-04 14:16:22.478 | q-svc,q-agt,q-dhcp,q-l3,q-meta
+2015-04-04 14:16:22.488 | woof
+2015-04-04 14:16:22.488 | 
+2015-04-04 14:16:22.488 | q-svc,q-agt,q-dhcp,q-l3,q-meta
+2015-04-04 14:16:22.492 | + source /home/ubuntu/devstack/lib/swift
+2015-04-04 14:16:22.497 | woof
+2015-04-04 14:16:22.497 | 
+2015-04-04 14:16:22.497 | q-svc,q-agt,q-dhcp,q-l3,q-meta
+2015-04-04 14:16:22.500 | woof
+2015-04-04 14:16:22.501 | 
+2015-04-04 14:16:22.501 | q-svc,q-agt,q-dhcp,q-l3,q-meta
+2015-04-04 14:16:22.503 | woof
+2015-04-04 14:16:22.503 | 
+2015-04-04 14:16:22.504 | q-svc,q-agt,q-dhcp,q-l3,q-meta
+2015-04-04 14:16:22.512 | + source /home/ubuntu/devstack/lib/ceilometer
+2015-04-04 14:16:22.523 | + source /home/ubuntu/devstack/lib/heat
+2015-04-04 14:16:22.535 | + source /home/ubuntu/devstack/lib/neutron
+2015-04-04 14:16:22.536 | ++ NETWORK_GATEWAY=10.0.0.1
+2015-04-04 14:16:22.536 | ++ PUBLIC_NETWORK_GATEWAY=172.24.4.1
+2015-04-04 14:16:22.536 | ++ PRIVATE_SUBNET_NAME=private-subnet
+2015-04-04 14:16:22.536 | ++ PUBLIC_SUBNET_NAME=public-subnet
+2015-04-04 14:16:22.536 | ++ is_ssl_enabled_service neutron
+2015-04-04 14:16:22.536 | ++ local services=neutron
+2015-04-04 14:16:22.536 | ++ local service=
+2015-04-04 14:16:22.536 | ++ '[' False == False ']'
+2015-04-04 14:16:22.536 | ++ return 1
+2015-04-04 14:16:22.536 | ++ is_service_enabled tls-proxy
+2015-04-04 14:16:22.539 | woof
+2015-04-04 14:16:22.539 | 
+2015-04-04 14:16:22.539 | q-svc,q-agt,q-dhcp,q-l3,q-meta
+2015-04-04 14:16:22.539 | ++ return 1
+2015-04-04 14:16:22.539 | ++ GITDIR["python-neutronclient"]=/opt/stack/python-neutronclient
+2015-04-04 14:16:22.539 | ++ NEUTRON_DIR=/opt/stack/neutron
+2015-04-04 14:16:22.539 | ++ NEUTRON_AUTH_CACHE_DIR=/var/cache/neutron
+2015-04-04 14:16:22.539 | ++ [[ -d /opt/stack/neutron/bin/neutron-server ]]
+2015-04-04 14:16:22.540 | +++ get_python_exec_prefix
+2015-04-04 14:16:22.540 | +++ is_fedora
+2015-04-04 14:16:22.540 | +++ [[ -z Ubuntu ]]
+2015-04-04 14:16:22.540 | +++ '[' Ubuntu = Fedora ']'
+2015-04-04 14:16:22.540 | +++ '[' Ubuntu = 'Red Hat' ']'
+2015-04-04 14:16:22.540 | +++ '[' Ubuntu = CentOS ']'
+2015-04-04 14:16:22.540 | +++ '[' Ubuntu = OracleServer ']'
+2015-04-04 14:16:22.540 | +++ is_suse
+2015-04-04 14:16:22.540 | +++ [[ -z Ubuntu ]]
+2015-04-04 14:16:22.540 | +++ '[' Ubuntu = openSUSE ']'
+2015-04-04 14:16:22.540 | +++ '[' Ubuntu = 'SUSE LINUX' ']'
+2015-04-04 14:16:22.540 | +++ echo /usr/local/bin
+2015-04-04 14:16:22.541 | ++ NEUTRON_BIN_DIR=/usr/local/bin
+2015-04-04 14:16:22.541 | ++ NEUTRON_CONF_DIR=/etc/neutron
+2015-04-04 14:16:22.541 | ++ NEUTRON_CONF=/etc/neutron/neutron.conf
+2015-04-04 14:16:22.541 | ++ export NEUTRON_TEST_CONFIG_FILE=/etc/neutron/debug.ini
+2015-04-04 14:16:22.541 | ++ NEUTRON_TEST_CONFIG_FILE=/etc/neutron/debug.ini
+2015-04-04 14:16:22.541 | ++ AGENT_DHCP_BINARY=/usr/local/bin/neutron-dhcp-agent
+2015-04-04 14:16:22.541 | ++ AGENT_L3_BINARY=/usr/local/bin/neutron-l3-agent
+2015-04-04 14:16:22.541 | ++ AGENT_META_BINARY=/usr/local/bin/neutron-metadata-agent
+2015-04-04 14:16:22.541 | ++ Q_DHCP_CONF_FILE=/etc/neutron/dhcp_agent.ini
+2015-04-04 14:16:22.541 | ++ Q_L3_CONF_FILE=/etc/neutron/l3_agent.ini
+2015-04-04 14:16:22.541 | ++ Q_FWAAS_CONF_FILE=/etc/neutron/fwaas_driver.ini
+2015-04-04 14:16:22.541 | ++ Q_VPN_CONF_FILE=/etc/neutron/vpn_agent.ini
+2015-04-04 14:16:22.541 | ++ Q_META_CONF_FILE=/etc/neutron/metadata_agent.ini
+2015-04-04 14:16:22.541 | ++ Q_DB_NAME=neutron
+2015-04-04 14:16:22.541 | ++ Q_PLUGIN=ml2
+2015-04-04 14:16:22.541 | ++ Q_PORT=9696
+2015-04-04 14:16:22.541 | ++ Q_PORT_INT=19696
+2015-04-04 14:16:22.541 | ++ Q_HOST=10.0.11.157
+2015-04-04 14:16:22.541 | ++ Q_PROTOCOL=http
+2015-04-04 14:16:22.541 | ++ Q_ADMIN_USERNAME=neutron
+2015-04-04 14:16:22.541 | ++ Q_AUTH_STRATEGY=keystone
+2015-04-04 14:16:22.541 | ++ Q_USE_NAMESPACE=True
+2015-04-04 14:16:22.541 | ++ Q_OVS_USE_VETH=False
+2015-04-04 14:16:22.541 | ++ Q_USE_ROOTWRAP=True
+2015-04-04 14:16:22.541 | ++ Q_META_DATA_IP=10.0.11.157
+2015-04-04 14:16:22.541 | ++ Q_ALLOW_OVERLAPPING_IP=True
+2015-04-04 14:16:22.542 | ++ Q_USE_DEBUG_COMMAND=False
+2015-04-04 14:16:22.542 | ++ Q_ROUTER_NAME=router1
+2015-04-04 14:16:22.542 | ++ NOVA_VIF_DRIVER=nova.virt.libvirt.vif.LibvirtGenericVIFDriver
+2015-04-04 14:16:22.542 | ++ Q_NOTIFY_NOVA_PORT_STATUS_CHANGES=True
+2015-04-04 14:16:22.542 | ++ Q_NOTIFY_NOVA_PORT_DATA_CHANGES=True
+2015-04-04 14:16:22.542 | ++ VIF_PLUGGING_IS_FATAL=True
+2015-04-04 14:16:22.542 | ++ VIF_PLUGGING_TIMEOUT=300
+2015-04-04 14:16:22.542 | ++ PROVIDER_SUBNET_NAME=provider_net
+2015-04-04 14:16:22.542 | ++ Q_USE_PROVIDERNET_FOR_PUBLIC=False
+2015-04-04 14:16:22.542 | ++ PUBLIC_PHYSICAL_NETWORK=public
+2015-04-04 14:16:22.542 | ++ Q_USE_PUBLIC_VETH=False
+2015-04-04 14:16:22.542 | ++ Q_PUBLIC_VETH_EX=veth-pub-ex
+2015-04-04 14:16:22.542 | ++ Q_PUBLIC_VETH_INT=veth-pub-int
+2015-04-04 14:16:22.542 | ++ Q_L3_ENABLED=False
+2015-04-04 14:16:22.542 | ++ Q_L3_ROUTER_PER_TENANT=False
+2015-04-04 14:16:22.542 | ++ declare -a Q_PLUGIN_EXTRA_CONF_FILES
+2015-04-04 14:16:22.542 | ++ declare -a Q_VPN_EXTRA_CONF_FILES
+2015-04-04 14:16:22.542 | ++ Q_RR_CONF_FILE=/etc/neutron/rootwrap.conf
+2015-04-04 14:16:22.542 | ++ [[ True == \F\a\l\s\e ]]
+2015-04-04 14:16:22.543 | +++ get_rootwrap_location neutron
+2015-04-04 14:16:22.543 | +++ local module=neutron
+2015-04-04 14:16:22.543 | ++++ get_python_exec_prefix
+2015-04-04 14:16:22.543 | ++++ is_fedora
+2015-04-04 14:16:22.543 | ++++ [[ -z Ubuntu ]]
+2015-04-04 14:16:22.543 | ++++ '[' Ubuntu = Fedora ']'
+2015-04-04 14:16:22.543 | ++++ '[' Ubuntu = 'Red Hat' ']'
+2015-04-04 14:16:22.543 | ++++ '[' Ubuntu = CentOS ']'
+2015-04-04 14:16:22.543 | ++++ '[' Ubuntu = OracleServer ']'
+2015-04-04 14:16:22.543 | ++++ is_suse
+2015-04-04 14:16:22.544 | ++++ [[ -z Ubuntu ]]
+2015-04-04 14:16:22.544 | ++++ '[' Ubuntu = openSUSE ']'
+2015-04-04 14:16:22.544 | ++++ '[' Ubuntu = 'SUSE LINUX' ']'
+2015-04-04 14:16:22.544 | ++++ echo /usr/local/bin
+2015-04-04 14:16:22.544 | +++ echo /usr/local/bin/neutron-rootwrap
+2015-04-04 14:16:22.544 | ++ NEUTRON_ROOTWRAP=/usr/local/bin/neutron-rootwrap
+2015-04-04 14:16:22.545 | ++ Q_RR_COMMAND='sudo /usr/local/bin/neutron-rootwrap /etc/neutron/rootwrap.conf'
+2015-04-04 14:16:22.545 | ++ Q_DVR_MODE=legacy
+2015-04-04 14:16:22.545 | ++ [[ legacy != \l\e\g\a\c\y ]]
+2015-04-04 14:16:22.545 | ++ ENABLE_TENANT_TUNNELS=True
+2015-04-04 14:16:22.545 | ++ TENANT_TUNNEL_RANGES=1:1000
+2015-04-04 14:16:22.545 | ++ ENABLE_TENANT_VLANS=False
+2015-04-04 14:16:22.545 | ++ TENANT_VLAN_RANGE=
+2015-04-04 14:16:22.545 | ++ PHYSICAL_NETWORK=
+2015-04-04 14:16:22.545 | ++ OVS_PHYSICAL_BRIDGE=
+2015-04-04 14:16:22.545 | ++ LB_PHYSICAL_INTERFACE=
+2015-04-04 14:16:22.545 | ++ TUNNEL_ENDPOINT_IP=10.0.11.157
+2015-04-04 14:16:22.545 | ++ OVS_ENABLE_TUNNELING=True
+2015-04-04 14:16:22.545 | ++ source /home/ubuntu/devstack/lib/neutron_plugins/ml2
+2015-04-04 14:16:22.557 | ++ source /home/ubuntu/devstack/lib/neutron_plugins/services/loadbalancer
+2015-04-04 14:16:22.560 | ++ source /home/ubuntu/devstack/lib/neutron_plugins/services/metering
+2015-04-04 14:16:22.563 | ++ source /home/ubuntu/devstack/lib/neutron_plugins/services/vpn
+2015-04-04 14:16:22.566 | ++ source /home/ubuntu/devstack/lib/neutron_plugins/services/firewall
+2015-04-04 14:16:22.570 | ++ has_neutron_plugin_security_group
+2015-04-04 14:16:22.570 | ++ return 0
+2015-04-04 14:16:22.570 | ++ Q_USE_SECGROUP=True
+2015-04-04 14:16:22.570 | ++ TEMPEST_SERVICES+=,neutron
+2015-04-04 14:16:22.585 | woof
+2015-04-04 14:16:22.585 | 
+2015-04-04 14:16:22.585 | q-svc,q-agt,q-dhcp,q-l3,q-meta
+2015-04-04 14:16:22.590 | woof
+2015-04-04 14:16:22.590 | 
+2015-04-04 14:16:22.590 | q-svc,q-agt,q-dhcp,q-l3,q-meta
+2015-04-04 14:16:22.595 | woof
+2015-04-04 14:16:22.595 | 
+2015-04-04 14:16:22.595 | q-svc,q-agt,q-dhcp,q-l3,q-meta
+2015-04-04 14:16:22.601 | woof
+2015-04-04 14:16:22.601 | 
+2015-04-04 14:16:22.601 | q-svc,q-agt,q-dhcp,q-l3,q-meta
+2015-04-04 14:16:22.606 | woof
+2015-04-04 14:16:22.606 | 
+2015-04-04 14:16:22.606 | q-svc,q-agt,q-dhcp,q-l3,q-meta
+2015-04-04 14:16:22.611 | woof
+2015-04-04 14:16:22.611 | 
+2015-04-04 14:16:22.611 | q-svc,q-agt,q-dhcp,q-l3,q-meta
+2015-04-04 14:16:22.612 | + source /home/ubuntu/devstack/lib/baremetal
+2015-04-04 14:16:22.628 | + source /home/ubuntu/devstack/lib/ldap
+2015-04-04 14:16:22.633 | + source /home/ubuntu/devstack/lib/dstat
+2015-04-04 14:16:22.636 | + [[ -d /home/ubuntu/devstack/extras.d ]]
+2015-04-04 14:16:22.636 | + for i in '$TOP_DIR/extras.d/*.sh'
+2015-04-04 14:16:22.636 | + [[ -r /home/ubuntu/devstack/extras.d/40-dib.sh ]]
+2015-04-04 14:16:22.636 | + source /home/ubuntu/devstack/extras.d/40-dib.sh source
+2015-04-04 14:16:22.636 | ++ is_service_enabled dib
+2015-04-04 14:16:22.639 | woof
+2015-04-04 14:16:22.639 | 
+2015-04-04 14:16:22.639 | q-svc,q-agt,q-dhcp,q-l3,q-meta
+2015-04-04 14:16:22.640 | ++ return 1
+2015-04-04 14:16:22.640 | + for i in '$TOP_DIR/extras.d/*.sh'
+2015-04-04 14:16:22.640 | + [[ -r /home/ubuntu/devstack/extras.d/50-ironic.sh ]]
+2015-04-04 14:16:22.640 | + source /home/ubuntu/devstack/extras.d/50-ironic.sh source
+2015-04-04 14:16:22.640 | ++ is_service_enabled ir-api ir-cond
+2015-04-04 14:16:22.643 | woof
+2015-04-04 14:16:22.643 | 
+2015-04-04 14:16:22.643 | q-svc,q-agt,q-dhcp,q-l3,q-meta
+2015-04-04 14:16:22.644 | ++ return 1
+2015-04-04 14:16:22.644 | + for i in '$TOP_DIR/extras.d/*.sh'
+2015-04-04 14:16:22.644 | + [[ -r /home/ubuntu/devstack/extras.d/60-ceph.sh ]]
+2015-04-04 14:16:22.644 | + source /home/ubuntu/devstack/extras.d/60-ceph.sh source
+2015-04-04 14:16:22.644 | ++ is_service_enabled ceph
+2015-04-04 14:16:22.647 | woof
+2015-04-04 14:16:22.647 | 
+2015-04-04 14:16:22.647 | q-svc,q-agt,q-dhcp,q-l3,q-meta
+2015-04-04 14:16:22.647 | ++ return 1
+2015-04-04 14:16:22.647 | + for i in '$TOP_DIR/extras.d/*.sh'
+2015-04-04 14:16:22.648 | + [[ -r /home/ubuntu/devstack/extras.d/70-gantt.sh ]]
+2015-04-04 14:16:22.648 | + source /home/ubuntu/devstack/extras.d/70-gantt.sh source
+2015-04-04 14:16:22.648 | ++ is_service_enabled n-sch
+2015-04-04 14:16:22.651 | woof
+2015-04-04 14:16:22.651 | 
+2015-04-04 14:16:22.651 | q-svc,q-agt,q-dhcp,q-l3,q-meta
+2015-04-04 14:16:22.651 | ++ return 1
+2015-04-04 14:16:22.651 | ++ is_service_enabled gantt
+2015-04-04 14:16:22.654 | woof
+2015-04-04 14:16:22.654 | 
+2015-04-04 14:16:22.654 | q-svc,q-agt,q-dhcp,q-l3,q-meta
+2015-04-04 14:16:22.654 | ++ return 1
+2015-04-04 14:16:22.655 | + for i in '$TOP_DIR/extras.d/*.sh'
+2015-04-04 14:16:22.655 | + [[ -r /home/ubuntu/devstack/extras.d/70-sahara.sh ]]
+2015-04-04 14:16:22.655 | + source /home/ubuntu/devstack/extras.d/70-sahara.sh source
+2015-04-04 14:16:22.655 | ++ is_service_enabled sahara
+2015-04-04 14:16:22.658 | woof
+2015-04-04 14:16:22.658 | 
+2015-04-04 14:16:22.658 | q-svc,q-agt,q-dhcp,q-l3,q-meta
+2015-04-04 14:16:22.658 | ++ return 1
+2015-04-04 14:16:22.658 | + for i in '$TOP_DIR/extras.d/*.sh'
+2015-04-04 14:16:22.658 | + [[ -r /home/ubuntu/devstack/extras.d/70-trove.sh ]]
+2015-04-04 14:16:22.658 | + source /home/ubuntu/devstack/extras.d/70-trove.sh source
+2015-04-04 14:16:22.659 | ++ is_service_enabled trove
+2015-04-04 14:16:22.661 | woof
+2015-04-04 14:16:22.662 | 
+2015-04-04 14:16:22.662 | q-svc,q-agt,q-dhcp,q-l3,q-meta
+2015-04-04 14:16:22.662 | ++ return 1
+2015-04-04 14:16:22.662 | + for i in '$TOP_DIR/extras.d/*.sh'
+2015-04-04 14:16:22.662 | + [[ -r /home/ubuntu/devstack/extras.d/70-zaqar.sh ]]
+2015-04-04 14:16:22.662 | + source /home/ubuntu/devstack/extras.d/70-zaqar.sh source
+2015-04-04 14:16:22.662 | ++ is_service_enabled zaqar-server
+2015-04-04 14:16:22.665 | woof
+2015-04-04 14:16:22.665 | 
+2015-04-04 14:16:22.665 | q-svc,q-agt,q-dhcp,q-l3,q-meta
+2015-04-04 14:16:22.666 | ++ return 1
+2015-04-04 14:16:22.666 | + for i in '$TOP_DIR/extras.d/*.sh'
+2015-04-04 14:16:22.666 | + [[ -r /home/ubuntu/devstack/extras.d/80-opendaylight.sh ]]
+2015-04-04 14:16:22.666 | + source /home/ubuntu/devstack/extras.d/80-opendaylight.sh source
+2015-04-04 14:16:22.666 | ++ is_service_enabled odl-server odl-compute
+2015-04-04 14:16:22.669 | woof
+2015-04-04 14:16:22.669 | 
+2015-04-04 14:16:22.669 | q-svc,q-agt,q-dhcp,q-l3,q-meta
+2015-04-04 14:16:22.670 | ++ return 1
+2015-04-04 14:16:22.670 | ++ is_service_enabled odl-server
+2015-04-04 14:16:22.673 | woof
+2015-04-04 14:16:22.673 | 
+2015-04-04 14:16:22.673 | q-svc,q-agt,q-dhcp,q-l3,q-meta
+2015-04-04 14:16:22.673 | ++ return 1
+2015-04-04 14:16:22.673 | ++ is_service_enabled odl-compute
+2015-04-04 14:16:22.676 | woof
+2015-04-04 14:16:22.676 | 
+2015-04-04 14:16:22.677 | q-svc,q-agt,q-dhcp,q-l3,q-meta
+2015-04-04 14:16:22.677 | ++ return 1
+2015-04-04 14:16:22.677 | + for i in '$TOP_DIR/extras.d/*.sh'
+2015-04-04 14:16:22.677 | + [[ -r /home/ubuntu/devstack/extras.d/80-tempest.sh ]]
+2015-04-04 14:16:22.677 | + source /home/ubuntu/devstack/extras.d/80-tempest.sh source
+2015-04-04 14:16:22.677 | ++ is_service_enabled tempest
+2015-04-04 14:16:22.680 | woof
+2015-04-04 14:16:22.680 | 
+2015-04-04 14:16:22.680 | q-svc,q-agt,q-dhcp,q-l3,q-meta
+2015-04-04 14:16:22.681 | ++ return 1
+2015-04-04 14:16:22.681 | + initialize_database_backends
+2015-04-04 14:16:22.681 | + for backend in '$DATABASE_BACKENDS'
+2015-04-04 14:16:22.681 | + is_service_enabled mysql
+2015-04-04 14:16:22.684 | woof
+2015-04-04 14:16:22.684 | 
+2015-04-04 14:16:22.684 | q-svc,q-agt,q-dhcp,q-l3,q-meta
+2015-04-04 14:16:22.685 | + return 1
+2015-04-04 14:16:22.685 | + for backend in '$DATABASE_BACKENDS'
+2015-04-04 14:16:22.685 | + is_service_enabled postgresql
+2015-04-04 14:16:22.688 | woof
+2015-04-04 14:16:22.688 | 
+2015-04-04 14:16:22.688 | q-svc,q-agt,q-dhcp,q-l3,q-meta
+2015-04-04 14:16:22.688 | + return 1
+2015-04-04 14:16:22.688 | + '[' -z '' ']'
+2015-04-04 14:16:22.688 | + return 1
+2015-04-04 14:16:22.688 | + echo 'No database enabled'
+2015-04-04 14:16:22.688 | No database enabled
+2015-04-04 14:16:22.688 | + is_service_enabled rabbit
+2015-04-04 14:16:22.691 | woof
+2015-04-04 14:16:22.691 | 
+2015-04-04 14:16:22.691 | q-svc,q-agt,q-dhcp,q-l3,q-meta
+2015-04-04 14:16:22.692 | + return 1
+2015-04-04 14:16:22.692 | + is_service_enabled key
+2015-04-04 14:16:22.695 | woof
+2015-04-04 14:16:22.695 | 
+2015-04-04 14:16:22.695 | q-svc,q-agt,q-dhcp,q-l3,q-meta
+2015-04-04 14:16:22.695 | + return 1
+2015-04-04 14:16:22.695 | + is_service_enabled s-proxy
+2015-04-04 14:16:22.698 | woof
+2015-04-04 14:16:22.698 | 
+2015-04-04 14:16:22.699 | q-svc,q-agt,q-dhcp,q-l3,q-meta
+2015-04-04 14:16:22.699 | + return 1
+2015-04-04 14:16:22.699 | + echo_summary 'Installing package prerequisites'
+2015-04-04 14:16:22.699 | + [[ -t 3 ]]
+2015-04-04 14:16:22.699 | + echo -e Installing package prerequisites
+2015-04-04 14:16:22.699 | + source /home/ubuntu/devstack/tools/install_prereqs.sh
+2015-04-04 14:16:22.699 | ++ [[ -n '' ]]
+2015-04-04 14:16:22.699 | ++ [[ -z /home/ubuntu/devstack ]]
+2015-04-04 14:16:22.699 | ++ PREREQ_RERUN_MARKER=/home/ubuntu/devstack/.prereqs
+2015-04-04 14:16:22.699 | ++ PREREQ_RERUN_HOURS=2
+2015-04-04 14:16:22.699 | ++ PREREQ_RERUN_SECONDS=7200
+2015-04-04 14:16:22.700 | +++ date +%s
+2015-04-04 14:16:22.702 | ++ NOW=1428156982
+2015-04-04 14:16:22.702 | +++ head -1 /home/ubuntu/devstack/.prereqs
+2015-04-04 14:16:22.704 | ++ LAST_RUN=1428154176
+2015-04-04 14:16:22.704 | ++ DELTA=2806
+2015-04-04 14:16:22.704 | ++ [[ 2806 -lt 7200 ]]
+2015-04-04 14:16:22.704 | ++ [[ -z '' ]]
+2015-04-04 14:16:22.705 | ++ echo 'Re-run time has not expired (4394 seconds remaining) '
+2015-04-04 14:16:22.705 | Re-run time has not expired (4394 seconds remaining) 
+2015-04-04 14:16:22.705 | ++ echo 'and FORCE_PREREQ not set; exiting...'
+2015-04-04 14:16:22.705 | and FORCE_PREREQ not set; exiting...
+2015-04-04 14:16:22.705 | ++ return 0
+2015-04-04 14:16:22.705 | + [[ False != \T\r\u\e ]]
+2015-04-04 14:16:22.705 | + PYPI_ALTERNATIVE_URL=
+2015-04-04 14:16:22.705 | + /home/ubuntu/devstack/tools/install_pip.sh
+2015-04-04 14:16:22.708 | +++ dirname /home/ubuntu/devstack/tools/install_pip.sh
+2015-04-04 14:16:22.709 | ++ cd /home/ubuntu/devstack/tools
+2015-04-04 14:16:22.709 | ++ pwd
+2015-04-04 14:16:22.710 | + TOOLS_DIR=/home/ubuntu/devstack/tools
+2015-04-04 14:16:22.710 | ++ cd /home/ubuntu/devstack/tools/..
+2015-04-04 14:16:22.710 | ++ pwd
+2015-04-04 14:16:22.710 | + TOP_DIR=/home/ubuntu/devstack
+2015-04-04 14:16:22.710 | + cd /home/ubuntu/devstack
+2015-04-04 14:16:22.711 | + source /home/ubuntu/devstack/functions
+2015-04-04 14:16:22.711 | ++++ dirname /home/ubuntu/devstack/functions
+2015-04-04 14:16:22.713 | +++ cd /home/ubuntu/devstack
+2015-04-04 14:16:22.713 | +++ pwd
+2015-04-04 14:16:22.713 | ++ FUNC_DIR=/home/ubuntu/devstack
+2015-04-04 14:16:22.713 | ++ source /home/ubuntu/devstack/functions-common
+2015-04-04 14:16:22.737 | + FILES=/home/ubuntu/devstack/files
+2015-04-04 14:16:22.737 | + PIP_GET_PIP_URL=https://bootstrap.pypa.io/get-pip.py
+2015-04-04 14:16:22.737 | ++ basename https://bootstrap.pypa.io/get-pip.py
+2015-04-04 14:16:22.738 | + LOCAL_PIP=/home/ubuntu/devstack/files/get-pip.py
+2015-04-04 14:16:22.738 | + GetDistro
+2015-04-04 14:16:22.738 | + GetOSVersion
+2015-04-04 14:16:22.739 | ++ which sw_vers
+2015-04-04 14:16:22.741 | + [[ -x '' ]]
+2015-04-04 14:16:22.741 | ++ which lsb_release
+2015-04-04 14:16:22.743 | + [[ -x /usr/bin/lsb_release ]]
+2015-04-04 14:16:22.743 | ++ lsb_release -i -s
+2015-04-04 14:16:22.836 | + os_VENDOR=Ubuntu
+2015-04-04 14:16:22.837 | ++ lsb_release -r -s
+2015-04-04 14:16:22.928 | + os_RELEASE=14.04
+2015-04-04 14:16:22.928 | + os_UPDATE=
+2015-04-04 14:16:22.928 | + os_PACKAGE=rpm
+2015-04-04 14:16:22.928 | + [[ Debian,Ubuntu,LinuxMint =~ Ubuntu ]]
+2015-04-04 14:16:22.929 | + os_PACKAGE=deb
+2015-04-04 14:16:22.929 | ++ lsb_release -c -s
+2015-04-04 14:16:23.021 | + os_CODENAME=trusty
+2015-04-04 14:16:23.021 | + export os_VENDOR os_RELEASE os_UPDATE os_PACKAGE os_CODENAME
+2015-04-04 14:16:23.021 | + [[ Ubuntu =~ (Ubuntu) ]]
+2015-04-04 14:16:23.021 | + DISTRO=trusty
+2015-04-04 14:16:23.021 | + export DISTRO
+2015-04-04 14:16:23.021 | + echo 'Distro: trusty'
+2015-04-04 14:16:23.021 | Distro: trusty
+2015-04-04 14:16:23.022 | + get_versions
+2015-04-04 14:16:23.022 | ++ which pip
+2015-04-04 14:16:23.024 | + PIP=/usr/local/bin/pip
+2015-04-04 14:16:23.024 | + [[ -n /usr/local/bin/pip ]]
+2015-04-04 14:16:23.025 | ++ /usr/local/bin/pip --version
+2015-04-04 14:16:23.025 | ++ awk '{ print $2}'
+2015-04-04 14:16:23.594 | + PIP_VERSION=6.0.8
+2015-04-04 14:16:23.594 | + echo 'pip: 6.0.8'
+2015-04-04 14:16:23.594 | pip: 6.0.8
+2015-04-04 14:16:23.595 | + uninstall_package python-pip
+2015-04-04 14:16:23.595 | + is_ubuntu
+2015-04-04 14:16:23.595 | + [[ -z deb ]]
+2015-04-04 14:16:23.595 | + '[' deb = deb ']'
+2015-04-04 14:16:23.595 | + apt_get purge python-pip
+2015-04-04 14:16:23.600 | + sudo DEBIAN_FRONTEND=noninteractive http_proxy= https_proxy= no_proxy= apt-get --option Dpkg::Options::=--force-confold --assume-yes purge python-pip
+2015-04-04 14:16:23.619 | Reading package lists...
+2015-04-04 14:16:23.897 | Building dependency tree...
+2015-04-04 14:16:23.899 | Reading state information...
+2015-04-04 14:16:24.107 | Package 'python-pip' is not installed, so not removed
+2015-04-04 14:16:24.107 | The following packages were automatically installed and are no longer required:
+2015-04-04 14:16:24.107 |   python-colorama python-distlib python-html5lib
+2015-04-04 14:16:24.107 | Use 'apt-get autoremove' to remove them.
+2015-04-04 14:16:24.154 | 0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+2015-04-04 14:16:24.156 | + install_get_pip
+2015-04-04 14:16:24.156 | + [[ ! -r /home/ubuntu/devstack/files/get-pip.py ]]
+2015-04-04 14:16:24.156 | + sudo -H -E python /home/ubuntu/devstack/files/get-pip.py
+2015-04-04 14:16:28.674 | Requirement already up-to-date: pip in /usr/local/lib/python2.7/dist-packages
+2015-04-04 14:16:28.742 | + [[ -n '' ]]
+2015-04-04 14:16:28.742 | + pip_install -U setuptools
+2015-04-04 14:16:28.747 | + sudo -H PIP_DOWNLOAD_CACHE=/var/cache/pip http_proxy= https_proxy= no_proxy= /usr/local/bin/pip install -U setuptools
+2015-04-04 14:16:29.755 | DEPRECATION: --download-cache has been deprecated and will be removed in the future. Pip now automatically uses and configures its cache.
+2015-04-04 14:16:30.919 | Requirement already up-to-date: setuptools in /usr/local/lib/python2.7/dist-packages
+2015-04-04 14:16:30.975 | + [[ '' == \T\r\u\e ]]
+2015-04-04 14:16:30.975 | + get_versions
+2015-04-04 14:16:30.976 | ++ which pip
+2015-04-04 14:16:30.978 | + PIP=/usr/local/bin/pip
+2015-04-04 14:16:30.978 | + [[ -n /usr/local/bin/pip ]]
+2015-04-04 14:16:30.978 | ++ /usr/local/bin/pip --version
+2015-04-04 14:16:30.979 | ++ awk '{ print $2}'
+2015-04-04 14:16:31.552 | + PIP_VERSION=6.0.8
+2015-04-04 14:16:31.552 | + echo 'pip: 6.0.8'
+2015-04-04 14:16:31.552 | pip: 6.0.8
+2015-04-04 14:16:31.553 | + source /home/ubuntu/devstack/tools/fixup_stuff.sh
+2015-04-04 14:16:31.553 | ++ [[ -z /home/ubuntu/devstack ]]
+2015-04-04 14:16:31.553 | ++ keystone_ports=35357,35358
+2015-04-04 14:16:31.553 | +++ sysctl net.ipv4.ip_local_reserved_ports
+2015-04-04 14:16:31.553 | +++ awk -F= '{print $2;}'
+2015-04-04 14:16:31.554 | +++ sed 's/^ //'
+2015-04-04 14:16:31.557 | ++ reserved_ports=35357-35358
+2015-04-04 14:16:31.557 | ++ [[ -z 35357-35358 ]]
+2015-04-04 14:16:31.557 | ++ sudo sysctl -w net.ipv4.ip_local_reserved_ports=35357,35358,35357-35358
+2015-04-04 14:16:31.565 | net.ipv4.ip_local_reserved_ports = 35357,35358,35357-35358
+2015-04-04 14:16:31.567 | ++ pip_install 'prettytable>=0.7'
+2015-04-04 14:16:31.573 | ++ sudo -H PIP_DOWNLOAD_CACHE=/var/cache/pip http_proxy= https_proxy= no_proxy= /usr/local/bin/pip install 'prettytable>=0.7'
+2015-04-04 14:16:32.596 | DEPRECATION: --download-cache has been deprecated and will be removed in the future. Pip now automatically uses and configures its cache.
+2015-04-04 14:16:33.058 | Requirement already satisfied (use --upgrade to upgrade): prettytable>=0.7 in /usr/local/lib/python2.7/dist-packages
+2015-04-04 14:16:33.099 | ++ [[ False == \T\r\u\e ]]
+2015-04-04 14:16:33.100 | +++ get_package_path prettytable
+2015-04-04 14:16:33.100 | +++ local package=prettytable
+2015-04-04 14:16:33.101 | ++++ python -c 'import os; import prettytable; print(os.path.split(os.path.realpath(prettytable.__file__))[0])'
+2015-04-04 14:16:33.170 | +++ echo /usr/local/lib/python2.7/dist-packages
+2015-04-04 14:16:33.171 | ++ PACKAGE_DIR=/usr/local/lib/python2.7/dist-packages
+2015-04-04 14:16:33.172 | +++ echo /usr/local/lib/python2.7/dist-packages/prettytable-0.7.2-py2.7.egg-info
+2015-04-04 14:16:33.173 | ++ dir=/usr/local/lib/python2.7/dist-packages/prettytable-0.7.2-py2.7.egg-info
+2015-04-04 14:16:33.173 | ++ [[ -d /usr/local/lib/python2.7/dist-packages/prettytable-0.7.2-py2.7.egg-info ]]
+2015-04-04 14:16:33.173 | ++ sudo chmod +r /usr/local/lib/python2.7/dist-packages/prettytable-0.7.2-py2.7.egg-info/PKG-INFO /usr/local/lib/python2.7/dist-packages/prettytable-0.7.2-py2.7.egg-info/SOURCES.txt /usr/local/lib/python2.7/dist-packages/prettytable-0.7.2-py2.7.egg-info/dependency_links.txt /usr/local/lib/python2.7/dist-packages/prettytable-0.7.2-py2.7.egg-info/installed-files.txt /usr/local/lib/python2.7/dist-packages/prettytable-0.7.2-py2.7.egg-info/top_level.txt
+2015-04-04 14:16:33.182 | ++ pip_install httplib2
+2015-04-04 14:16:33.188 | ++ sudo -H PIP_DOWNLOAD_CACHE=/var/cache/pip http_proxy= https_proxy= no_proxy= /usr/local/bin/pip install httplib2
+2015-04-04 14:16:34.242 | DEPRECATION: --download-cache has been deprecated and will be removed in the future. Pip now automatically uses and configures its cache.
+2015-04-04 14:16:34.728 | Requirement already satisfied (use --upgrade to upgrade): httplib2 in /usr/local/lib/python2.7/dist-packages
+2015-04-04 14:16:34.770 | ++ [[ False == \T\r\u\e ]]
+2015-04-04 14:16:34.770 | +++ get_package_path httplib2
+2015-04-04 14:16:34.770 | +++ local package=httplib2
+2015-04-04 14:16:34.771 | ++++ python -c 'import os; import httplib2; print(os.path.split(os.path.realpath(httplib2.__file__))[0])'
+2015-04-04 14:16:34.858 | +++ echo /usr/local/lib/python2.7/dist-packages/httplib2
+2015-04-04 14:16:34.859 | ++ PACKAGE_DIR=/usr/local/lib/python2.7/dist-packages/httplib2
+2015-04-04 14:16:34.860 | +++ echo '/usr/local/lib/python2.7/dist-packages/httplib2-0.8*'
+2015-04-04 14:16:34.862 | ++ dir='/usr/local/lib/python2.7/dist-packages/httplib2-0.8*'
+2015-04-04 14:16:34.862 | ++ [[ -d /usr/local/lib/python2.7/dist-packages/httplib2-0.8* ]]
+2015-04-04 14:16:34.862 | ++ is_fedora
+2015-04-04 14:16:34.862 | ++ [[ -z Ubuntu ]]
+2015-04-04 14:16:34.862 | ++ '[' Ubuntu = Fedora ']'
+2015-04-04 14:16:34.862 | ++ '[' Ubuntu = 'Red Hat' ']'
+2015-04-04 14:16:34.862 | ++ '[' Ubuntu = CentOS ']'
+2015-04-04 14:16:34.862 | ++ '[' Ubuntu = OracleServer ']'
+2015-04-04 14:16:34.862 | ++ [[ trusty =~ (rhel6) ]]
+2015-04-04 14:16:34.862 | + [[ -d /home/ubuntu/devstack/extras.d ]]
+2015-04-04 14:16:34.863 | + for i in '$TOP_DIR/extras.d/*.sh'
+2015-04-04 14:16:34.863 | + [[ -r /home/ubuntu/devstack/extras.d/40-dib.sh ]]
+2015-04-04 14:16:34.863 | + source /home/ubuntu/devstack/extras.d/40-dib.sh stack pre-install
+2015-04-04 14:16:34.863 | ++ is_service_enabled dib
+2015-04-04 14:16:34.866 | woof
+2015-04-04 14:16:34.866 | 
+2015-04-04 14:16:34.866 | q-svc,q-agt,q-dhcp,q-l3,q-meta
+2015-04-04 14:16:34.866 | ++ return 1
+2015-04-04 14:16:34.866 | + for i in '$TOP_DIR/extras.d/*.sh'
+2015-04-04 14:16:34.866 | + [[ -r /home/ubuntu/devstack/extras.d/50-ironic.sh ]]
+2015-04-04 14:16:34.866 | + source /home/ubuntu/devstack/extras.d/50-ironic.sh stack pre-install
+2015-04-04 14:16:34.866 | ++ is_service_enabled ir-api ir-cond
+2015-04-04 14:16:34.869 | woof
+2015-04-04 14:16:34.869 | 
+2015-04-04 14:16:34.869 | q-svc,q-agt,q-dhcp,q-l3,q-meta
+2015-04-04 14:16:34.870 | ++ return 1
+2015-04-04 14:16:34.870 | + for i in '$TOP_DIR/extras.d/*.sh'
+2015-04-04 14:16:34.870 | + [[ -r /home/ubuntu/devstack/extras.d/60-ceph.sh ]]
+2015-04-04 14:16:34.870 | + source /home/ubuntu/devstack/extras.d/60-ceph.sh stack pre-install
+2015-04-04 14:16:34.871 | ++ is_service_enabled ceph
+2015-04-04 14:16:34.874 | woof
+2015-04-04 14:16:34.874 | 
+2015-04-04 14:16:34.874 | q-svc,q-agt,q-dhcp,q-l3,q-meta
+2015-04-04 14:16:34.875 | ++ return 1
+2015-04-04 14:16:34.875 | + for i in '$TOP_DIR/extras.d/*.sh'
+2015-04-04 14:16:34.875 | + [[ -r /home/ubuntu/devstack/extras.d/70-gantt.sh ]]
+2015-04-04 14:16:34.875 | + source /home/ubuntu/devstack/extras.d/70-gantt.sh stack pre-install
+2015-04-04 14:16:34.875 | ++ is_service_enabled n-sch
+2015-04-04 14:16:34.879 | woof
+2015-04-04 14:16:34.879 | 
+2015-04-04 14:16:34.879 | q-svc,q-agt,q-dhcp,q-l3,q-meta
+2015-04-04 14:16:34.880 | ++ return 1
+2015-04-04 14:16:34.880 | ++ is_service_enabled gantt
+2015-04-04 14:16:34.883 | woof
+2015-04-04 14:16:34.883 | 
+2015-04-04 14:16:34.883 | q-svc,q-agt,q-dhcp,q-l3,q-meta
+2015-04-04 14:16:34.884 | ++ return 1
+2015-04-04 14:16:34.884 | + for i in '$TOP_DIR/extras.d/*.sh'
+2015-04-04 14:16:34.884 | + [[ -r /home/ubuntu/devstack/extras.d/70-sahara.sh ]]
+2015-04-04 14:16:34.884 | + source /home/ubuntu/devstack/extras.d/70-sahara.sh stack pre-install
+2015-04-04 14:16:34.885 | ++ is_service_enabled sahara
+2015-04-04 14:16:34.888 | woof
+2015-04-04 14:16:34.888 | 
+2015-04-04 14:16:34.888 | q-svc,q-agt,q-dhcp,q-l3,q-meta
+2015-04-04 14:16:34.889 | ++ return 1
+2015-04-04 14:16:34.889 | + for i in '$TOP_DIR/extras.d/*.sh'
+2015-04-04 14:16:34.889 | + [[ -r /home/ubuntu/devstack/extras.d/70-trove.sh ]]
+2015-04-04 14:16:34.889 | + source /home/ubuntu/devstack/extras.d/70-trove.sh stack pre-install
+2015-04-04 14:16:34.890 | ++ is_service_enabled trove
+2015-04-04 14:16:34.893 | woof
+2015-04-04 14:16:34.893 | 
+2015-04-04 14:16:34.893 | q-svc,q-agt,q-dhcp,q-l3,q-meta
+2015-04-04 14:16:34.894 | ++ return 1
+2015-04-04 14:16:34.894 | + for i in '$TOP_DIR/extras.d/*.sh'
+2015-04-04 14:16:34.894 | + [[ -r /home/ubuntu/devstack/extras.d/70-zaqar.sh ]]
+2015-04-04 14:16:34.894 | + source /home/ubuntu/devstack/extras.d/70-zaqar.sh stack pre-install
+2015-04-04 14:16:34.894 | ++ is_service_enabled zaqar-server
+2015-04-04 14:16:34.898 | woof
+2015-04-04 14:16:34.898 | 
+2015-04-04 14:16:34.898 | q-svc,q-agt,q-dhcp,q-l3,q-meta
+2015-04-04 14:16:34.899 | ++ return 1
+2015-04-04 14:16:34.899 | + for i in '$TOP_DIR/extras.d/*.sh'
+2015-04-04 14:16:34.899 | + [[ -r /home/ubuntu/devstack/extras.d/80-opendaylight.sh ]]
+2015-04-04 14:16:34.899 | + source /home/ubuntu/devstack/extras.d/80-opendaylight.sh stack pre-install
+2015-04-04 14:16:34.899 | ++ is_service_enabled odl-server odl-compute
+2015-04-04 14:16:34.903 | woof
+2015-04-04 14:16:34.903 | 
+2015-04-04 14:16:34.903 | q-svc,q-agt,q-dhcp,q-l3,q-meta
+2015-04-04 14:16:34.904 | ++ return 1
+2015-04-04 14:16:34.905 | ++ is_service_enabled odl-server
+2015-04-04 14:16:34.908 | woof
+2015-04-04 14:16:34.908 | 
+2015-04-04 14:16:34.908 | q-svc,q-agt,q-dhcp,q-l3,q-meta
+2015-04-04 14:16:34.909 | ++ return 1
+2015-04-04 14:16:34.909 | ++ is_service_enabled odl-compute
+2015-04-04 14:16:34.912 | woof
+2015-04-04 14:16:34.912 | 
+2015-04-04 14:16:34.912 | q-svc,q-agt,q-dhcp,q-l3,q-meta
+2015-04-04 14:16:34.913 | ++ return 1
+2015-04-04 14:16:34.913 | + for i in '$TOP_DIR/extras.d/*.sh'
+2015-04-04 14:16:34.913 | + [[ -r /home/ubuntu/devstack/extras.d/80-tempest.sh ]]
+2015-04-04 14:16:34.913 | + source /home/ubuntu/devstack/extras.d/80-tempest.sh stack pre-install
+2015-04-04 14:16:34.914 | ++ is_service_enabled tempest
+2015-04-04 14:16:34.917 | woof
+2015-04-04 14:16:34.917 | 
+2015-04-04 14:16:34.917 | q-svc,q-agt,q-dhcp,q-l3,q-meta
+2015-04-04 14:16:34.917 | ++ return 1
+2015-04-04 14:16:34.918 | + install_rpc_backend
+2015-04-04 14:16:34.918 | + '[' '' == AMQP1 ']'
+2015-04-04 14:16:34.918 | + is_service_enabled rabbit
+2015-04-04 14:16:34.921 | woof
+2015-04-04 14:16:34.921 | 
+2015-04-04 14:16:34.921 | q-svc,q-agt,q-dhcp,q-l3,q-meta
+2015-04-04 14:16:34.922 | + return 1
+2015-04-04 14:16:34.922 | + is_service_enabled qpid
+2015-04-04 14:16:34.925 | woof
+2015-04-04 14:16:34.925 | 
+2015-04-04 14:16:34.926 | q-svc,q-agt,q-dhcp,q-l3,q-meta
+2015-04-04 14:16:34.926 | + return 1
+2015-04-04 14:16:34.926 | + is_service_enabled zeromq
+2015-04-04 14:16:34.930 | woof
+2015-04-04 14:16:34.930 | 
+2015-04-04 14:16:34.930 | q-svc,q-agt,q-dhcp,q-l3,q-meta
+2015-04-04 14:16:34.931 | + return 1
+2015-04-04 14:16:34.931 | + is_service_enabled qpid
+2015-04-04 14:16:34.934 | woof
+2015-04-04 14:16:34.934 | 
+2015-04-04 14:16:34.934 | q-svc,q-agt,q-dhcp,q-l3,q-meta
+2015-04-04 14:16:34.935 | + return 1
+2015-04-04 14:16:34.935 | + '[' -n '' ']'
+2015-04-04 14:16:34.935 | + is_service_enabled mysql postgresql
+2015-04-04 14:16:34.939 | woof
+2015-04-04 14:16:34.939 | 
+2015-04-04 14:16:34.940 | q-svc,q-agt,q-dhcp,q-l3,q-meta
+2015-04-04 14:16:34.940 | + return 1
+2015-04-04 14:16:34.941 | + is_service_enabled neutron
+2015-04-04 14:16:34.944 | woof
+2015-04-04 14:16:34.944 | 
+2015-04-04 14:16:34.944 | q-svc,q-agt,q-dhcp,q-l3,q-meta
+2015-04-04 14:16:34.945 | + return 0
+2015-04-04 14:16:34.945 | + install_neutron_agent_packages
+2015-04-04 14:16:34.945 | + is_service_enabled q-l3
+2015-04-04 14:16:34.948 | woof
+2015-04-04 14:16:34.949 | 
+2015-04-04 14:16:34.949 | q-svc,q-agt,q-dhcp,q-l3,q-meta
+2015-04-04 14:16:34.949 | + return 0
+2015-04-04 14:16:34.950 | + install_package radvd
+2015-04-04 14:16:34.950 | + update_package_repo
+2015-04-04 14:16:34.950 | + [[ '' = \T\r\u\e ]]
+2015-04-04 14:16:34.950 | + is_ubuntu
+2015-04-04 14:16:34.950 | + [[ -z deb ]]
+2015-04-04 14:16:34.951 | + '[' deb = deb ']'
+2015-04-04 14:16:35.016 | Ign http://archive.ubuntu.com trusty InRelease
+2015-04-04 14:16:35.025 | Ign http://archive.ubuntu.com trusty-updates InRelease
+2015-04-04 14:16:35.028 | Ign http://ports.ubuntu.com trusty InRelease
+2015-04-04 14:16:35.033 | Ign http://archive.ubuntu.com trusty-backports InRelease
+2015-04-04 14:16:35.040 | Hit http://archive.ubuntu.com trusty Release.gpg
+2015-04-04 14:16:35.042 | Ign http://ports.ubuntu.com trusty-updates InRelease
+2015-04-04 14:16:35.049 | Get:1 http://archive.ubuntu.com trusty-updates Release.gpg [933 B]
+2015-04-04 14:16:35.055 | Ign http://ports.ubuntu.com trusty-backports InRelease
+2015-04-04 14:16:35.057 | Hit http://archive.ubuntu.com trusty-backports Release.gpg
+2015-04-04 14:16:35.072 | Hit http://archive.ubuntu.com trusty Release
+2015-04-04 14:16:35.072 | Ign http://ports.ubuntu.com trusty-security InRelease
+2015-04-04 14:16:35.073 | Get:2 http://archive.ubuntu.com trusty-updates Release [63.5 kB]
+2015-04-04 14:16:35.083 | Hit http://ports.ubuntu.com trusty Release.gpg
+2015-04-04 14:16:35.098 | Hit http://ports.ubuntu.com trusty-updates Release.gpg
+2015-04-04 14:16:35.098 | Hit http://archive.ubuntu.com trusty-backports Release
+2015-04-04 14:16:35.113 | Hit http://archive.ubuntu.com trusty/main Sources
+2015-04-04 14:16:35.113 | Hit http://ports.ubuntu.com trusty-backports Release.gpg
+2015-04-04 14:16:35.114 | Hit http://archive.ubuntu.com trusty/restricted Sources
+2015-04-04 14:16:35.121 | Hit http://archive.ubuntu.com trusty/universe Sources
+2015-04-04 14:16:35.125 | Hit http://ports.ubuntu.com trusty-security Release.gpg
+2015-04-04 14:16:35.129 | Hit http://archive.ubuntu.com trusty/multiverse Sources
+2015-04-04 14:16:35.137 | Get:3 http://archive.ubuntu.com trusty-updates/main Sources [190 kB]
+2015-04-04 14:16:35.138 | Hit http://ports.ubuntu.com trusty Release
+2015-04-04 14:16:35.152 | Hit http://ports.ubuntu.com trusty-updates Release
+2015-04-04 14:16:35.166 | Hit http://ports.ubuntu.com trusty-backports Release
+2015-04-04 14:16:35.177 | Get:4 http://archive.ubuntu.com trusty-updates/restricted Sources [2564 B]
+2015-04-04 14:16:35.180 | Hit http://ports.ubuntu.com trusty-security Release
+2015-04-04 14:16:35.185 | Get:5 http://archive.ubuntu.com trusty-updates/universe Sources [108 kB]
+2015-04-04 14:16:35.194 | Hit http://ports.ubuntu.com trusty/main arm64 Packages
+2015-04-04 14:16:35.203 | Get:6 http://archive.ubuntu.com trusty-updates/multiverse Sources [4765 B]
+2015-04-04 14:16:35.207 | Hit http://ports.ubuntu.com trusty/restricted arm64 Packages
+2015-04-04 14:16:35.211 | Hit http://archive.ubuntu.com trusty-backports/main Sources
+2015-04-04 14:16:35.219 | Hit http://archive.ubuntu.com trusty-backports/restricted Sources
+2015-04-04 14:16:35.221 | Hit http://ports.ubuntu.com trusty/universe arm64 Packages
+2015-04-04 14:16:35.235 | Hit http://ports.ubuntu.com trusty/multiverse arm64 Packages
+2015-04-04 14:16:35.249 | Hit http://ports.ubuntu.com trusty/main Translation-en
+2015-04-04 14:16:35.262 | Hit http://ports.ubuntu.com trusty/main Translation-en_GB
+2015-04-04 14:16:35.271 | Hit http://archive.ubuntu.com trusty-backports/universe Sources
+2015-04-04 14:16:35.276 | Hit http://ports.ubuntu.com trusty/multiverse Translation-en
+2015-04-04 14:16:35.278 | Hit http://archive.ubuntu.com trusty-backports/multiverse Sources
+2015-04-04 14:16:35.343 | Hit http://ports.ubuntu.com trusty/multiverse Translation-en_GB
+2015-04-04 14:16:35.357 | Hit http://ports.ubuntu.com trusty/restricted Translation-en
+2015-04-04 14:16:35.371 | Hit http://ports.ubuntu.com trusty/restricted Translation-en_GB
+2015-04-04 14:16:35.385 | Hit http://ports.ubuntu.com trusty/universe Translation-en
+2015-04-04 14:16:35.399 | Hit http://ports.ubuntu.com trusty/universe Translation-en_GB
+2015-04-04 14:16:35.412 | Hit http://ports.ubuntu.com trusty-updates/main arm64 Packages
+2015-04-04 14:16:35.426 | Hit http://ports.ubuntu.com trusty-updates/restricted arm64 Packages
+2015-04-04 14:16:35.440 | Hit http://ports.ubuntu.com trusty-updates/universe arm64 Packages
+2015-04-04 14:16:35.455 | Hit http://ports.ubuntu.com trusty-updates/multiverse arm64 Packages
+2015-04-04 14:16:35.469 | Hit http://ports.ubuntu.com trusty-updates/main Translation-en
+2015-04-04 14:16:35.482 | Hit http://ports.ubuntu.com trusty-updates/multiverse Translation-en
+2015-04-04 14:16:35.496 | Hit http://ports.ubuntu.com trusty-updates/restricted Translation-en
+2015-04-04 14:16:35.510 | Hit http://ports.ubuntu.com trusty-updates/universe Translation-en
+2015-04-04 14:16:35.524 | Hit http://ports.ubuntu.com trusty-backports/main arm64 Packages
+2015-04-04 14:16:35.537 | Hit http://ports.ubuntu.com trusty-backports/restricted arm64 Packages
+2015-04-04 14:16:35.551 | Hit http://ports.ubuntu.com trusty-backports/universe arm64 Packages
+2015-04-04 14:16:35.565 | Hit http://ports.ubuntu.com trusty-backports/multiverse arm64 Packages
+2015-04-04 14:16:35.578 | Hit http://ports.ubuntu.com trusty-backports/main Translation-en
+2015-04-04 14:16:35.642 | Hit http://ports.ubuntu.com trusty-backports/multiverse Translation-en
+2015-04-04 14:16:35.656 | Hit http://ports.ubuntu.com trusty-backports/restricted Translation-en
+2015-04-04 14:16:35.669 | Hit http://ports.ubuntu.com trusty-backports/universe Translation-en
+2015-04-04 14:16:35.683 | Hit http://ports.ubuntu.com trusty-security/main Sources
+2015-04-04 14:16:35.697 | Hit http://ports.ubuntu.com trusty-security/restricted Sources
+2015-04-04 14:16:35.710 | Hit http://ports.ubuntu.com trusty-security/universe Sources
+2015-04-04 14:16:35.724 | Hit http://ports.ubuntu.com trusty-security/multiverse Sources
+2015-04-04 14:16:35.738 | Hit http://ports.ubuntu.com trusty-security/main arm64 Packages
+2015-04-04 14:16:35.752 | Hit http://ports.ubuntu.com trusty-security/restricted arm64 Packages
+2015-04-04 14:16:35.766 | Hit http://ports.ubuntu.com trusty-security/universe arm64 Packages
+2015-04-04 14:16:35.779 | Hit http://ports.ubuntu.com trusty-security/multiverse arm64 Packages
+2015-04-04 14:16:35.793 | Hit http://ports.ubuntu.com trusty-security/main Translation-en
+2015-04-04 14:16:35.807 | Hit http://ports.ubuntu.com trusty-security/multiverse Translation-en
+2015-04-04 14:16:35.821 | Hit http://ports.ubuntu.com trusty-security/restricted Translation-en
+2015-04-04 14:16:35.834 | Hit http://ports.ubuntu.com trusty-security/universe Translation-en
+2015-04-04 14:16:38.409 | Fetched 369 kB in 3s (109 kB/s)
+2015-04-04 14:16:41.480 | Reading package lists...
+2015-04-04 14:16:41.485 | + real_install_package radvd
+2015-04-04 14:16:41.485 | + is_ubuntu
+2015-04-04 14:16:41.485 | + [[ -z deb ]]
+2015-04-04 14:16:41.485 | + '[' deb = deb ']'
+2015-04-04 14:16:41.485 | + apt_get install radvd
+2015-04-04 14:16:41.491 | + sudo DEBIAN_FRONTEND=noninteractive http_proxy= https_proxy= no_proxy= apt-get --option Dpkg::Options::=--force-confold --assume-yes install radvd
+2015-04-04 14:16:41.510 | Reading package lists...
+2015-04-04 14:16:41.788 | Building dependency tree...
+2015-04-04 14:16:41.790 | Reading state information...
+2015-04-04 14:16:41.997 | The following packages were automatically installed and are no longer required:
+2015-04-04 14:16:41.997 |   python-colorama python-distlib python-html5lib
+2015-04-04 14:16:41.998 | Use 'apt-get autoremove' to remove them.
+2015-04-04 14:16:42.021 | The following extra packages will be installed:
+2015-04-04 14:16:42.021 |   libdaemon0
+2015-04-04 14:16:42.028 | The following NEW packages will be installed:
+2015-04-04 14:16:42.028 |   libdaemon0 radvd
+2015-04-04 14:16:42.118 | 0 upgraded, 2 newly installed, 0 to remove and 0 not upgraded.
+2015-04-04 14:16:42.119 | Need to get 73.1 kB of archives.
+2015-04-04 14:16:42.119 | After this operation, 239 kB of additional disk space will be used.
+2015-04-04 14:16:42.119 | Get:1 http://ports.ubuntu.com/ubuntu-ports/ trusty/main libdaemon0 arm64 0.14-2ubuntu1 [15.0 kB]
+2015-04-04 14:16:42.155 | Get:2 http://ports.ubuntu.com/ubuntu-ports/ trusty/main radvd arm64 1:1.9.1-1.1ubuntu2 [58.1 kB]
+2015-04-04 14:16:42.470 | Fetched 73.1 kB in 0s (592 kB/s)
+2015-04-04 14:16:42.573 | Selecting previously unselected package libdaemon0.
+2015-04-04 14:16:42.628 | (Reading database ... 70878 files and directories currently installed.)
+2015-04-04 14:16:42.635 | Preparing to unpack .../libdaemon0_0.14-2ubuntu1_arm64.deb ...
+2015-04-04 14:16:42.653 | Unpacking libdaemon0 (0.14-2ubuntu1) ...
+2015-04-04 14:16:42.815 | Selecting previously unselected package radvd.
+2015-04-04 14:16:42.825 | Preparing to unpack .../radvd_1%3a1.9.1-1.1ubuntu2_arm64.deb ...
+2015-04-04 14:16:42.843 | Unpacking radvd (1:1.9.1-1.1ubuntu2) ...
+2015-04-04 14:16:42.998 | Processing triggers for man-db (2.6.7.1-1ubuntu1) ...
+2015-04-04 14:16:43.260 | Processing triggers for ureadahead (0.100.0-16) ...
+2015-04-04 14:16:43.374 | Setting up libdaemon0 (0.14-2ubuntu1) ...
+2015-04-04 14:16:43.468 | Setting up radvd (1:1.9.1-1.1ubuntu2) ...
+2015-04-04 14:16:43.776 | dpkg-statoverride: warning: --update given but /var/run/radvd does not exist
+2015-04-04 14:16:43.833 | Starting radvd: 
+2015-04-04 14:16:43.833 | * /etc/radvd.conf does not exist or is empty.
+2015-04-04 14:16:43.833 | * See /usr/share/doc/radvd/README.Debian
+2015-04-04 14:16:43.833 | * radvd will *not* be started.
+2015-04-04 14:16:43.852 | Processing triggers for libc-bin (2.19-0ubuntu6.6) ...
+2015-04-04 14:16:43.906 | Processing triggers for ureadahead (0.100.0-16) ...
+2015-04-04 14:16:44.315 | + real_install_package radvd
+2015-04-04 14:16:44.315 | + is_ubuntu
+2015-04-04 14:16:44.315 | + [[ -z deb ]]
+2015-04-04 14:16:44.315 | + '[' deb = deb ']'
+2015-04-04 14:16:44.316 | + apt_get install radvd
+2015-04-04 14:16:44.321 | + sudo DEBIAN_FRONTEND=noninteractive http_proxy= https_proxy= no_proxy= apt-get --option Dpkg::Options::=--force-confold --assume-yes install radvd
+2015-04-04 14:16:44.340 | Reading package lists...
+2015-04-04 14:16:44.615 | Building dependency tree...
+2015-04-04 14:16:44.616 | Reading state information...
+2015-04-04 14:16:44.825 | radvd is already the newest version.
+2015-04-04 14:16:44.825 | The following packages were automatically installed and are no longer required:
+2015-04-04 14:16:44.825 |   python-colorama python-distlib python-html5lib
+2015-04-04 14:16:44.825 | Use 'apt-get autoremove' to remove them.
+2015-04-04 14:16:44.872 | 0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+2015-04-04 14:16:44.874 | + is_service_enabled q-agt q-dhcp q-l3
+2015-04-04 14:16:44.880 | woof
+2015-04-04 14:16:44.880 | 
+2015-04-04 14:16:44.880 | q-svc,q-agt,q-dhcp,q-l3,q-meta
+2015-04-04 14:16:44.880 | + return 0
+2015-04-04 14:16:44.880 | + neutron_plugin_install_agent_packages
+2015-04-04 14:16:44.880 | + _neutron_ovs_base_install_agent_packages
+2015-04-04 14:16:44.880 | ++ get_packages openvswitch
+2015-04-04 14:16:44.888 | + install_package fakeroot make openvswitch-switch
+2015-04-04 14:16:44.888 | + update_package_repo
+2015-04-04 14:16:44.888 | + [[ '' = \T\r\u\e ]]
+2015-04-04 14:16:44.888 | + is_ubuntu
+2015-04-04 14:16:44.888 | + [[ -z deb ]]
+2015-04-04 14:16:44.888 | + '[' deb = deb ']'
+2015-04-04 14:16:44.891 | + real_install_package fakeroot make openvswitch-switch
+2015-04-04 14:16:44.891 | + is_ubuntu
+2015-04-04 14:16:44.891 | + [[ -z deb ]]
+2015-04-04 14:16:44.891 | + '[' deb = deb ']'
+2015-04-04 14:16:44.891 | + apt_get install fakeroot make openvswitch-switch
+2015-04-04 14:16:44.896 | + sudo DEBIAN_FRONTEND=noninteractive http_proxy= https_proxy= no_proxy= apt-get --option Dpkg::Options::=--force-confold --assume-yes install fakeroot make openvswitch-switch
+2015-04-04 14:16:44.915 | Reading package lists...
+2015-04-04 14:16:45.189 | Building dependency tree...
+2015-04-04 14:16:45.191 | Reading state information...
+2015-04-04 14:16:45.399 | fakeroot is already the newest version.
+2015-04-04 14:16:45.399 | fakeroot set to manually installed.
+2015-04-04 14:16:45.399 | make is already the newest version.
+2015-04-04 14:16:45.399 | make set to manually installed.
+2015-04-04 14:16:45.399 | The following packages were automatically installed and are no longer required:
+2015-04-04 14:16:45.399 |   python-colorama python-distlib python-html5lib
+2015-04-04 14:16:45.399 | Use 'apt-get autoremove' to remove them.
+2015-04-04 14:16:45.422 | The following extra packages will be installed:
+2015-04-04 14:16:45.422 |   openvswitch-common
+2015-04-04 14:16:45.425 | Suggested packages:
+2015-04-04 14:16:45.425 |   openvswitch-datapath-module
+2015-04-04 14:16:45.430 | The following NEW packages will be installed:
+2015-04-04 14:16:45.430 |   openvswitch-common openvswitch-switch
+2015-04-04 14:16:45.521 | 0 upgraded, 2 newly installed, 0 to remove and 0 not upgraded.
+2015-04-04 14:16:45.521 | Need to get 1092 kB of archives.
+2015-04-04 14:16:45.521 | After this operation, 5429 kB of additional disk space will be used.
+2015-04-04 14:16:45.521 | Get:1 http://ports.ubuntu.com/ubuntu-ports/ trusty-updates/main openvswitch-common arm64 2.0.2-0ubuntu0.14.04.1 [378 kB]
+2015-04-04 14:16:45.625 | Get:2 http://ports.ubuntu.com/ubuntu-ports/ trusty-updates/main openvswitch-switch arm64 2.0.2-0ubuntu0.14.04.1 [714 kB]
+2015-04-04 14:16:45.962 | Fetched 1092 kB in 0s (5287 kB/s)
+2015-04-04 14:16:46.032 | Selecting previously unselected package openvswitch-common.
+2015-04-04 14:16:46.087 | (Reading database ... 70898 files and directories currently installed.)
+2015-04-04 14:16:46.094 | Preparing to unpack .../openvswitch-common_2.0.2-0ubuntu0.14.04.1_arm64.deb ...
+2015-04-04 14:16:46.113 | Unpacking openvswitch-common (2.0.2-0ubuntu0.14.04.1) ...
+2015-04-04 14:16:46.435 | Selecting previously unselected package openvswitch-switch.
+2015-04-04 14:16:46.445 | Preparing to unpack .../openvswitch-switch_2.0.2-0ubuntu0.14.04.1_arm64.deb ...
+2015-04-04 14:16:46.466 | Unpacking openvswitch-switch (2.0.2-0ubuntu0.14.04.1) ...
+2015-04-04 14:16:46.768 | Processing triggers for man-db (2.6.7.1-1ubuntu1) ...
+2015-04-04 14:16:47.205 | Processing triggers for ureadahead (0.100.0-16) ...
+2015-04-04 14:16:47.313 | Setting up openvswitch-common (2.0.2-0ubuntu0.14.04.1) ...
+2015-04-04 14:16:47.366 | Setting up openvswitch-switch (2.0.2-0ubuntu0.14.04.1) ...
+2015-04-04 14:16:48.437 | openvswitch-switch start/running
+2015-04-04 14:16:48.489 | Processing triggers for ureadahead (0.100.0-16) ...
+2015-04-04 14:16:48.894 | + real_install_package fakeroot make openvswitch-switch
+2015-04-04 14:16:48.894 | + is_ubuntu
+2015-04-04 14:16:48.894 | + [[ -z deb ]]
+2015-04-04 14:16:48.894 | + '[' deb = deb ']'
+2015-04-04 14:16:48.894 | + apt_get install fakeroot make openvswitch-switch
+2015-04-04 14:16:48.900 | + sudo DEBIAN_FRONTEND=noninteractive http_proxy= https_proxy= no_proxy= apt-get --option Dpkg::Options::=--force-confold --assume-yes install fakeroot make openvswitch-switch
+2015-04-04 14:16:48.919 | Reading package lists...
+2015-04-04 14:16:49.197 | Building dependency tree...
+2015-04-04 14:16:49.199 | Reading state information...
+2015-04-04 14:16:49.407 | fakeroot is already the newest version.
+2015-04-04 14:16:49.407 | make is already the newest version.
+2015-04-04 14:16:49.407 | openvswitch-switch is already the newest version.
+2015-04-04 14:16:49.407 | The following packages were automatically installed and are no longer required:
+2015-04-04 14:16:49.407 |   python-colorama python-distlib python-html5lib
+2015-04-04 14:16:49.407 | Use 'apt-get autoremove' to remove them.
+2015-04-04 14:16:49.454 | 0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+2015-04-04 14:16:49.456 | + is_ubuntu
+2015-04-04 14:16:49.457 | + [[ -z deb ]]
+2015-04-04 14:16:49.457 | + '[' deb = deb ']'
+2015-04-04 14:16:49.457 | + _neutron_ovs_base_install_ubuntu_dkms
+2015-04-04 14:16:49.457 | ++ uname -r
+2015-04-04 14:16:49.458 | + local kernel_version=3.13.0-48-generic
+2015-04-04 14:16:49.459 | ++ echo 3.13.0-48-generic
+2015-04-04 14:16:49.459 | ++ cut -d. -f1-2
+2015-04-04 14:16:49.461 | + local kernel_major_minor=3.13
+2015-04-04 14:16:49.462 | ++ vercmp_numbers 3.13 3.13
+2015-04-04 14:16:49.462 | ++ typeset v1=3.13 v2=3.13 sep
+2015-04-04 14:16:49.462 | ++ typeset -a ver1 ver2
+2015-04-04 14:16:49.462 | ++ IFS=.
+2015-04-04 14:16:49.462 | ++ read -ra ver1
+2015-04-04 14:16:49.463 | ++ IFS=.
+2015-04-04 14:16:49.463 | ++ read -ra ver2
+2015-04-04 14:16:49.464 | ++ _vercmp_r 2 3 13 3 13
+2015-04-04 14:16:49.464 | ++ typeset sep
+2015-04-04 14:16:49.464 | ++ ver1=()
+2015-04-04 14:16:49.464 | ++ ver2=()
+2015-04-04 14:16:49.464 | ++ typeset -a ver1 ver2
+2015-04-04 14:16:49.464 | ++ sep=2
+2015-04-04 14:16:49.464 | ++ shift
+2015-04-04 14:16:49.465 | ++ ver1=("${@:1:sep}")
+2015-04-04 14:16:49.465 | ++ ver2=("${@:sep+1}")
+2015-04-04 14:16:49.465 | ++ (( ver1 > ver2 ))
+2015-04-04 14:16:49.465 | ++ (( ver2 > ver1 ))
+2015-04-04 14:16:49.465 | ++ (( sep <= 1 ))
+2015-04-04 14:16:49.465 | ++ _vercmp_r 1 13 13
+2015-04-04 14:16:49.465 | ++ typeset sep
+2015-04-04 14:16:49.465 | ++ ver1=()
+2015-04-04 14:16:49.466 | ++ ver2=()
+2015-04-04 14:16:49.466 | ++ typeset -a ver1 ver2
+2015-04-04 14:16:49.466 | ++ sep=1
+2015-04-04 14:16:49.466 | ++ shift
+2015-04-04 14:16:49.466 | ++ ver1=("${@:1:sep}")
+2015-04-04 14:16:49.466 | ++ ver2=("${@:sep+1}")
+2015-04-04 14:16:49.466 | ++ (( ver1 > ver2 ))
+2015-04-04 14:16:49.466 | ++ (( ver2 > ver1 ))
+2015-04-04 14:16:49.466 | ++ (( sep <= 1 ))
+2015-04-04 14:16:49.466 | ++ echo 0
+2015-04-04 14:16:49.467 | ++ return 0
+2015-04-04 14:16:49.468 | + '[' 0 -lt 0 ']'
+2015-04-04 14:16:49.468 | + restart_service openvswitch-switch
+2015-04-04 14:16:49.468 | + is_ubuntu
+2015-04-04 14:16:49.468 | + [[ -z deb ]]
+2015-04-04 14:16:49.468 | + '[' deb = deb ']'
+2015-04-04 14:16:49.468 | + sudo /usr/sbin/service openvswitch-switch restart
+2015-04-04 14:16:50.079 | openvswitch-switch stop/waiting
+2015-04-04 14:16:50.891 | openvswitch-switch start/running
+2015-04-04 14:16:50.893 | + is_service_enabled q-lbaas
+2015-04-04 14:16:50.898 | woof
+2015-04-04 14:16:50.898 | 
+2015-04-04 14:16:50.898 | q-svc,q-agt,q-dhcp,q-l3,q-meta
+2015-04-04 14:16:50.898 | + return 1
+2015-04-04 14:16:50.898 | + TRACK_DEPENDS=False
+2015-04-04 14:16:50.898 | + [[ False = True ]]
+2015-04-04 14:16:50.898 | + echo_summary 'Installing OpenStack project source'
+2015-04-04 14:16:50.898 | + [[ -t 3 ]]
+2015-04-04 14:16:50.898 | + echo -e Installing OpenStack project source
+2015-04-04 14:16:50.898 | + install_infra
+2015-04-04 14:16:50.898 | + git_clone git://git.openstack.org/openstack/requirements.git /opt/stack/requirements stable/juno
+2015-04-04 14:16:50.898 | + local git_remote=git://git.openstack.org/openstack/requirements.git
+2015-04-04 14:16:50.898 | + local git_dest=/opt/stack/requirements
+2015-04-04 14:16:50.898 | + local git_ref=stable/juno
+2015-04-04 14:16:50.898 | ++ pwd
+2015-04-04 14:16:50.899 | + local orig_dir=/home/ubuntu/devstack
+2015-04-04 14:16:50.899 | ++ trueorfalse False
+2015-04-04 14:16:50.904 | + RECLONE=False
+2015-04-04 14:16:50.904 | + [[ False = \T\r\u\e ]]
+2015-04-04 14:16:50.904 | + echo stable/juno
+2015-04-04 14:16:50.904 | + egrep -q '^refs'
+2015-04-04 14:16:50.906 | + [[ ! -d /opt/stack/requirements ]]
+2015-04-04 14:16:50.906 | + [[ False = \T\r\u\e ]]
+2015-04-04 14:16:50.906 | + cd /opt/stack/requirements
+2015-04-04 14:16:50.906 | + git show --oneline
+2015-04-04 14:16:50.906 | + head -1
+2015-04-04 14:16:50.909 | 2fc8159 Restore minimum requirement version for kombu
+2015-04-04 14:16:50.910 | + cd /home/ubuntu/devstack
+2015-04-04 14:16:50.910 | + use_library_from_git pbr
+2015-04-04 14:16:50.910 | + local name=pbr
+2015-04-04 14:16:50.910 | + local enabled=1
+2015-04-04 14:16:50.910 | + [[ ,, =~ ,pbr, ]]
+2015-04-04 14:16:50.910 | + return 1
+2015-04-04 14:16:50.910 | + pip_install -U pbr
+2015-04-04 14:16:50.916 | + sudo -H PIP_DOWNLOAD_CACHE=/var/cache/pip http_proxy= https_proxy= no_proxy= /usr/local/bin/pip install -U pbr
+2015-04-04 14:16:51.962 | DEPRECATION: --download-cache has been deprecated and will be removed in the future. Pip now automatically uses and configures its cache.
+2015-04-04 14:16:52.713 | Requirement already up-to-date: pbr in /usr/local/lib/python2.7/dist-packages
+2015-04-04 14:16:52.815 | Requirement already up-to-date: pip in /usr/local/lib/python2.7/dist-packages (from pbr)
+2015-04-04 14:16:52.870 | + [[ False == \T\r\u\e ]]
+2015-04-04 14:16:52.870 | + install_oslo
+2015-04-04 14:16:52.870 | + _do_install_oslo_lib cliff
+2015-04-04 14:16:52.870 | + local name=cliff
+2015-04-04 14:16:52.870 | + use_library_from_git cliff
+2015-04-04 14:16:52.870 | + local name=cliff
+2015-04-04 14:16:52.870 | + local enabled=1
+2015-04-04 14:16:52.870 | + [[ ,, =~ ,cliff, ]]
+2015-04-04 14:16:52.870 | + return 1
+2015-04-04 14:16:52.870 | + _do_install_oslo_lib oslo.i18n
+2015-04-04 14:16:52.870 | + local name=oslo.i18n
+2015-04-04 14:16:52.870 | + use_library_from_git oslo.i18n
+2015-04-04 14:16:52.870 | + local name=oslo.i18n
+2015-04-04 14:16:52.870 | + local enabled=1
+2015-04-04 14:16:52.870 | + [[ ,, =~ ,oslo.i18n, ]]
+2015-04-04 14:16:52.870 | + return 1
+2015-04-04 14:16:52.870 | + _do_install_oslo_lib oslo.utils
+2015-04-04 14:16:52.870 | + local name=oslo.utils
+2015-04-04 14:16:52.870 | + use_library_from_git oslo.utils
+2015-04-04 14:16:52.870 | + local name=oslo.utils
+2015-04-04 14:16:52.870 | + local enabled=1
+2015-04-04 14:16:52.870 | + [[ ,, =~ ,oslo.utils, ]]
+2015-04-04 14:16:52.870 | + return 1
+2015-04-04 14:16:52.871 | + _do_install_oslo_lib oslo.serialization
+2015-04-04 14:16:52.871 | + local name=oslo.serialization
+2015-04-04 14:16:52.871 | + use_library_from_git oslo.serialization
+2015-04-04 14:16:52.871 | + local name=oslo.serialization
+2015-04-04 14:16:52.871 | + local enabled=1
+2015-04-04 14:16:52.871 | + [[ ,, =~ ,oslo.serialization, ]]
+2015-04-04 14:16:52.871 | + return 1
+2015-04-04 14:16:52.871 | + _do_install_oslo_lib oslo.config
+2015-04-04 14:16:52.871 | + local name=oslo.config
+2015-04-04 14:16:52.871 | + use_library_from_git oslo.config
+2015-04-04 14:16:52.871 | + local name=oslo.config
+2015-04-04 14:16:52.871 | + local enabled=1
+2015-04-04 14:16:52.871 | + [[ ,, =~ ,oslo.config, ]]
+2015-04-04 14:16:52.871 | + return 1
+2015-04-04 14:16:52.871 | + _do_install_oslo_lib oslo.concurrency
+2015-04-04 14:16:52.871 | + local name=oslo.concurrency
+2015-04-04 14:16:52.871 | + use_library_from_git oslo.concurrency
+2015-04-04 14:16:52.871 | + local name=oslo.concurrency
+2015-04-04 14:16:52.871 | + local enabled=1
+2015-04-04 14:16:52.871 | + [[ ,, =~ ,oslo.concurrency, ]]
+2015-04-04 14:16:52.871 | + return 1
+2015-04-04 14:16:52.871 | + _do_install_oslo_lib oslo.middleware
+2015-04-04 14:16:52.871 | + local name=oslo.middleware
+2015-04-04 14:16:52.871 | + use_library_from_git oslo.middleware
+2015-04-04 14:16:52.871 | + local name=oslo.middleware
+2015-04-04 14:16:52.871 | + local enabled=1
+2015-04-04 14:16:52.871 | + [[ ,, =~ ,oslo.middleware, ]]
+2015-04-04 14:16:52.871 | + return 1
+2015-04-04 14:16:52.871 | + _do_install_oslo_lib oslo.messaging
+2015-04-04 14:16:52.871 | + local name=oslo.messaging
+2015-04-04 14:16:52.871 | + use_library_from_git oslo.messaging
+2015-04-04 14:16:52.872 | + local name=oslo.messaging
+2015-04-04 14:16:52.872 | + local enabled=1
+2015-04-04 14:16:52.872 | + [[ ,, =~ ,oslo.messaging, ]]
+2015-04-04 14:16:52.872 | + return 1
+2015-04-04 14:16:52.872 | + _do_install_oslo_lib oslo.rootwrap
+2015-04-04 14:16:52.872 | + local name=oslo.rootwrap
+2015-04-04 14:16:52.872 | + use_library_from_git oslo.rootwrap
+2015-04-04 14:16:52.872 | + local name=oslo.rootwrap
+2015-04-04 14:16:52.872 | + local enabled=1
+2015-04-04 14:16:52.872 | + [[ ,, =~ ,oslo.rootwrap, ]]
+2015-04-04 14:16:52.872 | + return 1
+2015-04-04 14:16:52.872 | + _do_install_oslo_lib oslo.db
+2015-04-04 14:16:52.872 | + local name=oslo.db
+2015-04-04 14:16:52.872 | + use_library_from_git oslo.db
+2015-04-04 14:16:52.872 | + local name=oslo.db
+2015-04-04 14:16:52.872 | + local enabled=1
+2015-04-04 14:16:52.872 | + [[ ,, =~ ,oslo.db, ]]
+2015-04-04 14:16:52.872 | + return 1
+2015-04-04 14:16:52.872 | + _do_install_oslo_lib oslo.vmware
+2015-04-04 14:16:52.872 | + local name=oslo.vmware
+2015-04-04 14:16:52.872 | + use_library_from_git oslo.vmware
+2015-04-04 14:16:52.872 | + local name=oslo.vmware
+2015-04-04 14:16:52.872 | + local enabled=1
+2015-04-04 14:16:52.872 | + [[ ,, =~ ,oslo.vmware, ]]
+2015-04-04 14:16:52.872 | + return 1
+2015-04-04 14:16:52.872 | + _do_install_oslo_lib pycadf
+2015-04-04 14:16:52.872 | + local name=pycadf
+2015-04-04 14:16:52.872 | + use_library_from_git pycadf
+2015-04-04 14:16:52.872 | + local name=pycadf
+2015-04-04 14:16:52.872 | + local enabled=1
+2015-04-04 14:16:52.872 | + [[ ,, =~ ,pycadf, ]]
+2015-04-04 14:16:52.872 | + return 1
+2015-04-04 14:16:52.872 | + _do_install_oslo_lib stevedore
+2015-04-04 14:16:52.873 | + local name=stevedore
+2015-04-04 14:16:52.873 | + use_library_from_git stevedore
+2015-04-04 14:16:52.873 | + local name=stevedore
+2015-04-04 14:16:52.873 | + local enabled=1
+2015-04-04 14:16:52.873 | + [[ ,, =~ ,stevedore, ]]
+2015-04-04 14:16:52.873 | + return 1
+2015-04-04 14:16:52.873 | + _do_install_oslo_lib taskflow
+2015-04-04 14:16:52.873 | + local name=taskflow
+2015-04-04 14:16:52.873 | + use_library_from_git taskflow
+2015-04-04 14:16:52.873 | + local name=taskflow
+2015-04-04 14:16:52.873 | + local enabled=1
+2015-04-04 14:16:52.873 | + [[ ,, =~ ,taskflow, ]]
+2015-04-04 14:16:52.873 | + return 1
+2015-04-04 14:16:52.873 | + is_service_enabled stackforge_libs
+2015-04-04 14:16:52.873 | woof
+2015-04-04 14:16:52.874 | 
+2015-04-04 14:16:52.874 | q-svc,q-agt,q-dhcp,q-l3,q-meta
+2015-04-04 14:16:52.874 | + return 1
+2015-04-04 14:16:52.875 | + install_keystoneclient
+2015-04-04 14:16:52.875 | + use_library_from_git python-keystoneclient
+2015-04-04 14:16:52.875 | + local name=python-keystoneclient
+2015-04-04 14:16:52.875 | + local enabled=1
+2015-04-04 14:16:52.875 | + [[ ,, =~ ,python-keystoneclient, ]]
+2015-04-04 14:16:52.875 | + return 1
+2015-04-04 14:16:52.875 | + install_glanceclient
+2015-04-04 14:16:52.875 | + use_library_from_git python-glanceclient
+2015-04-04 14:16:52.875 | + local name=python-glanceclient
+2015-04-04 14:16:52.875 | + local enabled=1
+2015-04-04 14:16:52.875 | + [[ ,, =~ ,python-glanceclient, ]]
+2015-04-04 14:16:52.875 | + return 1
+2015-04-04 14:16:52.875 | + install_cinderclient
+2015-04-04 14:16:52.875 | + use_library_from_git python-cinderclient
+2015-04-04 14:16:52.875 | + local name=python-cinderclient
+2015-04-04 14:16:52.875 | + local enabled=1
+2015-04-04 14:16:52.875 | + [[ ,, =~ ,python-cinderclient, ]]
+2015-04-04 14:16:52.875 | + return 1
+2015-04-04 14:16:52.875 | + install_novaclient
+2015-04-04 14:16:52.875 | + use_library_from_git python-novaclient
+2015-04-04 14:16:52.875 | + local name=python-novaclient
+2015-04-04 14:16:52.875 | + local enabled=1
+2015-04-04 14:16:52.875 | + [[ ,, =~ ,python-novaclient, ]]
+2015-04-04 14:16:52.875 | + return 1
+2015-04-04 14:16:52.875 | + is_service_enabled swift glance horizon
+2015-04-04 14:16:52.878 | woof
+2015-04-04 14:16:52.878 | 
+2015-04-04 14:16:52.878 | q-svc,q-agt,q-dhcp,q-l3,q-meta
+2015-04-04 14:16:52.879 | + return 1
+2015-04-04 14:16:52.879 | + is_service_enabled neutron nova horizon
+2015-04-04 14:16:52.883 | woof
+2015-04-04 14:16:52.883 | 
+2015-04-04 14:16:52.883 | q-svc,q-agt,q-dhcp,q-l3,q-meta
+2015-04-04 14:16:52.884 | + return 1
+2015-04-04 14:16:52.884 | + is_service_enabled heat horizon
+2015-04-04 14:16:52.887 | woof
+2015-04-04 14:16:52.887 | 
+2015-04-04 14:16:52.888 | q-svc,q-agt,q-dhcp,q-l3,q-meta
+2015-04-04 14:16:52.888 | + return 1
+2015-04-04 14:16:52.888 | + install_keystonemiddleware
+2015-04-04 14:16:52.889 | + use_library_from_git keystonemiddleware
+2015-04-04 14:16:52.889 | + local name=keystonemiddleware
+2015-04-04 14:16:52.889 | + local enabled=1
+2015-04-04 14:16:52.889 | + [[ ,, =~ ,keystonemiddleware, ]]
+2015-04-04 14:16:52.889 | + return 1
+2015-04-04 14:16:52.889 | + is_service_enabled key
+2015-04-04 14:16:52.893 | woof
+2015-04-04 14:16:52.893 | 
+2015-04-04 14:16:52.893 | q-svc,q-agt,q-dhcp,q-l3,q-meta
+2015-04-04 14:16:52.893 | + return 1
+2015-04-04 14:16:52.893 | + is_service_enabled s-proxy
+2015-04-04 14:16:52.897 | woof
+2015-04-04 14:16:52.897 | 
+2015-04-04 14:16:52.897 | q-svc,q-agt,q-dhcp,q-l3,q-meta
+2015-04-04 14:16:52.897 | + return 1
+2015-04-04 14:16:52.898 | + is_service_enabled g-api n-api
+2015-04-04 14:16:52.901 | woof
+2015-04-04 14:16:52.901 | 
+2015-04-04 14:16:52.901 | q-svc,q-agt,q-dhcp,q-l3,q-meta
+2015-04-04 14:16:52.902 | + return 1
+2015-04-04 14:16:52.902 | + is_service_enabled cinder
+2015-04-04 14:16:52.905 | woof
+2015-04-04 14:16:52.905 | 
+2015-04-04 14:16:52.905 | q-svc,q-agt,q-dhcp,q-l3,q-meta
+2015-04-04 14:16:52.906 | + return 1
+2015-04-04 14:16:52.906 | + is_service_enabled neutron
+2015-04-04 14:16:52.909 | woof
+2015-04-04 14:16:52.910 | 
+2015-04-04 14:16:52.910 | q-svc,q-agt,q-dhcp,q-l3,q-meta
+2015-04-04 14:16:52.910 | + return 0
+2015-04-04 14:16:52.910 | + install_neutron
+2015-04-04 14:16:52.911 | + git_clone git://git.openstack.org/openstack/neutron.git /opt/stack/neutron stable/juno
+2015-04-04 14:16:52.911 | + local git_remote=git://git.openstack.org/openstack/neutron.git
+2015-04-04 14:16:52.911 | + local git_dest=/opt/stack/neutron
+2015-04-04 14:16:52.911 | + local git_ref=stable/juno
+2015-04-04 14:16:52.912 | ++ pwd
+2015-04-04 14:16:52.912 | + local orig_dir=/home/ubuntu/devstack
+2015-04-04 14:16:52.913 | ++ trueorfalse False False
+2015-04-04 14:16:52.917 | + RECLONE=False
+2015-04-04 14:16:52.917 | + [[ False = \T\r\u\e ]]
+2015-04-04 14:16:52.917 | + echo stable/juno
+2015-04-04 14:16:52.918 | + egrep -q '^refs'
+2015-04-04 14:16:52.919 | + [[ ! -d /opt/stack/neutron ]]
+2015-04-04 14:16:52.919 | + [[ False = \T\r\u\e ]]
+2015-04-04 14:16:52.919 | + git_timed clone git://git.openstack.org/openstack/neutron.git /opt/stack/neutron
+2015-04-04 14:16:52.919 | + local count=0
+2015-04-04 14:16:52.920 | + local timeout=0
+2015-04-04 14:16:52.920 | + [[ -n 0 ]]
+2015-04-04 14:16:52.920 | + timeout=0
+2015-04-04 14:16:52.920 | + timeout -s SIGINT 0 git clone git://git.openstack.org/openstack/neutron.git /opt/stack/neutron
+2015-04-04 14:16:52.923 | Cloning into '/opt/stack/neutron'...
+2015-04-04 14:17:19.392 | + cd /opt/stack/neutron
+2015-04-04 14:17:19.393 | + git checkout stable/juno
+2015-04-04 14:17:19.756 | Switched to a new branch 'stable/juno'
+2015-04-04 14:17:19.756 | Branch stable/juno set up to track remote branch stable/juno from origin.
+2015-04-04 14:17:19.759 | + cd /opt/stack/neutron
+2015-04-04 14:17:19.759 | + git show --oneline
+2015-04-04 14:17:19.760 | + head -1
+2015-04-04 14:17:19.764 | 818ebcf Merge "Ignore 404 error and lower a warning log to info" into stable/juno
+2015-04-04 14:17:19.765 | + cd /home/ubuntu/devstack
+2015-04-04 14:17:19.765 | + setup_develop /opt/stack/neutron
+2015-04-04 14:17:19.765 | + local project_dir=/opt/stack/neutron
+2015-04-04 14:17:19.765 | + setup_package_with_req_sync /opt/stack/neutron -e
+2015-04-04 14:17:19.765 | + local project_dir=/opt/stack/neutron
+2015-04-04 14:17:19.765 | + local flags=-e
+2015-04-04 14:17:19.766 | ++ cd /opt/stack/neutron
+2015-04-04 14:17:19.766 | ++ git diff --exit-code
+2015-04-04 14:17:19.906 | + local update_requirements=
+2015-04-04 14:17:19.906 | + [[ '' != \c\h\a\n\g\e\d ]]
+2015-04-04 14:17:19.906 | + cd /opt/stack/requirements
+2015-04-04 14:17:19.906 | + python update.py /opt/stack/neutron
+2015-04-04 14:17:20.499 | _sync_requirements_file({'glance-store': 'glance_store>=0.1.1,<=0.1.10 # Apache-2.0', 'doc8': 'doc8  # Apache-2.0', 'sockjs-tornado': 'sockjs-tornado>=1.0.0,<2.0.0', 'xstatic-angular-mock': 'XStatic-angular-mock>=1.2.1.1  # MIT License', 'prettytable': 'PrettyTable>=0.7,<0.8', 'pystache': 'pystache', 'cffi': 'cffi', 'requests-mock': 'requests-mock>=0.4.0  # Apache-2.0', 'pyeclib': 'pyeclib>=0.9.2                          # BSD', 'networkx': 'networkx>=1.8,<=1.9.1', 'diskimage-builder': 'diskimage-builder>=0.1.20', 'openstack.nose-plugin': 'openstack.nose_plugin>=0.7', 'pyparsing': 'pyparsing>=2.0.1,<=2.0.3', 'tempest-lib': 'tempest-lib', 'python-glanceclient': 'python-glanceclient>=0.14.0,<=0.15.0', 'oslo.concurrency': 'oslo.concurrency>=0.3.0  # Apache-2.0', 'python-ldap': 'python-ldap==2.3.13', 'oauthlib': 'oauthlib>=0.6,<=0.7.2', 'python-ironicclient': 'python-ironicclient>=0.2.1,<=0.3.3', 'wrapt': 'wrapt>=1.7.0 # BSD License', 'flask': 'Flask>=0.10,<1.0', 'psycopg2': 'psycopg2', 'selenium': 'selenium', 'xstatic-bootstrap-datepicker': 'XStatic-bootstrap-datepicker>=1.3.1.0  # Apache 2.0 License', 'feedparser': 'feedparser<=5.1.3', 'nosexcover': 'nosexcover', 'python-troveclient': 'python-troveclient>=1.0.4,<=1.0.8', 'xstatic-spin': 'XStatic-spin>=1.2.5.2  # MIT License', 'libvirt-python': 'libvirt-python>=1.2.5                   # LGPLv2+', 'django-nose': 'django-nose', 'mox': 'mox>=0.5.3,<=0.5.3', 'cryptography': 'cryptography>=0.4 # Apache-2.0', 'python-cinderclient': 'python-cinderclient>=1.1.0,<=1.1.1', 'jinja2': 'Jinja2<=2.7.2', 'jsonpath-rw': 'jsonpath-rw>=1.2.0,<2.0', 'django-pyscss': 'django-pyscss>=1.0.3,<=1.0.6 # BSD License (2 clause)', 'happybase': 'happybase>=0.5,!=0.7,<=0.9', 'falcon': 'falcon>=0.1.6,<0.2.0', 'decorator': 'decorator>=3.4.0,<=3.4.0', 'pbr': 'pbr>=0.6,!=0.7,<1.0', 'webob': 'WebOb>=1.2.3,<=1.3.1', 'python-openstackclient': 'python-openstackclient>=0.3.0,<=1.0.1', 'redis': 'redis<=2.10.3', 'passlib': 'passlib<=1.6.2', 'psutil': 'psutil>=1.1.1,<2.0.0', 'oslotest': 'oslotest>=1.1.0,<1.4.0  # Apache-2.0', 'greenlet': 'greenlet>=0.3.2,<=0.4.2', 'mock': 'mock>=1.0', 'keystonemiddleware': 'keystonemiddleware>=1.0.0,<1.4.0', 'xstatic-jquery.bootstrap.wizard': 'XStatic-jquery.bootstrap.wizard>=1.0.0.1  # MIT License', 'requests': 'requests>=2.1.0,!=2.4.0,<=2.2.1', 'python-swiftclient': 'python-swiftclient>=2.2.0,<=2.3.1', 'discover': 'discover', 'nosehtmloutput': 'nosehtmloutput>=0.0.3', 'jsonschema': 'jsonschema>=2.0.0,<3.0.0', 'os-apply-config': 'os-apply-config', 'qpid-python': 'qpid-python<=0.26.1', 'fixtures': 'fixtures>=0.3.14,<=1.0.0', 'boto': 'boto>=2.32.1,<2.35.0', 'os-refresh-config': 'os-refresh-config', 'nose-exclude': 'nose-exclude', 'eventlet': 'eventlet>=0.15.1,<=0.15.2', 'pyopenssl': 'pyOpenSSL>=0.11,<=0.13', 'pastedeploy': 'PasteDeploy>=1.5.0,<=1.5.2', 'xstatic-jsencrypt': 'XStatic-jsencrypt>=2.0.0.2  # MIT License', 'tripleo-image-elements': 'tripleo-image-elements', 'ddt': 'ddt>=0.4.0', 'django-openstack-auth': 'django_openstack_auth>=1.1.7,!=1.1.8,<=1.1.9', 'python-designateclient': 'python-designateclient>=1.0.0,<=1.1.1', 'oslo.serialization': 'oslo.serialization>=1.0.0,<=1.2.0 # Apache-2.0', 'python-saharaclient': 'python-saharaclient>=0.7.3,<=0.7.6', 'pysqlite': 'pysqlite<=2.6.3', 'nose': 'nose<=1.3.1', 'python-neutronclient': 'python-neutronclient>=2.3.6,<3', 'sphinxcontrib-httpdomain': 'sphinxcontrib-httpdomain', 'pysaml2': 'pysaml2', 'xstatic-jasmine': 'XStatic-jasmine>=1.3.1.1,<2  # MIT License', 'msgpack-python': 'msgpack-python>=0.4.0,<=0.4.5', 'lockfile': 'lockfile>=0.8,<=0.8', 'paste': 'Paste<=1.7.5.1', 'python-barbicanclient': 'python-barbicanclient>=2.1.0,!=3.0.0,<3.0.2', 'oslo.i18n': 'oslo.i18n>=1.0.0,<=1.3.1 # Apache-2.0', 'pyyaml': 'PyYAML>=3.1.0,<=3.10', 'sqlalchemy-migrate': 'sqlalchemy-migrate==0.9.1', 'oslo.utils': 'oslo.utils>=1.0.0,<=1.2.1 # Apache-2.0', 'cliff-tablib': 'cliff-tablib>=1.0,<=1.1', 'xvfbwrapper': 'xvfbwrapper>=0.1.3 #license: MIT', 'requests-kerberos': 'requests-kerberos>=0.5 # MIT', 'wsgiref': 'wsgiref>=0.1.2', 'xstatic-angular': 'XStatic-angular>=1.2.1.1,<1.3.0  # MIT License', 'pyscss': 'pyScss>=1.2.1,<1.3  # MIT License', 'xstatic-angular-cookies': 'XStatic-angular-cookies>=1.2.1.1  # MIT License', 'mox3': 'mox3>=0.7.0', 'routes': 'Routes>=1.12.3,!=2.0,<=2.1', 'dnspython': 'dnspython>=1.9.4,<=1.12.0', 'anyjson': 'anyjson>=0.3.3,<=0.3.3', 'pyasn1': 'pyasn1<=0.1.7', 'pycadf': 'pycadf>=0.6.0,<0.7.0  # Apache-2.0', 'alembic': 'alembic>=0.6.4,<=0.7.4', 'coinor.pulp': 'coinor.pulp>=1.0.4', 'sphinxcontrib-pecanwsme': 'sphinxcontrib-pecanwsme>=0.8', 'kazoo': 'kazoo>=1.3.1,<=2.0', 'hgtools': 'hgtools # dependency of pytest-runner that is only in setup_requires', 'python-heatclient': 'python-heatclient>=0.2.9,<0.3.0', 'cmd2': 'cmd2>=0.6.7,<=0.6.8', 'xstatic-jquery-migrate': 'XStatic-jquery-migrate>=1.2.1.1  # MIT License', 'testrepository': 'testrepository>=0.0.18,<=0.0.20', 'testscenarios': 'testscenarios>=0.4', 'xstatic-hogan': 'XStatic-hogan>=2.0.0.2  # Apache 2.0 License', 'pexpect': 'pexpect>=3.1,<=3.3 # ISC License', 'testresources': 'testresources>=0.2.4', 'oslo.rootwrap': 'oslo.rootwrap>=1.3.0,<=1.5.0', 'swift': 'swift', 'pip-missing-reqs': 'pip_missing_reqs>=1.1.5', 'xstatic-jquery.tablesorter': 'XStatic-jquery.tablesorter>=2.0.5b.0  # MIT License', 'openstack-doc-tools': 'openstack-doc-tools>=0.18.1', 'xstatic-jquery': 'XStatic-jquery>=1.7.2  # MIT License', 'xstatic-rickshaw': 'XStatic-rickshaw>=1.5.0  # BSD License (prior)', 'oslo.context': 'oslo.context>=0.1.0,<=0.1.0 # Apache-2.0', 'pyzmq': 'pyzmq>=14.3.1 # LGPL+BSD', 'xstatic-qunit': 'XStatic-qunit>=1.14.0.2  # MIT License', 'warlock': 'warlock>=1.0.1,<2', 'python-novaclient': 'python-novaclient>=2.18.0,<=2.20.0', 'websockify': 'websockify>=0.6.0,<0.7', 'sqlalchemy': 'SQLAlchemy>=0.8.4,<=0.9.99,!=0.9.0,!=0.9.1,!=0.9.2,!=0.9.3,!=0.9.4,!=0.9.5,!=0.9.6', 'simplejson': 'simplejson>=2.2.0,<=3.3.1', 'os-collect-config': 'os-collect-config', 'pillow': 'Pillow==2.4.0 # MIT', 'pylint': 'pylint==0.25.2', 'trollius': 'trollius>=1.0', 'iso8601': 'iso8601>=0.1.9,<=0.1.10', 'rtslib-fb': 'rtslib-fb>=2.1.39,<=2.1.51', 'pytz': 'pytz<=2014.10', 'pecan': 'pecan>=0.5.0,<=0.8.3', 'xenapi': 'XenAPI>=1.2', 'testtools': 'testtools>=0.9.34,!=1.4.0,<=1.5.0', 'tooz': 'tooz>=0.3,<=0.12 # Apache-2.0', 'taskflow': 'taskflow>=0.4,<0.7.0', 'django-bootstrap-form': 'django-bootstrap-form', 'pyghmi': 'pyghmi>=0.6.11', 'os-cloud-config': 'os-cloud-config', 'pyflakes': 'pyflakes==0.8.1', 'wsme': 'WSME>=0.6,<=0.6.4', 'dib-utils': 'dib-utils  # Apache-2.0', 'posix-ipc': 'posix_ipc<=0.9.9', 'httpretty': 'httpretty>=0.8.0,!=0.8.1,!=0.8.2,!=0.8.3', 'oslo.db': 'oslo.db>=1.0.0,<1.1  # Apache-2.0', 'oslo.messaging': 'oslo.messaging>=1.4.0,<1.5.0', 'hacking': 'hacking>=0.9.2,<0.10', 'xstatic': 'XStatic>=1.0.0  # MIT License', 'dogpile.cache': 'dogpile.cache>=0.5.3,<=0.5.6', 'configobj': 'configobj<=4.7.2', 'futures': 'futures>=2.1.6,<=2.2.0', 'ordereddict': 'ordereddict<=1.1', 'greenio': 'greenio>=0.6.0', 'oslosphinx': 'oslosphinx>=2.2.0,<2.5.0  # Apache-2.0', 'argcomplete': 'argcomplete>=0.6.8  # Apache-2.0', 'mysql-python': 'MySQL-python<=1.2.3', 'pysendfile': 'pysendfile==2.0.0', 'suds': 'suds==0.4', 'pip': 'pip>=1.4', 'jsonrpclib': 'jsonrpclib<=0.1.3', 'xattr': 'xattr>=0.4,<=0.6.4', 'xstatic-bootstrap-scss': 'XStatic-bootstrap-scss>=3  # Apache 2.0 License', 'paramiko': 'paramiko>=1.13.0,<=1.15.2', 'osprofiler': 'osprofiler>=0.3.0,<=0.3.0 # Apache-2.0', 'mako': 'Mako>=0.4.0,<=1.0.1', 'lxml': 'lxml>=2.3,<=3.3.3', 'babel': 'Babel>=1.3,<=1.3', 'six': 'six>=1.7.0,<=1.9.0', 'webtest': 'WebTest>=2.0,<=2.0.18', 'ldappool': 'ldappool>=1.0 # MPL', 'jsonpatch': 'jsonpatch>=1.1,<=1.3', 'zake': 'zake>=0.1,<=0.1.7 # Apache-2.0', 'kombu': 'kombu>=2.5.0,<=3.0.7', 'croniter': 'croniter>=0.3.4,<=0.3.5 # MIT License', 'stevedore': 'stevedore>=1.0.0,<=1.2.0 # Apache-2.0', 'pymongo': 'pymongo>=2.5', 'unittest2': 'unittest2<=0.8.0', 'xstatic-d3': 'XStatic-d3>=3.1.6.2  # BSD License (3 clause)', 'pint': 'Pint>=0.5  # BSD', 'wheel': 'wheel', 'wsgi-intercept': 'wsgi_intercept>=0.6.1 # MIT License', 'python-keystoneclient': 'python-keystoneclient>=0.10.0,<=1.1.0', 'oslo.config': 'oslo.config>=1.4.0,<=1.6.0 # Apache-2.0', 'bashate': 'bashate>=0.2 # Apache-2.0', 'python-ceilometerclient': 'python-ceilometerclient>=1.0.6,<=1.0.12', 'nodeenv': 'nodeenv>=0.9.4 # BSD License', 'xstatic-jquery.quicksearch': 'XStatic-jquery.quicksearch>=2.0.3.1  # MIT License', 'python-subunit': 'python-subunit>=0.0.18,<=1.0.0', 'flake8': 'flake8==2.2.3', 'coverage': 'coverage>=3.6,<=3.7.1', 'oslo.vmware': 'oslo.vmware>=0.6.0,<0.9.0               # Apache-2.0', 'pysnmp': 'pysnmp>=4.2.1,<5.0.0', 'pyasn1-modules': 'pyasn1_modules', 'pyudev': 'pyudev<=0.16.1', 'sphinxcontrib-docbookrestapi': 'sphinxcontrib-docbookrestapi', 'cliff': 'cliff>=1.7.0,<=1.9.0 # Apache-2.0', 'argparse': 'argparse', 'proboscis': 'proboscis==1.2.5.3', 'sphinx': 'sphinx>=1.1.2,!=1.2.0,<1.3', 'pycrypto': 'pycrypto>=2.6,<=2.6.1', 'xstatic-jquery-ui': 'XStatic-jquery-ui>=1.10.1  # MIT License', 'python-marconiclient': 'python-marconiclient>=0.0.2', 'netaddr': 'netaddr>=0.7.12,<=0.7.13', 'keyring': 'keyring>=2.1,!=3.3', 'retrying': 'retrying>=1.2.2,!=1.3.0,<=1.3.3 # Apache-2.0', 'django': 'Django>=1.4.2,<1.7', 'pep8': 'pep8==1.5.7', 'xstatic-font-awesome': 'XStatic-font-awesome>=4.1.0  # SIL OFL 1.1 License, MIT License', 'extras': 'extras<=0.0.3', 'django-compressor': 'django_compressor>=1.4,<=1.4', 'netifaces': 'netifaces>=0.10.4,<=0.10.4', 'rfc3986': 'rfc3986>=0.2.0,<=0.2.0 # Apache-2.0', 'python-memcached': 'python-memcached>=1.48', 'python-zaqarclient': 'python-zaqarclient>=0.0.3', 'httplib2': 'httplib2>=0.7.5,<=0.9'}, {}, /opt/stack/neutron/requirements.txt)
+2015-04-04 14:17:20.499 | Syncing /opt/stack/neutron/requirements.txt
+2015-04-04 14:17:20.538 | _sync_requirements_file({'glance-store': 'glance_store>=0.1.1,<=0.1.10 # Apache-2.0', 'doc8': 'doc8  # Apache-2.0', 'sockjs-tornado': 'sockjs-tornado>=1.0.0,<2.0.0', 'xstatic-angular-mock': 'XStatic-angular-mock>=1.2.1.1  # MIT License', 'prettytable': 'PrettyTable>=0.7,<0.8', 'pystache': 'pystache', 'cffi': 'cffi', 'requests-mock': 'requests-mock>=0.4.0  # Apache-2.0', 'pyeclib': 'pyeclib>=0.9.2                          # BSD', 'networkx': 'networkx>=1.8,<=1.9.1', 'diskimage-builder': 'diskimage-builder>=0.1.20', 'openstack.nose-plugin': 'openstack.nose_plugin>=0.7', 'pyparsing': 'pyparsing>=2.0.1,<=2.0.3', 'tempest-lib': 'tempest-lib', 'python-glanceclient': 'python-glanceclient>=0.14.0,<=0.15.0', 'oslo.concurrency': 'oslo.concurrency>=0.3.0  # Apache-2.0', 'python-ldap': 'python-ldap==2.3.13', 'oauthlib': 'oauthlib>=0.6,<=0.7.2', 'python-ironicclient': 'python-ironicclient>=0.2.1,<=0.3.3', 'wrapt': 'wrapt>=1.7.0 # BSD License', 'flask': 'Flask>=0.10,<1.0', 'psycopg2': 'psycopg2', 'selenium': 'selenium', 'xstatic-bootstrap-datepicker': 'XStatic-bootstrap-datepicker>=1.3.1.0  # Apache 2.0 License', 'feedparser': 'feedparser<=5.1.3', 'nosexcover': 'nosexcover', 'python-troveclient': 'python-troveclient>=1.0.4,<=1.0.8', 'xstatic-spin': 'XStatic-spin>=1.2.5.2  # MIT License', 'libvirt-python': 'libvirt-python>=1.2.5                   # LGPLv2+', 'django-nose': 'django-nose', 'mox': 'mox>=0.5.3,<=0.5.3', 'cryptography': 'cryptography>=0.4 # Apache-2.0', 'python-cinderclient': 'python-cinderclient>=1.1.0,<=1.1.1', 'jinja2': 'Jinja2<=2.7.2', 'jsonpath-rw': 'jsonpath-rw>=1.2.0,<2.0', 'django-pyscss': 'django-pyscss>=1.0.3,<=1.0.6 # BSD License (2 clause)', 'happybase': 'happybase>=0.5,!=0.7,<=0.9', 'falcon': 'falcon>=0.1.6,<0.2.0', 'decorator': 'decorator>=3.4.0,<=3.4.0', 'pbr': 'pbr>=0.6,!=0.7,<1.0', 'webob': 'WebOb>=1.2.3,<=1.3.1', 'python-openstackclient': 'python-openstackclient>=0.3.0,<=1.0.1', 'redis': 'redis<=2.10.3', 'passlib': 'passlib<=1.6.2', 'psutil': 'psutil>=1.1.1,<2.0.0', 'oslotest': 'oslotest>=1.1.0,<1.4.0  # Apache-2.0', 'greenlet': 'greenlet>=0.3.2,<=0.4.2', 'mock': 'mock>=1.0', 'keystonemiddleware': 'keystonemiddleware>=1.0.0,<1.4.0', 'xstatic-jquery.bootstrap.wizard': 'XStatic-jquery.bootstrap.wizard>=1.0.0.1  # MIT License', 'requests': 'requests>=2.1.0,!=2.4.0,<=2.2.1', 'python-swiftclient': 'python-swiftclient>=2.2.0,<=2.3.1', 'discover': 'discover', 'nosehtmloutput': 'nosehtmloutput>=0.0.3', 'jsonschema': 'jsonschema>=2.0.0,<3.0.0', 'os-apply-config': 'os-apply-config', 'qpid-python': 'qpid-python<=0.26.1', 'fixtures': 'fixtures>=0.3.14,<=1.0.0', 'boto': 'boto>=2.32.1,<2.35.0', 'os-refresh-config': 'os-refresh-config', 'nose-exclude': 'nose-exclude', 'eventlet': 'eventlet>=0.15.1,<=0.15.2', 'pyopenssl': 'pyOpenSSL>=0.11,<=0.13', 'pastedeploy': 'PasteDeploy>=1.5.0,<=1.5.2', 'xstatic-jsencrypt': 'XStatic-jsencrypt>=2.0.0.2  # MIT License', 'tripleo-image-elements': 'tripleo-image-elements', 'ddt': 'ddt>=0.4.0', 'django-openstack-auth': 'django_openstack_auth>=1.1.7,!=1.1.8,<=1.1.9', 'python-designateclient': 'python-designateclient>=1.0.0,<=1.1.1', 'oslo.serialization': 'oslo.serialization>=1.0.0,<=1.2.0 # Apache-2.0', 'python-saharaclient': 'python-saharaclient>=0.7.3,<=0.7.6', 'pysqlite': 'pysqlite<=2.6.3', 'nose': 'nose<=1.3.1', 'python-neutronclient': 'python-neutronclient>=2.3.6,<3', 'sphinxcontrib-httpdomain': 'sphinxcontrib-httpdomain', 'pysaml2': 'pysaml2', 'xstatic-jasmine': 'XStatic-jasmine>=1.3.1.1,<2  # MIT License', 'msgpack-python': 'msgpack-python>=0.4.0,<=0.4.5', 'lockfile': 'lockfile>=0.8,<=0.8', 'paste': 'Paste<=1.7.5.1', 'python-barbicanclient': 'python-barbicanclient>=2.1.0,!=3.0.0,<3.0.2', 'oslo.i18n': 'oslo.i18n>=1.0.0,<=1.3.1 # Apache-2.0', 'pyyaml': 'PyYAML>=3.1.0,<=3.10', 'sqlalchemy-migrate': 'sqlalchemy-migrate==0.9.1', 'oslo.utils': 'oslo.utils>=1.0.0,<=1.2.1 # Apache-2.0', 'cliff-tablib': 'cliff-tablib>=1.0,<=1.1', 'xvfbwrapper': 'xvfbwrapper>=0.1.3 #license: MIT', 'requests-kerberos': 'requests-kerberos>=0.5 # MIT', 'wsgiref': 'wsgiref>=0.1.2', 'xstatic-angular': 'XStatic-angular>=1.2.1.1,<1.3.0  # MIT License', 'pyscss': 'pyScss>=1.2.1,<1.3  # MIT License', 'xstatic-angular-cookies': 'XStatic-angular-cookies>=1.2.1.1  # MIT License', 'mox3': 'mox3>=0.7.0', 'routes': 'Routes>=1.12.3,!=2.0,<=2.1', 'dnspython': 'dnspython>=1.9.4,<=1.12.0', 'anyjson': 'anyjson>=0.3.3,<=0.3.3', 'pyasn1': 'pyasn1<=0.1.7', 'pycadf': 'pycadf>=0.6.0,<0.7.0  # Apache-2.0', 'alembic': 'alembic>=0.6.4,<=0.7.4', 'coinor.pulp': 'coinor.pulp>=1.0.4', 'sphinxcontrib-pecanwsme': 'sphinxcontrib-pecanwsme>=0.8', 'kazoo': 'kazoo>=1.3.1,<=2.0', 'hgtools': 'hgtools # dependency of pytest-runner that is only in setup_requires', 'python-heatclient': 'python-heatclient>=0.2.9,<0.3.0', 'cmd2': 'cmd2>=0.6.7,<=0.6.8', 'xstatic-jquery-migrate': 'XStatic-jquery-migrate>=1.2.1.1  # MIT License', 'testrepository': 'testrepository>=0.0.18,<=0.0.20', 'testscenarios': 'testscenarios>=0.4', 'xstatic-hogan': 'XStatic-hogan>=2.0.0.2  # Apache 2.0 License', 'pexpect': 'pexpect>=3.1,<=3.3 # ISC License', 'testresources': 'testresources>=0.2.4', 'oslo.rootwrap': 'oslo.rootwrap>=1.3.0,<=1.5.0', 'swift': 'swift', 'pip-missing-reqs': 'pip_missing_reqs>=1.1.5', 'xstatic-jquery.tablesorter': 'XStatic-jquery.tablesorter>=2.0.5b.0  # MIT License', 'openstack-doc-tools': 'openstack-doc-tools>=0.18.1', 'xstatic-jquery': 'XStatic-jquery>=1.7.2  # MIT License', 'xstatic-rickshaw': 'XStatic-rickshaw>=1.5.0  # BSD License (prior)', 'oslo.context': 'oslo.context>=0.1.0,<=0.1.0 # Apache-2.0', 'pyzmq': 'pyzmq>=14.3.1 # LGPL+BSD', 'xstatic-qunit': 'XStatic-qunit>=1.14.0.2  # MIT License', 'warlock': 'warlock>=1.0.1,<2', 'python-novaclient': 'python-novaclient>=2.18.0,<=2.20.0', 'websockify': 'websockify>=0.6.0,<0.7', 'sqlalchemy': 'SQLAlchemy>=0.8.4,<=0.9.99,!=0.9.0,!=0.9.1,!=0.9.2,!=0.9.3,!=0.9.4,!=0.9.5,!=0.9.6', 'simplejson': 'simplejson>=2.2.0,<=3.3.1', 'os-collect-config': 'os-collect-config', 'pillow': 'Pillow==2.4.0 # MIT', 'pylint': 'pylint==0.25.2', 'trollius': 'trollius>=1.0', 'iso8601': 'iso8601>=0.1.9,<=0.1.10', 'rtslib-fb': 'rtslib-fb>=2.1.39,<=2.1.51', 'pytz': 'pytz<=2014.10', 'pecan': 'pecan>=0.5.0,<=0.8.3', 'xenapi': 'XenAPI>=1.2', 'testtools': 'testtools>=0.9.34,!=1.4.0,<=1.5.0', 'tooz': 'tooz>=0.3,<=0.12 # Apache-2.0', 'taskflow': 'taskflow>=0.4,<0.7.0', 'django-bootstrap-form': 'django-bootstrap-form', 'pyghmi': 'pyghmi>=0.6.11', 'os-cloud-config': 'os-cloud-config', 'pyflakes': 'pyflakes==0.8.1', 'wsme': 'WSME>=0.6,<=0.6.4', 'dib-utils': 'dib-utils  # Apache-2.0', 'posix-ipc': 'posix_ipc<=0.9.9', 'httpretty': 'httpretty>=0.8.0,!=0.8.1,!=0.8.2,!=0.8.3', 'oslo.db': 'oslo.db>=1.0.0,<1.1  # Apache-2.0', 'oslo.messaging': 'oslo.messaging>=1.4.0,<1.5.0', 'hacking': 'hacking>=0.9.2,<0.10', 'xstatic': 'XStatic>=1.0.0  # MIT License', 'dogpile.cache': 'dogpile.cache>=0.5.3,<=0.5.6', 'configobj': 'configobj<=4.7.2', 'futures': 'futures>=2.1.6,<=2.2.0', 'ordereddict': 'ordereddict<=1.1', 'greenio': 'greenio>=0.6.0', 'oslosphinx': 'oslosphinx>=2.2.0,<2.5.0  # Apache-2.0', 'argcomplete': 'argcomplete>=0.6.8  # Apache-2.0', 'mysql-python': 'MySQL-python<=1.2.3', 'pysendfile': 'pysendfile==2.0.0', 'suds': 'suds==0.4', 'pip': 'pip>=1.4', 'jsonrpclib': 'jsonrpclib<=0.1.3', 'xattr': 'xattr>=0.4,<=0.6.4', 'xstatic-bootstrap-scss': 'XStatic-bootstrap-scss>=3  # Apache 2.0 License', 'paramiko': 'paramiko>=1.13.0,<=1.15.2', 'osprofiler': 'osprofiler>=0.3.0,<=0.3.0 # Apache-2.0', 'mako': 'Mako>=0.4.0,<=1.0.1', 'lxml': 'lxml>=2.3,<=3.3.3', 'babel': 'Babel>=1.3,<=1.3', 'six': 'six>=1.7.0,<=1.9.0', 'webtest': 'WebTest>=2.0,<=2.0.18', 'ldappool': 'ldappool>=1.0 # MPL', 'jsonpatch': 'jsonpatch>=1.1,<=1.3', 'zake': 'zake>=0.1,<=0.1.7 # Apache-2.0', 'kombu': 'kombu>=2.5.0,<=3.0.7', 'croniter': 'croniter>=0.3.4,<=0.3.5 # MIT License', 'stevedore': 'stevedore>=1.0.0,<=1.2.0 # Apache-2.0', 'pymongo': 'pymongo>=2.5', 'unittest2': 'unittest2<=0.8.0', 'xstatic-d3': 'XStatic-d3>=3.1.6.2  # BSD License (3 clause)', 'pint': 'Pint>=0.5  # BSD', 'wheel': 'wheel', 'wsgi-intercept': 'wsgi_intercept>=0.6.1 # MIT License', 'python-keystoneclient': 'python-keystoneclient>=0.10.0,<=1.1.0', 'oslo.config': 'oslo.config>=1.4.0,<=1.6.0 # Apache-2.0', 'bashate': 'bashate>=0.2 # Apache-2.0', 'python-ceilometerclient': 'python-ceilometerclient>=1.0.6,<=1.0.12', 'nodeenv': 'nodeenv>=0.9.4 # BSD License', 'xstatic-jquery.quicksearch': 'XStatic-jquery.quicksearch>=2.0.3.1  # MIT License', 'python-subunit': 'python-subunit>=0.0.18,<=1.0.0', 'flake8': 'flake8==2.2.3', 'coverage': 'coverage>=3.6,<=3.7.1', 'oslo.vmware': 'oslo.vmware>=0.6.0,<0.9.0               # Apache-2.0', 'pysnmp': 'pysnmp>=4.2.1,<5.0.0', 'pyasn1-modules': 'pyasn1_modules', 'pyudev': 'pyudev<=0.16.1', 'sphinxcontrib-docbookrestapi': 'sphinxcontrib-docbookrestapi', 'cliff': 'cliff>=1.7.0,<=1.9.0 # Apache-2.0', 'argparse': 'argparse', 'proboscis': 'proboscis==1.2.5.3', 'sphinx': 'sphinx>=1.1.2,!=1.2.0,<1.3', 'pycrypto': 'pycrypto>=2.6,<=2.6.1', 'xstatic-jquery-ui': 'XStatic-jquery-ui>=1.10.1  # MIT License', 'python-marconiclient': 'python-marconiclient>=0.0.2', 'netaddr': 'netaddr>=0.7.12,<=0.7.13', 'keyring': 'keyring>=2.1,!=3.3', 'retrying': 'retrying>=1.2.2,!=1.3.0,<=1.3.3 # Apache-2.0', 'django': 'Django>=1.4.2,<1.7', 'pep8': 'pep8==1.5.7', 'xstatic-font-awesome': 'XStatic-font-awesome>=4.1.0  # SIL OFL 1.1 License, MIT License', 'extras': 'extras<=0.0.3', 'django-compressor': 'django_compressor>=1.4,<=1.4', 'netifaces': 'netifaces>=0.10.4,<=0.10.4', 'rfc3986': 'rfc3986>=0.2.0,<=0.2.0 # Apache-2.0', 'python-memcached': 'python-memcached>=1.48', 'python-zaqarclient': 'python-zaqarclient>=0.0.3', 'httplib2': 'httplib2>=0.7.5,<=0.9'}, {}, /opt/stack/neutron/test-requirements.txt)
+2015-04-04 14:17:20.538 | Syncing /opt/stack/neutron/test-requirements.txt
+2015-04-04 14:17:20.538 | Syncing setup.py
+2015-04-04 14:17:20.543 | + setup_package /opt/stack/neutron -e
+2015-04-04 14:17:20.543 | + local project_dir=/opt/stack/neutron
+2015-04-04 14:17:20.543 | + local flags=-e
+2015-04-04 14:17:20.543 | + pip_install -e /opt/stack/neutron
+2015-04-04 14:17:20.549 | + sudo -H PIP_DOWNLOAD_CACHE=/var/cache/pip http_proxy= https_proxy= no_proxy= /usr/local/bin/pip install -e /opt/stack/neutron
+2015-04-04 14:17:21.569 | DEPRECATION: --download-cache has been deprecated and will be removed in the future. Pip now automatically uses and configures its cache.
+2015-04-04 14:17:22.033 | Obtaining file:///opt/stack/neutron
+2015-04-04 14:17:23.509 |     [pbr] Processing SOURCES.txt
+2015-04-04 14:17:23.510 |     warning: LocalManifestMaker: standard file '-c' not found
+2015-04-04 14:17:23.510 |     [pbr] In git context, generating filelist from git
+2015-04-04 14:17:23.574 | Requirement already satisfied (use --upgrade to upgrade): pbr!=0.7,<1.0,>=0.6 in /usr/local/lib/python2.7/dist-packages (from neutron==2014.2.3.dev62)
+2015-04-04 14:17:23.578 | Requirement already satisfied (use --upgrade to upgrade): Paste<=1.7.5.1 in /usr/lib/python2.7/dist-packages (from neutron==2014.2.3.dev62)
+2015-04-04 14:17:23.579 | Requirement already satisfied (use --upgrade to upgrade): PasteDeploy<=1.5.2,>=1.5.0 in /usr/lib/python2.7/dist-packages (from neutron==2014.2.3.dev62)
+2015-04-04 14:17:23.581 | Requirement already satisfied (use --upgrade to upgrade): Routes!=2.0,<=2.1,>=1.12.3 in /usr/local/lib/python2.7/dist-packages (from neutron==2014.2.3.dev62)
+2015-04-04 14:17:23.583 | Requirement already satisfied (use --upgrade to upgrade): anyjson<=0.3.3,>=0.3.3 in /usr/lib/python2.7/dist-packages (from neutron==2014.2.3.dev62)
+2015-04-04 14:17:23.585 | Requirement already satisfied (use --upgrade to upgrade): argparse in /usr/lib/python2.7 (from neutron==2014.2.3.dev62)
+2015-04-04 14:17:23.586 | Requirement already satisfied (use --upgrade to upgrade): Babel<=1.3,>=1.3 in /usr/local/lib/python2.7/dist-packages (from neutron==2014.2.3.dev62)
+2015-04-04 14:17:23.588 | Requirement already satisfied (use --upgrade to upgrade): eventlet<=0.15.2,>=0.15.1 in /usr/local/lib/python2.7/dist-packages (from neutron==2014.2.3.dev62)
+2015-04-04 14:17:23.590 | Requirement already satisfied (use --upgrade to upgrade): greenlet<=0.4.2,>=0.3.2 in /usr/lib/python2.7/dist-packages (from neutron==2014.2.3.dev62)
+2015-04-04 14:17:23.591 | Requirement already satisfied (use --upgrade to upgrade): httplib2<=0.9,>=0.7.5 in /usr/local/lib/python2.7/dist-packages (from neutron==2014.2.3.dev62)
+2015-04-04 14:17:23.593 | Requirement already satisfied (use --upgrade to upgrade): requests!=2.4.0,<=2.2.1,>=2.1.0 in /usr/lib/python2.7/dist-packages (from neutron==2014.2.3.dev62)
+2015-04-04 14:17:23.594 | Requirement already satisfied (use --upgrade to upgrade): iso8601<=0.1.10,>=0.1.9 in /usr/lib/python2.7/dist-packages (from neutron==2014.2.3.dev62)
+2015-04-04 14:17:23.640 | Collecting jsonrpclib<=0.1.3 (from neutron==2014.2.3.dev62)
+2015-04-04 14:17:23.866 |   Downloading jsonrpclib-0.1.3.tar.gz
+2015-04-04 14:17:24.352 | Requirement already satisfied (use --upgrade to upgrade): Jinja2<=2.7.2 in /usr/lib/python2.7/dist-packages (from neutron==2014.2.3.dev62)
+2015-04-04 14:17:24.354 | Requirement already satisfied (use --upgrade to upgrade): keystonemiddleware<1.4.0,>=1.0.0 in /usr/local/lib/python2.7/dist-packages (from neutron==2014.2.3.dev62)
+2015-04-04 14:17:24.359 | Requirement already satisfied (use --upgrade to upgrade): netaddr<=0.7.13,>=0.7.12 in /usr/local/lib/python2.7/dist-packages (from neutron==2014.2.3.dev62)
+2015-04-04 14:17:24.405 | Collecting python-neutronclient<3,>=2.3.6 (from neutron==2014.2.3.dev62)
+2015-04-04 14:17:24.492 |   Downloading python_neutronclient-2.3.11-py2.py3-none-any.whl (199kB)
+2015-04-04 14:17:24.663 | Requirement already satisfied (use --upgrade to upgrade): SQLAlchemy!=0.9.0,!=0.9.1,!=0.9.2,!=0.9.3,!=0.9.4,!=0.9.5,!=0.9.6,<=0.9.99,>=0.8.4 in /usr/lib/python2.7/dist-packages (from neutron==2014.2.3.dev62)
+2015-04-04 14:17:24.665 | Requirement already satisfied (use --upgrade to upgrade): WebOb<=1.3.1,>=1.2.3 in /usr/lib/python2.7/dist-packages (from neutron==2014.2.3.dev62)
+2015-04-04 14:17:24.667 | Requirement already satisfied (use --upgrade to upgrade): python-keystoneclient<=1.1.0,>=0.10.0 in /usr/local/lib/python2.7/dist-packages (from neutron==2014.2.3.dev62)
+2015-04-04 14:17:24.672 | Collecting alembic<=0.7.4,>=0.6.4 (from neutron==2014.2.3.dev62)
+2015-04-04 14:17:24.768 |   Downloading alembic-0.7.4.tar.gz (604kB)
+2015-04-04 14:17:25.555 | Requirement already satisfied (use --upgrade to upgrade): six<=1.9.0,>=1.7.0 in /usr/local/lib/python2.7/dist-packages (from neutron==2014.2.3.dev62)
+2015-04-04 14:17:25.558 | Requirement already satisfied (use --upgrade to upgrade): stevedore<=1.2.0,>=1.0.0 in /usr/local/lib/python2.7/dist-packages (from neutron==2014.2.3.dev62)
+2015-04-04 14:17:25.560 | Requirement already satisfied (use --upgrade to upgrade): oslo.config<=1.6.0,>=1.4.0 in /usr/local/lib/python2.7/dist-packages (from neutron==2014.2.3.dev62)
+2015-04-04 14:17:25.563 | Requirement already satisfied (use --upgrade to upgrade): oslo.db<1.1,>=1.0.0 in /usr/local/lib/python2.7/dist-packages (from neutron==2014.2.3.dev62)
+2015-04-04 14:17:25.567 | Requirement already satisfied (use --upgrade to upgrade): oslo.messaging<1.5.0,>=1.4.0 in /usr/local/lib/python2.7/dist-packages (from neutron==2014.2.3.dev62)
+2015-04-04 14:17:25.570 | Requirement already satisfied (use --upgrade to upgrade): oslo.rootwrap<=1.5.0,>=1.3.0 in /usr/local/lib/python2.7/dist-packages (from neutron==2014.2.3.dev62)
+2015-04-04 14:17:25.574 | Requirement already satisfied (use --upgrade to upgrade): python-novaclient<=2.20.0,>=2.18.0 in /usr/local/lib/python2.7/dist-packages (from neutron==2014.2.3.dev62)
+2015-04-04 14:17:25.578 | Requirement already satisfied (use --upgrade to upgrade): pip in /usr/local/lib/python2.7/dist-packages (from pbr!=0.7,<1.0,>=0.6->neutron==2014.2.3.dev62)
+2015-04-04 14:17:25.581 | Requirement already satisfied (use --upgrade to upgrade): repoze.lru>=0.3 in /usr/lib/python2.7/dist-packages (from Routes!=2.0,<=2.1,>=1.12.3->neutron==2014.2.3.dev62)
+2015-04-04 14:17:25.583 | Requirement already satisfied (use --upgrade to upgrade): pytz>=0a in /usr/local/lib/python2.7/dist-packages (from Babel<=1.3,>=1.3->neutron==2014.2.3.dev62)
+2015-04-04 14:17:25.588 | Requirement already satisfied (use --upgrade to upgrade): markupsafe in /usr/lib/python2.7/dist-packages (from Jinja2<=2.7.2->neutron==2014.2.3.dev62)
+2015-04-04 14:17:25.589 | Requirement already satisfied (use --upgrade to upgrade): pycadf>=0.6.0 in /usr/local/lib/python2.7/dist-packages (from keystonemiddleware<1.4.0,>=1.0.0->neutron==2014.2.3.dev62)
+2015-04-04 14:17:25.593 | Requirement already satisfied (use --upgrade to upgrade): oslo.utils>=1.1.0 in /usr/local/lib/python2.7/dist-packages (from keystonemiddleware<1.4.0,>=1.0.0->neutron==2014.2.3.dev62)
+2015-04-04 14:17:25.596 | Requirement already satisfied (use --upgrade to upgrade): oslo.i18n>=1.0.0 in /usr/local/lib/python2.7/dist-packages (from keystonemiddleware<1.4.0,>=1.0.0->neutron==2014.2.3.dev62)
+2015-04-04 14:17:25.599 | Requirement already satisfied (use --upgrade to upgrade): oslo.serialization>=1.0.0 in /usr/local/lib/python2.7/dist-packages (from keystonemiddleware<1.4.0,>=1.0.0->neutron==2014.2.3.dev62)
+2015-04-04 14:17:25.602 | Requirement already satisfied (use --upgrade to upgrade): cliff>=1.7.0 in /usr/local/lib/python2.7/dist-packages (from python-neutronclient<3,>=2.3.6->neutron==2014.2.3.dev62)
+2015-04-04 14:17:25.605 | Requirement already satisfied (use --upgrade to upgrade): simplejson>=2.2.0 in /usr/local/lib/python2.7/dist-packages (from python-neutronclient<3,>=2.3.6->neutron==2014.2.3.dev62)
+2015-04-04 14:17:25.607 | Requirement already satisfied (use --upgrade to upgrade): PrettyTable<0.8,>=0.7 in /usr/local/lib/python2.7/dist-packages (from python-keystoneclient<=1.1.0,>=0.10.0->neutron==2014.2.3.dev62)
+2015-04-04 14:17:25.608 | Requirement already satisfied (use --upgrade to upgrade): Mako in /usr/local/lib/python2.7/dist-packages (from alembic<=0.7.4,>=0.6.4->neutron==2014.2.3.dev62)
+2015-04-04 14:17:25.610 | Requirement already satisfied (use --upgrade to upgrade): sqlalchemy-migrate!=0.9.2,>=0.9.1 in /usr/local/lib/python2.7/dist-packages (from oslo.db<1.1,>=1.0.0->neutron==2014.2.3.dev62)
+2015-04-04 14:17:25.612 | Requirement already satisfied (use --upgrade to upgrade): kombu>=2.4.8 in /usr/local/lib/python2.7/dist-packages (from oslo.messaging<1.5.0,>=1.4.0->neutron==2014.2.3.dev62)
+2015-04-04 14:17:25.615 | Requirement already satisfied (use --upgrade to upgrade): PyYAML>=3.1.0 in /usr/local/lib/python2.7/dist-packages (from oslo.messaging<1.5.0,>=1.4.0->neutron==2014.2.3.dev62)
+2015-04-04 14:17:25.617 | Requirement already satisfied (use --upgrade to upgrade): posix-ipc in /usr/local/lib/python2.7/dist-packages (from pycadf>=0.6.0->keystonemiddleware<1.4.0,>=1.0.0->neutron==2014.2.3.dev62)
+2015-04-04 14:17:25.618 | Requirement already satisfied (use --upgrade to upgrade): netifaces>=0.10.4 in /usr/local/lib/python2.7/dist-packages (from oslo.utils>=1.1.0->keystonemiddleware<1.4.0,>=1.0.0->neutron==2014.2.3.dev62)
+2015-04-04 14:17:25.620 | Requirement already satisfied (use --upgrade to upgrade): cmd2>=0.6.7 in /usr/local/lib/python2.7/dist-packages (from cliff>=1.7.0->python-neutronclient<3,>=2.3.6->neutron==2014.2.3.dev62)
+2015-04-04 14:17:25.621 | Requirement already satisfied (use --upgrade to upgrade): pyparsing>=2.0.1 in /usr/local/lib/python2.7/dist-packages (from cliff>=1.7.0->python-neutronclient<3,>=2.3.6->neutron==2014.2.3.dev62)
+2015-04-04 14:17:25.623 | Requirement already satisfied (use --upgrade to upgrade): decorator in /usr/lib/python2.7/dist-packages (from sqlalchemy-migrate!=0.9.2,>=0.9.1->oslo.db<1.1,>=1.0.0->neutron==2014.2.3.dev62)
+2015-04-04 14:17:25.625 | Requirement already satisfied (use --upgrade to upgrade): Tempita>=0.4 in /usr/lib/python2.7/dist-packages (from sqlalchemy-migrate!=0.9.2,>=0.9.1->oslo.db<1.1,>=1.0.0->neutron==2014.2.3.dev62)
+2015-04-04 14:17:25.626 | Requirement already satisfied (use --upgrade to upgrade): amqp<2.0,>=1.3.3 in /usr/local/lib/python2.7/dist-packages (from kombu>=2.4.8->oslo.messaging<1.5.0,>=1.4.0->neutron==2014.2.3.dev62)
+2015-04-04 14:17:25.629 | Installing collected packages: neutron, alembic, python-neutronclient, jsonrpclib
+2015-04-04 14:17:25.629 |   Running setup.py develop for neutron
+2015-04-04 14:17:26.730 |     [pbr] Reusing existing SOURCES.txt
+2015-04-04 14:17:26.730 |     Creating /usr/local/lib/python2.7/dist-packages/neutron.egg-link (link to .)
+2015-04-04 14:17:26.730 |     Adding neutron 2014.2.3.dev62 to easy-install.pth file
+2015-04-04 14:17:26.730 |     Installing neutron-debug script to /usr/local/bin
+2015-04-04 14:17:26.730 |     Installing neutron-openvswitch-agent script to /usr/local/bin
+2015-04-04 14:17:26.730 |     Installing neutron-check-nsx-config script to /usr/local/bin
+2015-04-04 14:17:26.730 |     Installing neutron-sriov-nic-agent script to /usr/local/bin
+2015-04-04 14:17:26.730 |     Installing neutron-nec-agent script to /usr/local/bin
+2015-04-04 14:17:26.730 |     Installing neutron-rootwrap script to /usr/local/bin
+2015-04-04 14:17:26.730 |     Installing neutron-ovs-cleanup script to /usr/local/bin
+2015-04-04 14:17:26.730 |     Installing neutron-ns-metadata-proxy script to /usr/local/bin
+2015-04-04 14:17:26.730 |     Installing neutron-lbaas-agent script to /usr/local/bin
+2015-04-04 14:17:26.730 |     Installing neutron-cisco-cfg-agent script to /usr/local/bin
+2015-04-04 14:17:26.731 |     Installing neutron-ibm-agent script to /usr/local/bin
+2015-04-04 14:17:26.731 |     Installing neutron-linuxbridge-agent script to /usr/local/bin
+2015-04-04 14:17:26.731 |     Installing neutron-usage-audit script to /usr/local/bin
+2015-04-04 14:17:26.732 |     Installing neutron-nsx-manage script to /usr/local/bin
+2015-04-04 14:17:26.732 |     Installing neutron-dhcp-agent script to /usr/local/bin
+2015-04-04 14:17:26.733 |     Installing neutron-mlnx-agent script to /usr/local/bin
+2015-04-04 14:17:26.733 |     Installing neutron-sanity-check script to /usr/local/bin
+2015-04-04 14:17:26.734 |     Installing neutron-nvsd-agent script to /usr/local/bin
+2015-04-04 14:17:26.734 |     Installing neutron-ryu-agent script to /usr/local/bin
+2015-04-04 14:17:26.735 |     Installing neutron-metering-agent script to /usr/local/bin
+2015-04-04 14:17:26.735 |     Installing neutron-server script to /usr/local/bin
+2015-04-04 14:17:26.736 |     Installing neutron-l3-agent script to /usr/local/bin
+2015-04-04 14:17:26.736 |     Installing neutron-restproxy-agent script to /usr/local/bin
+2015-04-04 14:17:26.737 |     Installing neutron-db-manage script to /usr/local/bin
+2015-04-04 14:17:26.737 |     Installing neutron-netns-cleanup script to /usr/local/bin
+2015-04-04 14:17:26.738 |     Installing neutron-metadata-agent script to /usr/local/bin
+2015-04-04 14:17:26.738 |     Installing neutron-ofagent-agent script to /usr/local/bin
+2015-04-04 14:17:26.739 |     Installing neutron-vpn-agent script to /usr/local/bin
+2015-04-04 14:17:26.739 |     Installing neutron-hyperv-agent script to /usr/local/bin
+2015-04-04 14:17:26.740 |     Installing neutron-rootwrap script to /usr/local/bin
+2015-04-04 14:17:26.740 |     Installing neutron-rootwrap-xen-dom0 script to /usr/local/bin
+2015-04-04 14:17:26.741 |     Installed /opt/stack/neutron
+2015-04-04 14:17:26.742 |   Found existing installation: alembic 0.7.5.post2
+2015-04-04 14:17:26.763 |     Uninstalling alembic-0.7.5.post2:
+2015-04-04 14:17:26.789 |       Successfully uninstalled alembic-0.7.5.post2
+2015-04-04 14:17:26.790 |   Running setup.py install for alembic
+2015-04-04 14:17:27.558 |     Installing alembic script to /usr/local/bin
+2015-04-04 14:17:27.957 | 
+2015-04-04 14:17:28.070 |   Running setup.py install for jsonrpclib
+2015-04-04 14:17:28.880 | Successfully installed alembic-0.7.4 jsonrpclib-0.1.3 neutron python-neutronclient-2.3.11
+2015-04-04 14:17:28.969 | + [[ False == \T\r\u\e ]]
+2015-04-04 14:17:28.969 | + [[ -e == \-\e ]]
+2015-04-04 14:17:28.969 | + safe_chown -R stack /opt/stack/neutron/neutron.egg-info
+2015-04-04 14:17:28.969 | + _safe_permission_operation chown -R stack /opt/stack/neutron/neutron.egg-info
+2015-04-04 14:17:28.974 | + sudo chown -R stack /opt/stack/neutron/neutron.egg-info
+2015-04-04 14:17:28.984 | + '[' True = True ']'
+2015-04-04 14:17:28.985 | + [[ '' != \c\h\a\n\g\e\d ]]
+2015-04-04 14:17:28.985 | + cd /opt/stack/neutron
+2015-04-04 14:17:28.985 | + git reset --hard
+2015-04-04 14:17:29.265 | HEAD is now at 818ebcf Merge "Ignore 404 error and lower a warning log to info" into stable/juno
+2015-04-04 14:17:29.267 | + install_neutron_third_party
+2015-04-04 14:17:29.267 | + _neutron_third_party_do install
+2015-04-04 14:17:29.268 | + is_service_enabled nova
+2015-04-04 14:17:29.270 | woof
+2015-04-04 14:17:29.271 | 
+2015-04-04 14:17:29.271 | q-svc,q-agt,q-dhcp,q-l3,q-meta
+2015-04-04 14:17:29.271 | + return 1
+2015-04-04 14:17:29.271 | + is_service_enabled horizon
+2015-04-04 14:17:29.275 | woof
+2015-04-04 14:17:29.275 | 
+2015-04-04 14:17:29.275 | q-svc,q-agt,q-dhcp,q-l3,q-meta
+2015-04-04 14:17:29.275 | + return 1
+2015-04-04 14:17:29.275 | + is_service_enabled ceilometer
+2015-04-04 14:17:29.279 | woof
+2015-04-04 14:17:29.279 | 
+2015-04-04 14:17:29.279 | q-svc,q-agt,q-dhcp,q-l3,q-meta
+2015-04-04 14:17:29.279 | + return 1
+2015-04-04 14:17:29.279 | + is_service_enabled heat
+2015-04-04 14:17:29.283 | woof
+2015-04-04 14:17:29.283 | 
+2015-04-04 14:17:29.283 | q-svc,q-agt,q-dhcp,q-l3,q-meta
+2015-04-04 14:17:29.283 | + return 1
+2015-04-04 14:17:29.283 | + is_service_enabled tls-proxy
+2015-04-04 14:17:29.286 | woof
+2015-04-04 14:17:29.287 | 
+2015-04-04 14:17:29.287 | q-svc,q-agt,q-dhcp,q-l3,q-meta
+2015-04-04 14:17:29.288 | + return 1
+2015-04-04 14:17:29.288 | + '[' False == True ']'
+2015-04-04 14:17:29.288 | + [[ -d /home/ubuntu/devstack/extras.d ]]
+2015-04-04 14:17:29.288 | + for i in '$TOP_DIR/extras.d/*.sh'
+2015-04-04 14:17:29.288 | + [[ -r /home/ubuntu/devstack/extras.d/40-dib.sh ]]
+2015-04-04 14:17:29.288 | + source /home/ubuntu/devstack/extras.d/40-dib.sh stack install
+2015-04-04 14:17:29.288 | ++ is_service_enabled dib
+2015-04-04 14:17:29.291 | woof
+2015-04-04 14:17:29.291 | 
+2015-04-04 14:17:29.291 | q-svc,q-agt,q-dhcp,q-l3,q-meta
+2015-04-04 14:17:29.291 | ++ return 1
+2015-04-04 14:17:29.292 | + for i in '$TOP_DIR/extras.d/*.sh'
+2015-04-04 14:17:29.292 | + [[ -r /home/ubuntu/devstack/extras.d/50-ironic.sh ]]
+2015-04-04 14:17:29.292 | + source /home/ubuntu/devstack/extras.d/50-ironic.sh stack install
+2015-04-04 14:17:29.292 | ++ is_service_enabled ir-api ir-cond
+2015-04-04 14:17:29.296 | woof
+2015-04-04 14:17:29.296 | 
+2015-04-04 14:17:29.296 | q-svc,q-agt,q-dhcp,q-l3,q-meta
+2015-04-04 14:17:29.297 | ++ return 1
+2015-04-04 14:17:29.297 | + for i in '$TOP_DIR/extras.d/*.sh'
+2015-04-04 14:17:29.297 | + [[ -r /home/ubuntu/devstack/extras.d/60-ceph.sh ]]
+2015-04-04 14:17:29.297 | + source /home/ubuntu/devstack/extras.d/60-ceph.sh stack install
+2015-04-04 14:17:29.297 | ++ is_service_enabled ceph
+2015-04-04 14:17:29.301 | woof
+2015-04-04 14:17:29.301 | 
+2015-04-04 14:17:29.301 | q-svc,q-agt,q-dhcp,q-l3,q-meta
+2015-04-04 14:17:29.301 | ++ return 1
+2015-04-04 14:17:29.301 | + for i in '$TOP_DIR/extras.d/*.sh'
+2015-04-04 14:17:29.301 | + [[ -r /home/ubuntu/devstack/extras.d/70-gantt.sh ]]
+2015-04-04 14:17:29.301 | + source /home/ubuntu/devstack/extras.d/70-gantt.sh stack install
+2015-04-04 14:17:29.301 | ++ is_service_enabled n-sch
+2015-04-04 14:17:29.304 | woof
+2015-04-04 14:17:29.304 | 
+2015-04-04 14:17:29.304 | q-svc,q-agt,q-dhcp,q-l3,q-meta
+2015-04-04 14:17:29.305 | ++ return 1
+2015-04-04 14:17:29.305 | ++ is_service_enabled gantt
+2015-04-04 14:17:29.308 | woof
+2015-04-04 14:17:29.308 | 
+2015-04-04 14:17:29.308 | q-svc,q-agt,q-dhcp,q-l3,q-meta
+2015-04-04 14:17:29.309 | ++ return 1
+2015-04-04 14:17:29.309 | + for i in '$TOP_DIR/extras.d/*.sh'
+2015-04-04 14:17:29.309 | + [[ -r /home/ubuntu/devstack/extras.d/70-sahara.sh ]]
+2015-04-04 14:17:29.309 | + source /home/ubuntu/devstack/extras.d/70-sahara.sh stack install
+2015-04-04 14:17:29.310 | ++ is_service_enabled sahara
+2015-04-04 14:17:29.313 | woof
+2015-04-04 14:17:29.313 | 
+2015-04-04 14:17:29.313 | q-svc,q-agt,q-dhcp,q-l3,q-meta
+2015-04-04 14:17:29.313 | ++ return 1
+2015-04-04 14:17:29.314 | + for i in '$TOP_DIR/extras.d/*.sh'
+2015-04-04 14:17:29.314 | + [[ -r /home/ubuntu/devstack/extras.d/70-trove.sh ]]
+2015-04-04 14:17:29.314 | + source /home/ubuntu/devstack/extras.d/70-trove.sh stack install
+2015-04-04 14:17:29.314 | ++ is_service_enabled trove
+2015-04-04 14:17:29.318 | woof
+2015-04-04 14:17:29.318 | 
+2015-04-04 14:17:29.318 | q-svc,q-agt,q-dhcp,q-l3,q-meta
+2015-04-04 14:17:29.318 | ++ return 1
+2015-04-04 14:17:29.318 | + for i in '$TOP_DIR/extras.d/*.sh'
+2015-04-04 14:17:29.319 | + [[ -r /home/ubuntu/devstack/extras.d/70-zaqar.sh ]]
+2015-04-04 14:17:29.319 | + source /home/ubuntu/devstack/extras.d/70-zaqar.sh stack install
+2015-04-04 14:17:29.319 | ++ is_service_enabled zaqar-server
+2015-04-04 14:17:29.322 | woof
+2015-04-04 14:17:29.323 | 
+2015-04-04 14:17:29.323 | q-svc,q-agt,q-dhcp,q-l3,q-meta
+2015-04-04 14:17:29.323 | ++ return 1
+2015-04-04 14:17:29.323 | + for i in '$TOP_DIR/extras.d/*.sh'
+2015-04-04 14:17:29.323 | + [[ -r /home/ubuntu/devstack/extras.d/80-opendaylight.sh ]]
+2015-04-04 14:17:29.324 | + source /home/ubuntu/devstack/extras.d/80-opendaylight.sh stack install
+2015-04-04 14:17:29.324 | ++ is_service_enabled odl-server odl-compute
+2015-04-04 14:17:29.327 | woof
+2015-04-04 14:17:29.327 | 
+2015-04-04 14:17:29.327 | q-svc,q-agt,q-dhcp,q-l3,q-meta
+2015-04-04 14:17:29.328 | ++ return 1
+2015-04-04 14:17:29.329 | ++ is_service_enabled odl-server
+2015-04-04 14:17:29.332 | woof
+2015-04-04 14:17:29.332 | 
+2015-04-04 14:17:29.332 | q-svc,q-agt,q-dhcp,q-l3,q-meta
+2015-04-04 14:17:29.332 | ++ return 1
+2015-04-04 14:17:29.333 | ++ is_service_enabled odl-compute
+2015-04-04 14:17:29.336 | woof
+2015-04-04 14:17:29.336 | 
+2015-04-04 14:17:29.337 | q-svc,q-agt,q-dhcp,q-l3,q-meta
+2015-04-04 14:17:29.337 | ++ return 1
+2015-04-04 14:17:29.337 | + for i in '$TOP_DIR/extras.d/*.sh'
+2015-04-04 14:17:29.337 | + [[ -r /home/ubuntu/devstack/extras.d/80-tempest.sh ]]
+2015-04-04 14:17:29.337 | + source /home/ubuntu/devstack/extras.d/80-tempest.sh stack install
+2015-04-04 14:17:29.338 | ++ is_service_enabled tempest
+2015-04-04 14:17:29.341 | woof
+2015-04-04 14:17:29.341 | 
+2015-04-04 14:17:29.341 | q-svc,q-agt,q-dhcp,q-l3,q-meta
+2015-04-04 14:17:29.342 | ++ return 1
+2015-04-04 14:17:29.342 | + use_library_from_git python-openstackclient
+2015-04-04 14:17:29.342 | + local name=python-openstackclient
+2015-04-04 14:17:29.342 | + local enabled=1
+2015-04-04 14:17:29.342 | + [[ ,, =~ ,python-openstackclient, ]]
+2015-04-04 14:17:29.343 | + return 1
+2015-04-04 14:17:29.343 | + pip_install python-openstackclient==1.0.1
+2015-04-04 14:17:29.349 | + sudo -H PIP_DOWNLOAD_CACHE=/var/cache/pip http_proxy= https_proxy= no_proxy= /usr/local/bin/pip install python-openstackclient==1.0.1
+2015-04-04 14:17:30.373 | DEPRECATION: --download-cache has been deprecated and will be removed in the future. Pip now automatically uses and configures its cache.
+2015-04-04 14:17:30.880 | Collecting python-openstackclient==1.0.1
+2015-04-04 14:17:31.093 |   Downloading python_openstackclient-1.0.1-py2.py3-none-any.whl (235kB)
+2015-04-04 14:17:31.278 | Requirement already satisfied (use --upgrade to upgrade): oslo.utils>=1.0.0 in /usr/local/lib/python2.7/dist-packages (from python-openstackclient==1.0.1)
+2015-04-04 14:17:31.282 | Requirement already satisfied (use --upgrade to upgrade): six>=1.7.0 in /usr/local/lib/python2.7/dist-packages (from python-openstackclient==1.0.1)
+2015-04-04 14:17:31.284 | Requirement already satisfied (use --upgrade to upgrade): stevedore>=1.1.0 in /usr/local/lib/python2.7/dist-packages (from python-openstackclient==1.0.1)
+2015-04-04 14:17:31.286 | Requirement already satisfied (use --upgrade to upgrade): python-cinderclient>=1.1.0 in /usr/local/lib/python2.7/dist-packages (from python-openstackclient==1.0.1)
+2015-04-04 14:17:31.336 | Collecting cliff-tablib>=1.0 (from python-openstackclient==1.0.1)
+2015-04-04 14:17:31.378 |   Downloading cliff-tablib-1.1.tar.gz (80kB)
+2015-04-04 14:17:32.131 | Requirement already satisfied (use --upgrade to upgrade): requests!=2.4.0,>=2.2.0 in /usr/lib/python2.7/dist-packages (from python-openstackclient==1.0.1)
+2015-04-04 14:17:32.133 | Requirement already satisfied (use --upgrade to upgrade): pbr!=0.7,<1.0,>=0.6 in /usr/local/lib/python2.7/dist-packages (from python-openstackclient==1.0.1)
+2015-04-04 14:17:32.135 | Requirement already satisfied (use --upgrade to upgrade): python-glanceclient>=0.14.0 in /usr/local/lib/python2.7/dist-packages (from python-openstackclient==1.0.1)
+2015-04-04 14:17:32.139 | Requirement already satisfied (use --upgrade to upgrade): python-keystoneclient>=0.11.1 in /usr/local/lib/python2.7/dist-packages (from python-openstackclient==1.0.1)
+2015-04-04 14:17:32.144 | Requirement already satisfied (use --upgrade to upgrade): cliff>=1.7.0 in /usr/local/lib/python2.7/dist-packages (from python-openstackclient==1.0.1)
+2015-04-04 14:17:32.147 | Requirement already satisfied (use --upgrade to upgrade): Babel>=1.3 in /usr/local/lib/python2.7/dist-packages (from python-openstackclient==1.0.1)
+2015-04-04 14:17:32.149 | Requirement already satisfied (use --upgrade to upgrade): oslo.i18n>=1.0.0 in /usr/local/lib/python2.7/dist-packages (from python-openstackclient==1.0.1)
+2015-04-04 14:17:32.151 | Requirement already satisfied (use --upgrade to upgrade): oslo.serialization>=1.0.0 in /usr/local/lib/python2.7/dist-packages (from python-openstackclient==1.0.1)
+2015-04-04 14:17:32.154 | Requirement already satisfied (use --upgrade to upgrade): python-novaclient>=2.18.0 in /usr/local/lib/python2.7/dist-packages (from python-openstackclient==1.0.1)
+2015-04-04 14:17:32.158 | Requirement already satisfied (use --upgrade to upgrade): python-neutronclient<3,>=2.3.6 in /usr/local/lib/python2.7/dist-packages (from python-openstackclient==1.0.1)
+2015-04-04 14:17:32.162 | Requirement already satisfied (use --upgrade to upgrade): netifaces>=0.10.4 in /usr/local/lib/python2.7/dist-packages (from oslo.utils>=1.0.0->python-openstackclient==1.0.1)
+2015-04-04 14:17:32.163 | Requirement already satisfied (use --upgrade to upgrade): netaddr>=0.7.12 in /usr/local/lib/python2.7/dist-packages (from oslo.utils>=1.0.0->python-openstackclient==1.0.1)
+2015-04-04 14:17:32.166 | Requirement already satisfied (use --upgrade to upgrade): iso8601>=0.1.9 in /usr/lib/python2.7/dist-packages (from oslo.utils>=1.0.0->python-openstackclient==1.0.1)
+2015-04-04 14:17:32.167 | Requirement already satisfied (use --upgrade to upgrade): argparse in /usr/lib/python2.7 (from stevedore>=1.1.0->python-openstackclient==1.0.1)
+2015-04-04 14:17:32.168 | Requirement already satisfied (use --upgrade to upgrade): PrettyTable<0.8,>=0.7 in /usr/local/lib/python2.7/dist-packages (from python-cinderclient>=1.1.0->python-openstackclient==1.0.1)
+2015-04-04 14:17:32.170 | Requirement already satisfied (use --upgrade to upgrade): simplejson>=2.2.0 in /usr/local/lib/python2.7/dist-packages (from python-cinderclient>=1.1.0->python-openstackclient==1.0.1)
+2015-04-04 14:17:32.218 | Collecting tablib (from cliff-tablib>=1.0->python-openstackclient==1.0.1)
+2015-04-04 14:17:32.336 |   Downloading tablib-0.10.0-py2.py3-none-any.whl (864kB)
+2015-04-04 14:17:32.689 | Requirement already satisfied (use --upgrade to upgrade): pip in /usr/local/lib/python2.7/dist-packages (from pbr!=0.7,<1.0,>=0.6->python-openstackclient==1.0.1)
+2015-04-04 14:17:32.693 | Requirement already satisfied (use --upgrade to upgrade): pyOpenSSL>=0.11 in /usr/lib/python2.7/dist-packages (from python-glanceclient>=0.14.0->python-openstackclient==1.0.1)
+2015-04-04 14:17:32.694 | Requirement already satisfied (use --upgrade to upgrade): warlock<2,>=1.0.1 in /usr/local/lib/python2.7/dist-packages (from python-glanceclient>=0.14.0->python-openstackclient==1.0.1)
+2015-04-04 14:17:32.696 | Requirement already satisfied (use --upgrade to upgrade): oslo.config>=1.6.0 in /usr/local/lib/python2.7/dist-packages (from python-keystoneclient>=0.11.1->python-openstackclient==1.0.1)
+2015-04-04 14:17:32.699 | Requirement already satisfied (use --upgrade to upgrade): cmd2>=0.6.7 in /usr/local/lib/python2.7/dist-packages (from cliff>=1.7.0->python-openstackclient==1.0.1)
+2015-04-04 14:17:32.700 | Requirement already satisfied (use --upgrade to upgrade): pyparsing>=2.0.1 in /usr/local/lib/python2.7/dist-packages (from cliff>=1.7.0->python-openstackclient==1.0.1)
+2015-04-04 14:17:32.702 | Requirement already satisfied (use --upgrade to upgrade): pytz>=0a in /usr/local/lib/python2.7/dist-packages (from Babel>=1.3->python-openstackclient==1.0.1)
+2015-04-04 14:17:32.707 | Requirement already satisfied (use --upgrade to upgrade): jsonschema<3,>=0.7 in /usr/local/lib/python2.7/dist-packages (from warlock<2,>=1.0.1->python-glanceclient>=0.14.0->python-openstackclient==1.0.1)
+2015-04-04 14:17:32.710 | Requirement already satisfied (use --upgrade to upgrade): jsonpatch<2,>=0.10 in /usr/local/lib/python2.7/dist-packages (from warlock<2,>=1.0.1->python-glanceclient>=0.14.0->python-openstackclient==1.0.1)
+2015-04-04 14:17:32.712 | Requirement already satisfied (use --upgrade to upgrade): jsonpointer>=1.5 in /usr/local/lib/python2.7/dist-packages (from jsonpatch<2,>=0.10->warlock<2,>=1.0.1->python-glanceclient>=0.14.0->python-openstackclient==1.0.1)
+2015-04-04 14:17:32.714 | Installing collected packages: tablib, cliff-tablib, python-openstackclient
+2015-04-04 14:17:34.084 |   Compiling /tmp/pip-build-Ff0a67/tablib/tablib/packages/xlrd3/__init__.py
+2015-04-04 14:17:34.084 |   
+2015-04-04 14:17:34.084 |   Compiling /tmp/pip-build-Ff0a67/tablib/tablib/packages/xlrd3/biffh.py
+2015-04-04 14:17:34.084 |   
+2015-04-04 14:17:34.084 |   Compiling /tmp/pip-build-Ff0a67/tablib/tablib/packages/xlrd3/compdoc.py
+2015-04-04 14:17:34.084 |   
+2015-04-04 14:17:34.084 |   Compiling /tmp/pip-build-Ff0a67/tablib/tablib/packages/xlrd3/formatting.py
+2015-04-04 14:17:34.085 |   
+2015-04-04 14:17:34.085 |   Compiling /tmp/pip-build-Ff0a67/tablib/tablib/packages/xlrd3/formula.py
+2015-04-04 14:17:34.085 |   
+2015-04-04 14:17:34.085 |   Compiling /tmp/pip-build-Ff0a67/tablib/tablib/packages/xlrd3/sheet.py
+2015-04-04 14:17:34.085 |   
+2015-04-04 14:17:34.085 |   Compiling /tmp/pip-build-Ff0a67/tablib/tablib/packages/xlwt3/antlr.py
+2015-04-04 14:17:34.085 |   
+2015-04-04 14:17:34.085 | 
+2015-04-04 14:17:34.324 |   Running setup.py install for cliff-tablib
+2015-04-04 14:17:35.246 | 
+2015-04-04 14:17:35.655 | Successfully installed cliff-tablib-1.1 python-openstackclient-1.0.1 tablib-0.10.0
+2015-04-04 14:17:35.765 | + [[ False == \T\r\u\e ]]
+2015-04-04 14:17:35.765 | + [[ False = True ]]
+2015-04-04 14:17:35.765 | + [[ False != \F\a\l\s\e ]]
+2015-04-04 14:17:35.765 | + restart_rpc_backend
+2015-04-04 14:17:35.765 | + is_service_enabled rabbit
+2015-04-04 14:17:35.768 | woof
+2015-04-04 14:17:35.768 | 
+2015-04-04 14:17:35.768 | q-svc,q-agt,q-dhcp,q-l3,q-meta
+2015-04-04 14:17:35.769 | + return 1
+2015-04-04 14:17:35.769 | + is_service_enabled qpid
+2015-04-04 14:17:35.772 | woof
+2015-04-04 14:17:35.773 | 
+2015-04-04 14:17:35.773 | q-svc,q-agt,q-dhcp,q-l3,q-meta
+2015-04-04 14:17:35.773 | + return 1
+2015-04-04 14:17:35.773 | + '[' -f /opt/stack/data/ca-bundle.pem ']'
+2015-04-04 14:17:35.773 | + is_service_enabled mysql postgresql
+2015-04-04 14:17:35.775 | woof
+2015-04-04 14:17:35.775 | 
+2015-04-04 14:17:35.775 | q-svc,q-agt,q-dhcp,q-l3,q-meta
+2015-04-04 14:17:35.776 | + return 1
+2015-04-04 14:17:35.776 | ++ trueorfalse True True
+2015-04-04 14:17:35.781 | + USE_SCREEN=True
+2015-04-04 14:17:35.782 | + [[ True == \T\r\u\e ]]
+2015-04-04 14:17:35.782 | + screen -d -m -S stack -t shell -s /bin/bash
+2015-04-04 14:17:35.784 | + sleep 1
+2015-04-04 14:17:36.786 | + '[' -z '' ']'
+2015-04-04 14:17:36.786 | + SCREEN_HARDSTATUS='%{= .} %-Lw%{= .}%> %n%f %t*%{= .}%+Lw%< %-=%{g}(%{d}%H/%l%{g})'
+2015-04-04 14:17:36.786 | + screen -r stack -X hardstatus alwayslastline '%{= .} %-Lw%{= .}%> %n%f %t*%{= .}%+Lw%< %-=%{g}(%{d}%H/%l%{g})'
+2015-04-04 14:17:36.789 | + screen -r stack -X setenv PROMPT_COMMAND /bin/true
+2015-04-04 14:17:36.792 | + SCREENRC=/home/ubuntu/devstack/stack-screenrc
+2015-04-04 14:17:36.792 | + [[ -e /home/ubuntu/devstack/stack-screenrc ]]
+2015-04-04 14:17:36.792 | + init_service_check
+2015-04-04 14:17:36.792 | + SCREEN_NAME=stack
+2015-04-04 14:17:36.793 | + SERVICE_DIR=/opt/stack/status
+2015-04-04 14:17:36.793 | + [[ ! -d /opt/stack/status/stack ]]
+2015-04-04 14:17:36.793 | + mkdir -p /opt/stack/status/stack
+2015-04-04 14:17:36.794 | + rm -f '/opt/stack/status/stack/*.failure'
+2015-04-04 14:17:36.796 | + start_dstat
+2015-04-04 14:17:36.796 | + DSTAT_OPTS='-tcmndrylp --top-cpu-adv'
+2015-04-04 14:17:36.796 | + [[ -n '' ]]
+2015-04-04 14:17:36.796 | + screen_it dstat 'dstat -tcmndrylp --top-cpu-adv'
+2015-04-04 14:17:36.796 | + is_service_enabled dstat
+2015-04-04 14:17:36.800 | woof
+2015-04-04 14:17:36.800 | 
+2015-04-04 14:17:36.800 | q-svc,q-agt,q-dhcp,q-l3,q-meta
+2015-04-04 14:17:36.800 | + return 1
+2015-04-04 14:17:36.801 | + is_service_enabled key
+2015-04-04 14:17:36.805 | woof
+2015-04-04 14:17:36.805 | 
+2015-04-04 14:17:36.805 | q-svc,q-agt,q-dhcp,q-l3,q-meta
+2015-04-04 14:17:36.805 | + return 1
+2015-04-04 14:17:36.806 | + is_service_enabled horizon
+2015-04-04 14:17:36.809 | woof
+2015-04-04 14:17:36.809 | 
+2015-04-04 14:17:36.809 | q-svc,q-agt,q-dhcp,q-l3,q-meta
+2015-04-04 14:17:36.810 | + return 1
+2015-04-04 14:17:36.810 | + is_service_enabled g-reg
+2015-04-04 14:17:36.813 | woof
+2015-04-04 14:17:36.814 | 
+2015-04-04 14:17:36.814 | q-svc,q-agt,q-dhcp,q-l3,q-meta
+2015-04-04 14:17:36.814 | + return 1
+2015-04-04 14:17:36.814 | + is_service_enabled neutron
+2015-04-04 14:17:36.818 | woof
+2015-04-04 14:17:36.818 | 
+2015-04-04 14:17:36.818 | q-svc,q-agt,q-dhcp,q-l3,q-meta
+2015-04-04 14:17:36.819 | + return 0
+2015-04-04 14:17:36.819 | + echo_summary 'Configuring Neutron'
+2015-04-04 14:17:36.819 | + [[ -t 3 ]]
+2015-04-04 14:17:36.819 | + echo -e Configuring Neutron
+2015-04-04 14:17:36.820 | + configure_neutron
+2015-04-04 14:17:36.820 | + _configure_neutron_common
+2015-04-04 14:17:36.820 | + [[ ! -d /etc/neutron ]]
+2015-04-04 14:17:36.820 | + sudo mkdir -p /etc/neutron
+2015-04-04 14:17:36.830 | + sudo chown stack /etc/neutron
+2015-04-04 14:17:36.839 | + cp /opt/stack/neutron/etc/neutron.conf /etc/neutron/neutron.conf
+2015-04-04 14:17:36.841 | + neutron_plugin_configure_common
+2015-04-04 14:17:36.842 | + Q_PLUGIN_CONF_PATH=etc/neutron/plugins/ml2
+2015-04-04 14:17:36.842 | + Q_PLUGIN_CONF_FILENAME=ml2_conf.ini
+2015-04-04 14:17:36.842 | + Q_PLUGIN_CLASS=neutron.plugins.ml2.plugin.Ml2Plugin
+2015-04-04 14:17:36.842 | + _neutron_service_plugin_class_add neutron.services.l3_router.l3_router_plugin.L3RouterPlugin
+2015-04-04 14:17:36.842 | + local service_plugin_class=neutron.services.l3_router.l3_router_plugin.L3RouterPlugin
+2015-04-04 14:17:36.842 | + [[ '' == '' ]]
+2015-04-04 14:17:36.842 | + Q_SERVICE_PLUGIN_CLASSES=neutron.services.l3_router.l3_router_plugin.L3RouterPlugin
+2015-04-04 14:17:36.843 | + [[ etc/neutron/plugins/ml2 == '' ]]
+2015-04-04 14:17:36.843 | + [[ ml2_conf.ini == '' ]]
+2015-04-04 14:17:36.843 | + [[ neutron.plugins.ml2.plugin.Ml2Plugin == '' ]]
+2015-04-04 14:17:36.843 | + mkdir -p /etc/neutron/plugins/ml2
+2015-04-04 14:17:36.845 | + Q_PLUGIN_CONF_FILE=etc/neutron/plugins/ml2/ml2_conf.ini
+2015-04-04 14:17:36.845 | + cp /opt/stack/neutron/etc/neutron/plugins/ml2/ml2_conf.ini /etc/neutron/plugins/ml2/ml2_conf.ini
+2015-04-04 14:17:36.847 | ++ database_connection_url neutron
+2015-04-04 14:17:36.847 | ++ local db=neutron
+2015-04-04 14:17:36.847 | ++ database_connection_url_ neutron
+2015-04-04 14:17:36.848 | /home/ubuntu/devstack/lib/database: line 120: database_connection_url_: command not found
+2015-04-04 14:17:36.849 | + iniset /etc/neutron/neutron.conf database connection
+2015-04-04 14:17:36.865 | + iniset /etc/neutron/neutron.conf DEFAULT state_path /opt/stack/data/neutron
+2015-04-04 14:17:36.880 | + [[ 0 > 0 ]]
+2015-04-04 14:17:36.880 | + [[ '' != '' ]]
+2015-04-04 14:17:36.880 | + '[' ironic = fake ']'
+2015-04-04 14:17:36.880 | + '[' True == True ']'
+2015-04-04 14:17:36.880 | + '[' False == False ']'
+2015-04-04 14:17:36.880 | + setup_colorized_logging /etc/neutron/neutron.conf DEFAULT project_id
+2015-04-04 14:17:36.881 | + local conf_file=/etc/neutron/neutron.conf
+2015-04-04 14:17:36.881 | + local conf_section=DEFAULT
+2015-04-04 14:17:36.881 | + local project_var=project_id
+2015-04-04 14:17:36.881 | + local user_var=user_name
+2015-04-04 14:17:36.881 | + iniset /etc/neutron/neutron.conf DEFAULT logging_context_format_string '%(asctime)s.%(msecs)03d %(color)s%(levelname)s %(name)s [[01;36m%(request_id)s [00;36m%(user_name)s %(project_id)s%(color)s] [01;35m%(instance)s%(color)s%(message)s[00m'
+2015-04-04 14:17:36.896 | + iniset /etc/neutron/neutron.conf DEFAULT logging_default_format_string '%(asctime)s.%(msecs)03d %(color)s%(levelname)s %(name)s [[00;36m-%(color)s] [01;35m%(instance)s%(color)s%(message)s[00m'
+2015-04-04 14:17:36.911 | + iniset /etc/neutron/neutron.conf DEFAULT logging_debug_format_suffix '[00;33mfrom (pid=%(process)d) %(funcName)s %(pathname)s:%(lineno)d[00m'
+2015-04-04 14:17:36.927 | + iniset /etc/neutron/neutron.conf DEFAULT logging_exception_prefix '%(color)s%(asctime)s.%(msecs)03d TRACE %(name)s [01;35m%(instance)s[00m'
+2015-04-04 14:17:36.942 | + is_service_enabled tls-proxy
+2015-04-04 14:17:36.946 | woof
+2015-04-04 14:17:36.946 | 
+2015-04-04 14:17:36.946 | q-svc,q-agt,q-dhcp,q-l3,q-meta
+2015-04-04 14:17:36.947 | + return 1
+2015-04-04 14:17:36.947 | + is_ssl_enabled_service nova
+2015-04-04 14:17:36.947 | + local services=nova
+2015-04-04 14:17:36.947 | + local service=
+2015-04-04 14:17:36.948 | + '[' False == False ']'
+2015-04-04 14:17:36.948 | + return 1
+2015-04-04 14:17:36.948 | + is_ssl_enabled_service neutron
+2015-04-04 14:17:36.948 | + local services=neutron
+2015-04-04 14:17:36.948 | + local service=
+2015-04-04 14:17:36.949 | + '[' False == False ']'
+2015-04-04 14:17:36.949 | + return 1
+2015-04-04 14:17:36.949 | + _neutron_setup_rootwrap
+2015-04-04 14:17:36.949 | + [[ True == \F\a\l\s\e ]]
+2015-04-04 14:17:36.949 | + Q_CONF_ROOTWRAP_D=/etc/neutron/rootwrap.d
+2015-04-04 14:17:36.950 | + [[ -d /etc/neutron/rootwrap.d ]]
+2015-04-04 14:17:36.950 | + mkdir -p -m 755 /etc/neutron/rootwrap.d
+2015-04-04 14:17:36.952 | + cp -pr /opt/stack/neutron/etc/neutron/rootwrap.d/cisco-apic.filters /opt/stack/neutron/etc/neutron/rootwrap.d/debug.filters /opt/stack/neutron/etc/neutron/rootwrap.d/dhcp.filters /opt/stack/neutron/etc/neutron/rootwrap.d/ipset-firewall.filters /opt/stack/neutron/etc/neutron/rootwrap.d/iptables-firewall.filters /opt/stack/neutron/etc/neutron/rootwrap.d/l3.filters /opt/stack/neutron/etc/neutron/rootwrap.d/lbaas-haproxy.filters /opt/stack/neutron/etc/neutron/rootwrap.d/linuxbridge-plugin.filters /opt/stack/neutron/etc/neutron/rootwrap.d/nec-plugin.filters /opt/stack/neutron/etc/neutron/rootwrap.d/openvswitch-plugin.filters /opt/stack/neutron/etc/neutron/rootwrap.d/ryu-plugin.filters /opt/stack/neutron/etc/neutron/rootwrap.d/vpnaas.filters /etc/neutron/rootwrap.d/
+2015-04-04 14:17:36.954 | + sudo chown -R root:root /etc/neutron/rootwrap.d
+2015-04-04 14:17:36.964 | + sudo chmod 644 /etc/neutron/rootwrap.d/cisco-apic.filters /etc/neutron/rootwrap.d/debug.filters /etc/neutron/rootwrap.d/dhcp.filters /etc/neutron/rootwrap.d/ipset-firewall.filters /etc/neutron/rootwrap.d/iptables-firewall.filters /etc/neutron/rootwrap.d/l3.filters /etc/neutron/rootwrap.d/lbaas-haproxy.filters /etc/neutron/rootwrap.d/linuxbridge-plugin.filters /etc/neutron/rootwrap.d/nec-plugin.filters /etc/neutron/rootwrap.d/openvswitch-plugin.filters /etc/neutron/rootwrap.d/ryu-plugin.filters /etc/neutron/rootwrap.d/vpnaas.filters
+2015-04-04 14:17:36.973 | + test -r /opt/stack/neutron/etc/neutron/rootwrap.conf
+2015-04-04 14:17:36.973 | + sudo cp -p /opt/stack/neutron/etc/rootwrap.conf /etc/neutron/rootwrap.conf
+2015-04-04 14:17:36.982 | + sudo sed -e 's:^filters_path=.*$:filters_path=/etc/neutron/rootwrap.d:' -i /etc/neutron/rootwrap.conf
+2015-04-04 14:17:36.992 | + sudo chown root:root /etc/neutron/rootwrap.conf
+2015-04-04 14:17:37.002 | + sudo chmod 0644 /etc/neutron/rootwrap.conf
+2015-04-04 14:17:37.011 | + ROOTWRAP_SUDOER_CMD='/usr/local/bin/neutron-rootwrap /etc/neutron/rootwrap.conf *'
+2015-04-04 14:17:37.011 | ++ mktemp
+2015-04-04 14:17:37.013 | + TEMPFILE=/tmp/tmp.H4SIB16S1P
+2015-04-04 14:17:37.013 | + echo 'stack ALL=(root) NOPASSWD: /usr/local/bin/neutron-rootwrap /etc/neutron/rootwrap.conf *'
+2015-04-04 14:17:37.013 | + chmod 0440 /tmp/tmp.H4SIB16S1P
+2015-04-04 14:17:37.015 | + sudo chown root:root /tmp/tmp.H4SIB16S1P
+2015-04-04 14:17:37.024 | + sudo mv /tmp/tmp.H4SIB16S1P /etc/sudoers.d/neutron-rootwrap
+2015-04-04 14:17:37.034 | + iniset /etc/neutron/neutron.conf agent root_helper 'sudo /usr/local/bin/neutron-rootwrap /etc/neutron/rootwrap.conf'
+2015-04-04 14:17:37.049 | + iniset_rpc_backend neutron /etc/neutron/neutron.conf DEFAULT
+2015-04-04 14:17:37.050 | + local package=neutron
+2015-04-04 14:17:37.050 | + local file=/etc/neutron/neutron.conf
+2015-04-04 14:17:37.050 | + local section=DEFAULT
+2015-04-04 14:17:37.051 | + is_service_enabled zeromq
+2015-04-04 14:17:37.054 | woof
+2015-04-04 14:17:37.054 | 
+2015-04-04 14:17:37.054 | q-svc,q-agt,q-dhcp,q-l3,q-meta
+2015-04-04 14:17:37.055 | + return 1
+2015-04-04 14:17:37.055 | + is_service_enabled qpid
+2015-04-04 14:17:37.059 | woof
+2015-04-04 14:17:37.059 | 
+2015-04-04 14:17:37.059 | q-svc,q-agt,q-dhcp,q-l3,q-meta
+2015-04-04 14:17:37.060 | + return 1
+2015-04-04 14:17:37.060 | + '[' -n '' ']'
+2015-04-04 14:17:37.060 | + is_service_enabled rabbit
+2015-04-04 14:17:37.063 | woof
+2015-04-04 14:17:37.064 | 
+2015-04-04 14:17:37.064 | q-svc,q-agt,q-dhcp,q-l3,q-meta
+2015-04-04 14:17:37.064 | + return 1
+2015-04-04 14:17:37.065 | + '[' -n '' ']'
+2015-04-04 14:17:37.065 | + is_service_enabled q-lbaas
+2015-04-04 14:17:37.068 | woof
+2015-04-04 14:17:37.069 | 
+2015-04-04 14:17:37.069 | q-svc,q-agt,q-dhcp,q-l3,q-meta
+2015-04-04 14:17:37.069 | + return 1
+2015-04-04 14:17:37.070 | + is_service_enabled q-metering
+2015-04-04 14:17:37.073 | woof
+2015-04-04 14:17:37.073 | 
+2015-04-04 14:17:37.073 | q-svc,q-agt,q-dhcp,q-l3,q-meta
+2015-04-04 14:17:37.074 | + return 1
+2015-04-04 14:17:37.074 | + is_service_enabled q-vpn
+2015-04-04 14:17:37.077 | woof
+2015-04-04 14:17:37.078 | 
+2015-04-04 14:17:37.078 | q-svc,q-agt,q-dhcp,q-l3,q-meta
+2015-04-04 14:17:37.079 | + return 1
+2015-04-04 14:17:37.079 | + is_service_enabled q-fwaas
+2015-04-04 14:17:37.082 | woof
+2015-04-04 14:17:37.082 | 
+2015-04-04 14:17:37.083 | q-svc,q-agt,q-dhcp,q-l3,q-meta
+2015-04-04 14:17:37.083 | + return 1
+2015-04-04 14:17:37.083 | + is_service_enabled q-agt q-svc
+2015-04-04 14:17:37.087 | woof
+2015-04-04 14:17:37.087 | 
+2015-04-04 14:17:37.087 | q-svc,q-agt,q-dhcp,q-l3,q-meta
+2015-04-04 14:17:37.088 | + return 0
+2015-04-04 14:17:37.088 | + _configure_neutron_service
+2015-04-04 14:17:37.088 | + Q_API_PASTE_FILE=/etc/neutron/api-paste.ini
+2015-04-04 14:17:37.089 | + Q_POLICY_FILE=/etc/neutron/policy.json
+2015-04-04 14:17:37.089 | + cp /opt/stack/neutron/etc/api-paste.ini /etc/neutron/api-paste.ini
+2015-04-04 14:17:37.091 | + cp /opt/stack/neutron/etc/policy.json /etc/neutron/policy.json
+2015-04-04 14:17:37.093 | + sed -i 's/"context_is_admin":  "role:admin"/"context_is_admin":  "role:admin or user_name:neutron"/g' /etc/neutron/policy.json
+2015-04-04 14:17:37.096 | + iniset /etc/neutron/neutron.conf DEFAULT core_plugin neutron.plugins.ml2.plugin.Ml2Plugin
+2015-04-04 14:17:37.111 | + [[ neutron.services.l3_router.l3_router_plugin.L3RouterPlugin != '' ]]
+2015-04-04 14:17:37.111 | + iniset /etc/neutron/neutron.conf DEFAULT service_plugins neutron.services.l3_router.l3_router_plugin.L3RouterPlugin
+2015-04-04 14:17:37.127 | + iniset /etc/neutron/neutron.conf DEFAULT verbose True
+2015-04-04 14:17:37.143 | + iniset /etc/neutron/neutron.conf DEFAULT debug True
+2015-04-04 14:17:37.158 | + iniset /etc/neutron/neutron.conf DEFAULT policy_file /etc/neutron/policy.json
+2015-04-04 14:17:37.174 | + iniset /etc/neutron/neutron.conf DEFAULT allow_overlapping_ips True
+2015-04-04 14:17:37.190 | + iniset /etc/neutron/neutron.conf DEFAULT auth_strategy keystone
+2015-04-04 14:17:37.206 | + _neutron_setup_keystone /etc/neutron/neutron.conf keystone_authtoken
+2015-04-04 14:17:37.206 | + local conf_file=/etc/neutron/neutron.conf
+2015-04-04 14:17:37.206 | + local section=keystone_authtoken
+2015-04-04 14:17:37.206 | + create_neutron_cache_dir
+2015-04-04 14:17:37.206 | + sudo mkdir -p /var/cache/neutron
+2015-04-04 14:17:37.216 | + sudo chown stack /var/cache/neutron
+2015-04-04 14:17:37.225 | + rm -f '/var/cache/neutron/*'
+2015-04-04 14:17:37.227 | + configure_auth_token_middleware /etc/neutron/neutron.conf neutron /var/cache/neutron keystone_authtoken
+2015-04-04 14:17:37.227 | + local conf_file=/etc/neutron/neutron.conf
+2015-04-04 14:17:37.227 | + local admin_user=neutron
+2015-04-04 14:17:37.227 | + local signing_dir=/var/cache/neutron
+2015-04-04 14:17:37.227 | + local section=keystone_authtoken
+2015-04-04 14:17:37.227 | + iniset /etc/neutron/neutron.conf keystone_authtoken auth_host 10.0.11.157
+2015-04-04 14:17:37.244 | + iniset /etc/neutron/neutron.conf keystone_authtoken auth_port 35357
+2015-04-04 14:17:37.261 | + iniset /etc/neutron/neutron.conf keystone_authtoken auth_protocol http
+2015-04-04 14:17:37.278 | + iniset /etc/neutron/neutron.conf keystone_authtoken identity_uri http://10.0.11.157:35357
+2015-04-04 14:17:37.293 | + iniset /etc/neutron/neutron.conf keystone_authtoken cafile /opt/stack/data/ca-bundle.pem
+2015-04-04 14:17:37.309 | + configure_API_version /etc/neutron/neutron.conf 2.0 keystone_authtoken
+2015-04-04 14:17:37.309 | + local conf_file=/etc/neutron/neutron.conf
+2015-04-04 14:17:37.309 | + local api_version=2.0
+2015-04-04 14:17:37.310 | + local section=keystone_authtoken
+2015-04-04 14:17:37.310 | + iniset /etc/neutron/neutron.conf keystone_authtoken auth_uri http://10.0.11.157:5000/v2.0
+2015-04-04 14:17:37.325 | + iniset /etc/neutron/neutron.conf keystone_authtoken admin_tenant_name service
+2015-04-04 14:17:37.342 | + iniset /etc/neutron/neutron.conf keystone_authtoken admin_user neutron
+2015-04-04 14:17:37.359 | + iniset /etc/neutron/neutron.conf keystone_authtoken admin_password nomoresecrete
+2015-04-04 14:17:37.376 | + iniset /etc/neutron/neutron.conf keystone_authtoken signing_dir /var/cache/neutron
+2015-04-04 14:17:37.392 | + [[ -n '' ]]
+2015-04-04 14:17:37.392 | + iniset /etc/neutron/neutron.conf DEFAULT notify_nova_on_port_status_changes True
+2015-04-04 14:17:37.408 | + iniset /etc/neutron/neutron.conf DEFAULT notify_nova_on_port_data_changes True
+2015-04-04 14:17:37.423 | + iniset /etc/neutron/neutron.conf DEFAULT nova_url http://10.0.11.157:8774/v2
+2015-04-04 14:17:37.439 | + iniset /etc/neutron/neutron.conf DEFAULT nova_admin_username nova
+2015-04-04 14:17:37.455 | + iniset /etc/neutron/neutron.conf DEFAULT nova_admin_password nomoresecrete
+2015-04-04 14:17:37.471 | ++ openstack project list
+2015-04-04 14:17:37.471 | ++ awk '/ service / { print $2 }'
+2015-04-04 14:17:38.459 | ERROR: openstack Authentication type must be selected with --os-auth-type
+2015-04-04 14:17:38.517 | + ADMIN_TENANT_ID=
+2015-04-04 14:17:38.518 | + iniset /etc/neutron/neutron.conf DEFAULT nova_admin_tenant_id
+2015-04-04 14:17:38.534 | + iniset /etc/neutron/neutron.conf DEFAULT nova_admin_auth_url http://10.0.11.157:35357/v2.0
+2015-04-04 14:17:38.551 | + neutron_plugin_configure_service
+2015-04-04 14:17:38.551 | + [[ vxlan != \l\o\c\a\l ]]
+2015-04-04 14:17:38.551 | + Q_SRV_EXTRA_OPTS+=(tenant_network_types=$Q_ML2_TENANT_NETWORK_TYPE)
+2015-04-04 14:17:38.551 | + '[' '' == '' ']'
+2015-04-04 14:17:38.551 | + [[ '' == '' ]]
+2015-04-04 14:17:38.551 | + [[ '' != '' ]]
+2015-04-04 14:17:38.551 | + [[ '' != '' ]]
+2015-04-04 14:17:38.551 | + [[ True == \T\r\u\e ]]
+2015-04-04 14:17:38.551 | + iniset /etc/neutron/plugins/ml2/ml2_conf.ini securitygroup firewall_driver neutron.agent.not.a.real.FirewallDriver
+2015-04-04 14:17:38.563 | + iniset /etc/neutron/plugins/ml2/ml2_conf.ini ovs local_ip 10.0.11.157
+2015-04-04 14:17:38.575 | + populate_ml2_config /etc/neutron/plugins/ml2/ml2_conf.ini ml2 mechanism_drivers=openvswitch,linuxbridge
+2015-04-04 14:17:38.575 | + CONF=/etc/neutron/plugins/ml2/ml2_conf.ini
+2015-04-04 14:17:38.575 | + SECTION=ml2
+2015-04-04 14:17:38.575 | + OPTS=mechanism_drivers=openvswitch,linuxbridge
+2015-04-04 14:17:38.575 | + '[' -z mechanism_drivers=openvswitch,linuxbridge ']'
+2015-04-04 14:17:38.575 | + for I in '"${OPTS[@]}"'
+2015-04-04 14:17:38.575 | + iniset /etc/neutron/plugins/ml2/ml2_conf.ini ml2 mechanism_drivers openvswitch,linuxbridge
+2015-04-04 14:17:38.587 | + populate_ml2_config /etc/neutron/plugins/ml2/ml2_conf.ini ml2 type_drivers=local,flat,vlan,gre,vxlan
+2015-04-04 14:17:38.587 | + CONF=/etc/neutron/plugins/ml2/ml2_conf.ini
+2015-04-04 14:17:38.587 | + SECTION=ml2
+2015-04-04 14:17:38.588 | + OPTS=type_drivers=local,flat,vlan,gre,vxlan
+2015-04-04 14:17:38.588 | + '[' -z type_drivers=local,flat,vlan,gre,vxlan ']'
+2015-04-04 14:17:38.588 | + for I in '"${OPTS[@]}"'
+2015-04-04 14:17:38.588 | + iniset /etc/neutron/plugins/ml2/ml2_conf.ini ml2 type_drivers local,flat,vlan,gre,vxlan
+2015-04-04 14:17:38.600 | + populate_ml2_config /etc/neutron/plugins/ml2/ml2_conf.ini ml2 tenant_network_types=vxlan
+2015-04-04 14:17:38.600 | + CONF=/etc/neutron/plugins/ml2/ml2_conf.ini
+2015-04-04 14:17:38.600 | + SECTION=ml2
+2015-04-04 14:17:38.600 | + OPTS=tenant_network_types=vxlan
+2015-04-04 14:17:38.600 | + '[' -z tenant_network_types=vxlan ']'
+2015-04-04 14:17:38.600 | + for I in '"${OPTS[@]}"'
+2015-04-04 14:17:38.601 | + iniset /etc/neutron/plugins/ml2/ml2_conf.ini ml2 tenant_network_types vxlan
+2015-04-04 14:17:38.613 | + populate_ml2_config /etc/neutron/plugins/ml2/ml2_conf.ini ml2_type_gre tunnel_id_ranges=1:1000
+2015-04-04 14:17:38.613 | + CONF=/etc/neutron/plugins/ml2/ml2_conf.ini
+2015-04-04 14:17:38.613 | + SECTION=ml2_type_gre
+2015-04-04 14:17:38.613 | + OPTS=tunnel_id_ranges=1:1000
+2015-04-04 14:17:38.614 | + '[' -z tunnel_id_ranges=1:1000 ']'
+2015-04-04 14:17:38.614 | + for I in '"${OPTS[@]}"'
+2015-04-04 14:17:38.614 | + iniset /etc/neutron/plugins/ml2/ml2_conf.ini ml2_type_gre tunnel_id_ranges 1:1000
+2015-04-04 14:17:38.626 | + populate_ml2_config /etc/neutron/plugins/ml2/ml2_conf.ini ml2_type_vxlan vni_ranges=1001:2000
+2015-04-04 14:17:38.627 | + CONF=/etc/neutron/plugins/ml2/ml2_conf.ini
+2015-04-04 14:17:38.627 | + SECTION=ml2_type_vxlan
+2015-04-04 14:17:38.627 | + OPTS=vni_ranges=1001:2000
+2015-04-04 14:17:38.627 | + '[' -z vni_ranges=1001:2000 ']'
+2015-04-04 14:17:38.627 | + for I in '"${OPTS[@]}"'
+2015-04-04 14:17:38.627 | + iniset /etc/neutron/plugins/ml2/ml2_conf.ini ml2_type_vxlan vni_ranges 1001:2000
+2015-04-04 14:17:38.640 | + populate_ml2_config /etc/neutron/plugins/ml2/ml2_conf.ini ml2_type_vlan
+2015-04-04 14:17:38.640 | + CONF=/etc/neutron/plugins/ml2/ml2_conf.ini
+2015-04-04 14:17:38.640 | + SECTION=ml2_type_vlan
+2015-04-04 14:17:38.640 | + OPTS=
+2015-04-04 14:17:38.640 | + '[' -z '' ']'
+2015-04-04 14:17:38.640 | + return
+2015-04-04 14:17:38.640 | + [[ legacy != \l\e\g\a\c\y ]]
+2015-04-04 14:17:38.640 | + is_service_enabled q-agt
+2015-04-04 14:17:38.643 | woof
+2015-04-04 14:17:38.644 | 
+2015-04-04 14:17:38.644 | q-svc,q-agt,q-dhcp,q-l3,q-meta
+2015-04-04 14:17:38.644 | + return 0
+2015-04-04 14:17:38.644 | + _configure_neutron_plugin_agent
+2015-04-04 14:17:38.645 | + iniset /etc/neutron/plugins/ml2/ml2_conf.ini agent root_helper 'sudo /usr/local/bin/neutron-rootwrap /etc/neutron/rootwrap.conf'
+2015-04-04 14:17:38.657 | + iniset /etc/neutron/neutron.conf DEFAULT verbose True
+2015-04-04 14:17:38.674 | + iniset /etc/neutron/neutron.conf DEFAULT debug True
+2015-04-04 14:17:38.692 | + neutron_plugin_configure_plugin_agent
+2015-04-04 14:17:38.692 | + _neutron_ovs_base_setup_bridge br-int
+2015-04-04 14:17:38.692 | + local bridge=br-int
+2015-04-04 14:17:38.692 | + neutron-ovs-cleanup
+2015-04-04 14:17:39.921 | + sudo ovs-vsctl --no-wait -- --may-exist add-br br-int
+2015-04-04 14:17:39.937 | + [[ '' != '' ]]
+2015-04-04 14:17:39.937 | + sudo ovs-vsctl --no-wait br-set-external-id br-int bridge-id br-int
+2015-04-04 14:17:39.950 | + _neutron_ovs_base_configure_firewall_driver
+2015-04-04 14:17:39.950 | + [[ True == \T\r\u\e ]]
+2015-04-04 14:17:39.950 | + iniset /etc/neutron/plugins/ml2/ml2_conf.ini securitygroup firewall_driver neutron.agent.linux.iptables_firewall.OVSHybridIptablesFirewallDriver
+2015-04-04 14:17:39.965 | + [[ True == \T\r\u\e ]]
+2015-04-04 14:17:39.966 | ++ ovs-vsctl --version
+2015-04-04 14:17:39.967 | ++ grep -E -o '[0-9]+\.[0-9]+'
+2015-04-04 14:17:39.967 | ++ head -n 1
+2015-04-04 14:17:39.970 | + OVS_VERSION=2.0
+2015-04-04 14:17:39.971 | ++ vercmp_numbers 2.0 1.4
+2015-04-04 14:17:39.971 | ++ typeset v1=2.0 v2=1.4 sep
+2015-04-04 14:17:39.971 | ++ typeset -a ver1 ver2
+2015-04-04 14:17:39.971 | ++ IFS=.
+2015-04-04 14:17:39.971 | ++ read -ra ver1
+2015-04-04 14:17:39.972 | ++ IFS=.
+2015-04-04 14:17:39.972 | ++ read -ra ver2
+2015-04-04 14:17:39.973 | ++ _vercmp_r 2 2 0 1 4
+2015-04-04 14:17:39.973 | ++ typeset sep
+2015-04-04 14:17:39.973 | ++ ver1=()
+2015-04-04 14:17:39.973 | ++ ver2=()
+2015-04-04 14:17:39.973 | ++ typeset -a ver1 ver2
+2015-04-04 14:17:39.973 | ++ sep=2
+2015-04-04 14:17:39.973 | ++ shift
+2015-04-04 14:17:39.973 | ++ ver1=("${@:1:sep}")
+2015-04-04 14:17:39.973 | ++ ver2=("${@:sep+1}")
+2015-04-04 14:17:39.973 | ++ (( ver1 > ver2 ))
+2015-04-04 14:17:39.974 | ++ echo 1
+2015-04-04 14:17:39.974 | ++ return 0
+2015-04-04 14:17:39.975 | + '[' 1 -lt 0 ']'
+2015-04-04 14:17:39.975 | + iniset /etc/neutron/plugins/ml2/ml2_conf.ini ovs enable_tunneling True
+2015-04-04 14:17:39.988 | + iniset /etc/neutron/plugins/ml2/ml2_conf.ini ovs local_ip 10.0.11.157
+2015-04-04 14:17:40.006 | + [[ '' == '' ]]
+2015-04-04 14:17:40.006 | + [[ '' != '' ]]
+2015-04-04 14:17:40.006 | + [[ '' != '' ]]
+2015-04-04 14:17:40.006 | + AGENT_BINARY=/usr/local/bin/neutron-openvswitch-agent
+2015-04-04 14:17:40.006 | + '[' ironic == xenserver ']'
+2015-04-04 14:17:40.006 | + iniset /etc/neutron/plugins/ml2/ml2_conf.ini agent tunnel_types vxlan
+2015-04-04 14:17:40.019 | + is_service_enabled q-dhcp
+2015-04-04 14:17:40.023 | woof
+2015-04-04 14:17:40.023 | 
+2015-04-04 14:17:40.023 | q-svc,q-agt,q-dhcp,q-l3,q-meta
+2015-04-04 14:17:40.023 | + return 0
+2015-04-04 14:17:40.024 | + _configure_neutron_dhcp_agent
+2015-04-04 14:17:40.024 | + cp /opt/stack/neutron/etc/dhcp_agent.ini /etc/neutron/dhcp_agent.ini
+2015-04-04 14:17:40.026 | + iniset /etc/neutron/dhcp_agent.ini DEFAULT verbose True
+2015-04-04 14:17:40.038 | + iniset /etc/neutron/dhcp_agent.ini DEFAULT debug True
+2015-04-04 14:17:40.050 | + iniset /etc/neutron/dhcp_agent.ini DEFAULT use_namespaces True
+2015-04-04 14:17:40.063 | + iniset /etc/neutron/dhcp_agent.ini DEFAULT root_helper 'sudo /usr/local/bin/neutron-rootwrap /etc/neutron/rootwrap.conf'
+2015-04-04 14:17:40.075 | + _neutron_setup_interface_driver /etc/neutron/dhcp_agent.ini
+2015-04-04 14:17:40.075 | + iniset /etc/neutron/dhcp_agent.ini DEFAULT ovs_use_veth False
+2015-04-04 14:17:40.087 | + neutron_plugin_setup_interface_driver /etc/neutron/dhcp_agent.ini
+2015-04-04 14:17:40.088 | + local conf_file=/etc/neutron/dhcp_agent.ini
+2015-04-04 14:17:40.088 | + iniset /etc/neutron/dhcp_agent.ini DEFAULT interface_driver neutron.agent.linux.interface.OVSInterfaceDriver
+2015-04-04 14:17:40.100 | + neutron_plugin_configure_dhcp_agent
+2015-04-04 14:17:40.100 | + iniset /etc/neutron/dhcp_agent.ini DEFAULT dhcp_agent_manager neutron.agent.dhcp_agent.DhcpAgentWithStateReport
+2015-04-04 14:17:40.112 | + is_service_enabled q-l3
+2015-04-04 14:17:40.116 | woof
+2015-04-04 14:17:40.116 | 
+2015-04-04 14:17:40.116 | q-svc,q-agt,q-dhcp,q-l3,q-meta
+2015-04-04 14:17:40.116 | + return 0
+2015-04-04 14:17:40.117 | + _configure_neutron_l3_agent
+2015-04-04 14:17:40.117 | + local cfg_file
+2015-04-04 14:17:40.117 | + Q_L3_ENABLED=True
+2015-04-04 14:17:40.117 | + Q_L3_ROUTER_PER_TENANT=True
+2015-04-04 14:17:40.117 | + is_service_enabled q-vpn
+2015-04-04 14:17:40.120 | woof
+2015-04-04 14:17:40.120 | 
+2015-04-04 14:17:40.121 | q-svc,q-agt,q-dhcp,q-l3,q-meta
+2015-04-04 14:17:40.121 | + return 1
+2015-04-04 14:17:40.121 | + cp /opt/stack/neutron/etc/l3_agent.ini /etc/neutron/l3_agent.ini
+2015-04-04 14:17:40.123 | + iniset /etc/neutron/l3_agent.ini DEFAULT verbose True
+2015-04-04 14:17:40.135 | + iniset /etc/neutron/l3_agent.ini DEFAULT debug True
+2015-04-04 14:17:40.148 | + iniset /etc/neutron/l3_agent.ini DEFAULT use_namespaces True
+2015-04-04 14:17:40.160 | + iniset /etc/neutron/l3_agent.ini DEFAULT root_helper 'sudo /usr/local/bin/neutron-rootwrap /etc/neutron/rootwrap.conf'
+2015-04-04 14:17:40.173 | + _neutron_setup_interface_driver /etc/neutron/l3_agent.ini
+2015-04-04 14:17:40.173 | + iniset /etc/neutron/l3_agent.ini DEFAULT ovs_use_veth False
+2015-04-04 14:17:40.185 | + neutron_plugin_setup_interface_driver /etc/neutron/l3_agent.ini
+2015-04-04 14:17:40.185 | + local conf_file=/etc/neutron/l3_agent.ini
+2015-04-04 14:17:40.185 | + iniset /etc/neutron/l3_agent.ini DEFAULT interface_driver neutron.agent.linux.interface.OVSInterfaceDriver
+2015-04-04 14:17:40.198 | + neutron_plugin_configure_l3_agent
+2015-04-04 14:17:40.198 | + _neutron_ovs_base_configure_l3_agent
+2015-04-04 14:17:40.198 | + '[' False = True ']'
+2015-04-04 14:17:40.198 | + iniset /etc/neutron/l3_agent.ini DEFAULT external_network_bridge br-ex
+2015-04-04 14:17:40.211 | + neutron-ovs-cleanup
+2015-04-04 14:17:41.195 | + [[ False = \T\r\u\e ]]
+2015-04-04 14:17:41.195 | + sudo ovs-vsctl -- --may-exist add-br br-ex
+2015-04-04 14:17:41.214 | + sudo ovs-vsctl br-set-external-id br-ex bridge-id br-ex
+2015-04-04 14:17:41.228 | + sudo ip addr flush dev br-ex
+2015-04-04 14:17:41.238 | + iniset /etc/neutron/l3_agent.ini DEFAULT l3_agent_manager neutron.agent.l3_agent.L3NATAgentWithStateReport
+2015-04-04 14:17:41.253 | + is_service_enabled q-meta
+2015-04-04 14:17:41.256 | woof
+2015-04-04 14:17:41.256 | 
+2015-04-04 14:17:41.257 | q-svc,q-agt,q-dhcp,q-l3,q-meta
+2015-04-04 14:17:41.257 | + return 0
+2015-04-04 14:17:41.257 | + _configure_neutron_metadata_agent
+2015-04-04 14:17:41.257 | + cp /opt/stack/neutron/etc/metadata_agent.ini /etc/neutron/metadata_agent.ini
+2015-04-04 14:17:41.259 | + iniset /etc/neutron/metadata_agent.ini DEFAULT verbose True
+2015-04-04 14:17:41.272 | + iniset /etc/neutron/metadata_agent.ini DEFAULT debug True
+2015-04-04 14:17:41.284 | + iniset /etc/neutron/metadata_agent.ini DEFAULT nova_metadata_ip 10.0.11.157
+2015-04-04 14:17:41.297 | + iniset /etc/neutron/metadata_agent.ini DEFAULT root_helper 'sudo /usr/local/bin/neutron-rootwrap /etc/neutron/rootwrap.conf'
+2015-04-04 14:17:41.309 | + _neutron_setup_keystone /etc/neutron/metadata_agent.ini DEFAULT
+2015-04-04 14:17:41.309 | + local conf_file=/etc/neutron/metadata_agent.ini
+2015-04-04 14:17:41.309 | + local section=DEFAULT
+2015-04-04 14:17:41.309 | + create_neutron_cache_dir
+2015-04-04 14:17:41.309 | + sudo mkdir -p /var/cache/neutron
+2015-04-04 14:17:41.320 | + sudo chown stack /var/cache/neutron
+2015-04-04 14:17:41.329 | + rm -f '/var/cache/neutron/*'
+2015-04-04 14:17:41.331 | + configure_auth_token_middleware /etc/neutron/metadata_agent.ini neutron /var/cache/neutron DEFAULT
+2015-04-04 14:17:41.331 | + local conf_file=/etc/neutron/metadata_agent.ini
+2015-04-04 14:17:41.331 | + local admin_user=neutron
+2015-04-04 14:17:41.331 | + local signing_dir=/var/cache/neutron
+2015-04-04 14:17:41.331 | + local section=DEFAULT
+2015-04-04 14:17:41.332 | + iniset /etc/neutron/metadata_agent.ini DEFAULT auth_host 10.0.11.157
+2015-04-04 14:17:41.344 | + iniset /etc/neutron/metadata_agent.ini DEFAULT auth_port 35357
+2015-04-04 14:17:41.356 | + iniset /etc/neutron/metadata_agent.ini DEFAULT auth_protocol http
+2015-04-04 14:17:41.369 | + iniset /etc/neutron/metadata_agent.ini DEFAULT identity_uri http://10.0.11.157:35357
+2015-04-04 14:17:41.381 | + iniset /etc/neutron/metadata_agent.ini DEFAULT cafile /opt/stack/data/ca-bundle.pem
+2015-04-04 14:17:41.393 | + configure_API_version /etc/neutron/metadata_agent.ini 2.0 DEFAULT
+2015-04-04 14:17:41.394 | + local conf_file=/etc/neutron/metadata_agent.ini
+2015-04-04 14:17:41.394 | + local api_version=2.0
+2015-04-04 14:17:41.394 | + local section=DEFAULT
+2015-04-04 14:17:41.394 | + iniset /etc/neutron/metadata_agent.ini DEFAULT auth_uri http://10.0.11.157:5000/v2.0
+2015-04-04 14:17:41.406 | + iniset /etc/neutron/metadata_agent.ini DEFAULT admin_tenant_name service
+2015-04-04 14:17:41.419 | + iniset /etc/neutron/metadata_agent.ini DEFAULT admin_user neutron
+2015-04-04 14:17:41.433 | + iniset /etc/neutron/metadata_agent.ini DEFAULT admin_password nomoresecrete
+2015-04-04 14:17:41.446 | + iniset /etc/neutron/metadata_agent.ini DEFAULT signing_dir /var/cache/neutron
+2015-04-04 14:17:41.459 | + [[ -n '' ]]
+2015-04-04 14:17:41.459 | + [[ legacy != \l\e\g\a\c\y ]]
+2015-04-04 14:17:41.459 | + is_service_enabled ceilometer
+2015-04-04 14:17:41.463 | woof
+2015-04-04 14:17:41.463 | 
+2015-04-04 14:17:41.463 | q-svc,q-agt,q-dhcp,q-l3,q-meta
+2015-04-04 14:17:41.463 | + return 1
+2015-04-04 14:17:41.464 | + _configure_neutron_debug_command
+2015-04-04 14:17:41.464 | + [[ False != \T\r\u\e ]]
+2015-04-04 14:17:41.464 | + return
+2015-04-04 14:17:41.464 | + is_service_enabled mysql postgresql
+2015-04-04 14:17:41.467 | woof
+2015-04-04 14:17:41.467 | 
+2015-04-04 14:17:41.467 | q-svc,q-agt,q-dhcp,q-l3,q-meta
+2015-04-04 14:17:41.468 | + return 1
+2015-04-04 14:17:41.468 | + is_service_enabled neutron
+2015-04-04 14:17:41.472 | woof
+2015-04-04 14:17:41.472 | 
+2015-04-04 14:17:41.472 | q-svc,q-agt,q-dhcp,q-l3,q-meta
+2015-04-04 14:17:41.472 | + return 0
+2015-04-04 14:17:41.472 | + configure_neutron_third_party
+2015-04-04 14:17:41.473 | + _neutron_third_party_do configure
+2015-04-04 14:17:41.473 | + init_neutron_third_party
+2015-04-04 14:17:41.473 | + _neutron_third_party_do init
+2015-04-04 14:17:41.473 | + start_neutron_third_party
+2015-04-04 14:17:41.473 | + _neutron_third_party_do start
+2015-04-04 14:17:41.473 | + is_service_enabled n-net q-dhcp
+2015-04-04 14:17:41.477 | woof
+2015-04-04 14:17:41.477 | 
+2015-04-04 14:17:41.477 | q-svc,q-agt,q-dhcp,q-l3,q-meta
+2015-04-04 14:17:41.478 | + return 0
+2015-04-04 14:17:41.478 | ++ pidof NetworkManager
+2015-04-04 14:17:41.487 | ++ true
+2015-04-04 14:17:41.488 | + netman_pid=
+2015-04-04 14:17:41.488 | + '[' -z '' ']'
+2015-04-04 14:17:41.488 | + sudo killall dnsmasq
+2015-04-04 14:17:41.501 | dnsmasq: no process found
+2015-04-04 14:17:41.502 | + true
+2015-04-04 14:17:41.502 | + clean_iptables
+2015-04-04 14:17:41.503 | + sudo iptables -S -v
+2015-04-04 14:17:41.503 | + sed 's/-c [0-9]* [0-9]* //g'
+2015-04-04 14:17:41.504 | + grep nova
+2015-04-04 14:17:41.504 | + grep '\-A'
+2015-04-04 14:17:41.504 | + sed s/-A/-D/g
+2015-04-04 14:17:41.505 | + awk '{print "sudo iptables",$0}'
+2015-04-04 14:17:41.505 | + bash
+2015-04-04 14:17:41.523 | + sudo iptables -S -v -t nat
+2015-04-04 14:17:41.524 | + sed 's/-c [0-9]* [0-9]* //g'
+2015-04-04 14:17:41.524 | + grep nova
+2015-04-04 14:17:41.525 | + grep '\-A'
+2015-04-04 14:17:41.525 | + sed s/-A/-D/g
+2015-04-04 14:17:41.526 | + awk '{print "sudo iptables -t nat",$0}'
+2015-04-04 14:17:41.526 | + bash
+2015-04-04 14:17:41.552 | + sudo iptables -S -v
+2015-04-04 14:17:41.552 | + grep nova
+2015-04-04 14:17:41.553 | + grep '\-N'
+2015-04-04 14:17:41.553 | + sed 's/-c [0-9]* [0-9]* //g'
+2015-04-04 14:17:41.553 | + sed s/-N/-X/g
+2015-04-04 14:17:41.553 | + awk '{print "sudo iptables",$0}'
+2015-04-04 14:17:41.554 | + bash
+2015-04-04 14:17:41.562 | + sudo iptables -S -v -t nat
+2015-04-04 14:17:41.562 | + sed 's/-c [0-9]* [0-9]* //g'
+2015-04-04 14:17:41.563 | + grep nova
+2015-04-04 14:17:41.563 | + grep '\-N'
+2015-04-04 14:17:41.563 | + sed s/-N/-X/g
+2015-04-04 14:17:41.564 | + awk '{print "sudo iptables -t nat",$0}'
+2015-04-04 14:17:41.564 | + bash
+2015-04-04 14:17:41.572 | + is_service_enabled n-net
+2015-04-04 14:17:41.575 | woof
+2015-04-04 14:17:41.575 | 
+2015-04-04 14:17:41.575 | q-svc,q-agt,q-dhcp,q-l3,q-meta
+2015-04-04 14:17:41.576 | + return 1
+2015-04-04 14:17:41.576 | + sudo sysctl -w net.ipv4.ip_forward=1
+2015-04-04 14:17:41.584 | net.ipv4.ip_forward = 1
+2015-04-04 14:17:41.585 | + is_service_enabled s-proxy
+2015-04-04 14:17:41.589 | woof
+2015-04-04 14:17:41.589 | 
+2015-04-04 14:17:41.589 | q-svc,q-agt,q-dhcp,q-l3,q-meta
+2015-04-04 14:17:41.589 | + return 1
+2015-04-04 14:17:41.590 | + is_service_enabled cinder
+2015-04-04 14:17:41.593 | woof
+2015-04-04 14:17:41.593 | 
+2015-04-04 14:17:41.593 | q-svc,q-agt,q-dhcp,q-l3,q-meta
+2015-04-04 14:17:41.594 | + return 1
+2015-04-04 14:17:41.594 | + is_service_enabled nova
+2015-04-04 14:17:41.598 | woof
+2015-04-04 14:17:41.598 | 
+2015-04-04 14:17:41.598 | q-svc,q-agt,q-dhcp,q-l3,q-meta
+2015-04-04 14:17:41.598 | + return 1
+2015-04-04 14:17:41.599 | + is_service_enabled nova
+2015-04-04 14:17:41.602 | woof
+2015-04-04 14:17:41.602 | 
+2015-04-04 14:17:41.602 | q-svc,q-agt,q-dhcp,q-l3,q-meta
+2015-04-04 14:17:41.603 | + return 1
+2015-04-04 14:17:41.603 | + [[ -d /home/ubuntu/devstack/extras.d ]]
+2015-04-04 14:17:41.603 | + for i in '$TOP_DIR/extras.d/*.sh'
+2015-04-04 14:17:41.603 | + [[ -r /home/ubuntu/devstack/extras.d/40-dib.sh ]]
+2015-04-04 14:17:41.603 | + source /home/ubuntu/devstack/extras.d/40-dib.sh stack post-config
+2015-04-04 14:17:41.604 | ++ is_service_enabled dib
+2015-04-04 14:17:41.607 | woof
+2015-04-04 14:17:41.607 | 
+2015-04-04 14:17:41.607 | q-svc,q-agt,q-dhcp,q-l3,q-meta
+2015-04-04 14:17:41.608 | ++ return 1
+2015-04-04 14:17:41.608 | + for i in '$TOP_DIR/extras.d/*.sh'
+2015-04-04 14:17:41.608 | + [[ -r /home/ubuntu/devstack/extras.d/50-ironic.sh ]]
+2015-04-04 14:17:41.608 | + source /home/ubuntu/devstack/extras.d/50-ironic.sh stack post-config
+2015-04-04 14:17:41.609 | ++ is_service_enabled ir-api ir-cond
+2015-04-04 14:17:41.612 | woof
+2015-04-04 14:17:41.612 | 
+2015-04-04 14:17:41.612 | q-svc,q-agt,q-dhcp,q-l3,q-meta
+2015-04-04 14:17:41.613 | ++ return 1
+2015-04-04 14:17:41.613 | + for i in '$TOP_DIR/extras.d/*.sh'
+2015-04-04 14:17:41.613 | + [[ -r /home/ubuntu/devstack/extras.d/60-ceph.sh ]]
+2015-04-04 14:17:41.613 | + source /home/ubuntu/devstack/extras.d/60-ceph.sh stack post-config
+2015-04-04 14:17:41.614 | ++ is_service_enabled ceph
+2015-04-04 14:17:41.617 | woof
+2015-04-04 14:17:41.617 | 
+2015-04-04 14:17:41.617 | q-svc,q-agt,q-dhcp,q-l3,q-meta
+2015-04-04 14:17:41.618 | ++ return 1
+2015-04-04 14:17:41.618 | + for i in '$TOP_DIR/extras.d/*.sh'
+2015-04-04 14:17:41.618 | + [[ -r /home/ubuntu/devstack/extras.d/70-gantt.sh ]]
+2015-04-04 14:17:41.618 | + source /home/ubuntu/devstack/extras.d/70-gantt.sh stack post-config
+2015-04-04 14:17:41.619 | ++ is_service_enabled n-sch
+2015-04-04 14:17:41.622 | woof
+2015-04-04 14:17:41.622 | 
+2015-04-04 14:17:41.622 | q-svc,q-agt,q-dhcp,q-l3,q-meta
+2015-04-04 14:17:41.622 | ++ return 1
+2015-04-04 14:17:41.623 | ++ is_service_enabled gantt
+2015-04-04 14:17:41.626 | woof
+2015-04-04 14:17:41.626 | 
+2015-04-04 14:17:41.626 | q-svc,q-agt,q-dhcp,q-l3,q-meta
+2015-04-04 14:17:41.627 | ++ return 1
+2015-04-04 14:17:41.627 | + for i in '$TOP_DIR/extras.d/*.sh'
+2015-04-04 14:17:41.627 | + [[ -r /home/ubuntu/devstack/extras.d/70-sahara.sh ]]
+2015-04-04 14:17:41.627 | + source /home/ubuntu/devstack/extras.d/70-sahara.sh stack post-config
+2015-04-04 14:17:41.628 | ++ is_service_enabled sahara
+2015-04-04 14:17:41.631 | woof
+2015-04-04 14:17:41.631 | 
+2015-04-04 14:17:41.631 | q-svc,q-agt,q-dhcp,q-l3,q-meta
+2015-04-04 14:17:41.631 | ++ return 1
+2015-04-04 14:17:41.632 | + for i in '$TOP_DIR/extras.d/*.sh'
+2015-04-04 14:17:41.632 | + [[ -r /home/ubuntu/devstack/extras.d/70-trove.sh ]]
+2015-04-04 14:17:41.632 | + source /home/ubuntu/devstack/extras.d/70-trove.sh stack post-config
+2015-04-04 14:17:41.632 | ++ is_service_enabled trove
+2015-04-04 14:17:41.636 | woof
+2015-04-04 14:17:41.636 | 
+2015-04-04 14:17:41.636 | q-svc,q-agt,q-dhcp,q-l3,q-meta
+2015-04-04 14:17:41.636 | ++ return 1
+2015-04-04 14:17:41.636 | + for i in '$TOP_DIR/extras.d/*.sh'
+2015-04-04 14:17:41.637 | + [[ -r /home/ubuntu/devstack/extras.d/70-zaqar.sh ]]
+2015-04-04 14:17:41.637 | + source /home/ubuntu/devstack/extras.d/70-zaqar.sh stack post-config
+2015-04-04 14:17:41.637 | ++ is_service_enabled zaqar-server
+2015-04-04 14:17:41.640 | woof
+2015-04-04 14:17:41.640 | 
+2015-04-04 14:17:41.641 | q-svc,q-agt,q-dhcp,q-l3,q-meta
+2015-04-04 14:17:41.641 | ++ return 1
+2015-04-04 14:17:41.641 | + for i in '$TOP_DIR/extras.d/*.sh'
+2015-04-04 14:17:41.641 | + [[ -r /home/ubuntu/devstack/extras.d/80-opendaylight.sh ]]
+2015-04-04 14:17:41.641 | + source /home/ubuntu/devstack/extras.d/80-opendaylight.sh stack post-config
+2015-04-04 14:17:41.642 | ++ is_service_enabled odl-server odl-compute
+2015-04-04 14:17:41.645 | woof
+2015-04-04 14:17:41.645 | 
+2015-04-04 14:17:41.645 | q-svc,q-agt,q-dhcp,q-l3,q-meta
+2015-04-04 14:17:41.646 | ++ return 1
+2015-04-04 14:17:41.646 | ++ is_service_enabled odl-server
+2015-04-04 14:17:41.650 | woof
+2015-04-04 14:17:41.650 | 
+2015-04-04 14:17:41.650 | q-svc,q-agt,q-dhcp,q-l3,q-meta
+2015-04-04 14:17:41.650 | ++ return 1
+2015-04-04 14:17:41.651 | ++ is_service_enabled odl-compute
+2015-04-04 14:17:41.654 | woof
+2015-04-04 14:17:41.654 | 
+2015-04-04 14:17:41.654 | q-svc,q-agt,q-dhcp,q-l3,q-meta
+2015-04-04 14:17:41.655 | ++ return 1
+2015-04-04 14:17:41.655 | + for i in '$TOP_DIR/extras.d/*.sh'
+2015-04-04 14:17:41.655 | + [[ -r /home/ubuntu/devstack/extras.d/80-tempest.sh ]]
+2015-04-04 14:17:41.655 | + source /home/ubuntu/devstack/extras.d/80-tempest.sh stack post-config
+2015-04-04 14:17:41.656 | ++ is_service_enabled tempest
+2015-04-04 14:17:41.659 | woof
+2015-04-04 14:17:41.659 | 
+2015-04-04 14:17:41.659 | q-svc,q-agt,q-dhcp,q-l3,q-meta
+2015-04-04 14:17:41.660 | ++ return 1
+2015-04-04 14:17:41.660 | + merge_config_group /home/ubuntu/devstack/local.conf post-config
+2015-04-04 14:17:41.660 | + local localfile=/home/ubuntu/devstack/local.conf
+2015-04-04 14:17:41.660 | + shift
+2015-04-04 14:17:41.660 | + local matchgroups=post-config
+2015-04-04 14:17:41.660 | + [[ -r /home/ubuntu/devstack/local.conf ]]
+2015-04-04 14:17:41.660 | + local configfile group
+2015-04-04 14:17:41.661 | + for group in '$matchgroups'
+2015-04-04 14:17:41.661 | ++ get_meta_section_files /home/ubuntu/devstack/local.conf post-config
+2015-04-04 14:17:41.661 | ++ local file=/home/ubuntu/devstack/local.conf
+2015-04-04 14:17:41.662 | ++ local matchgroup=post-config
+2015-04-04 14:17:41.662 | ++ [[ -r /home/ubuntu/devstack/local.conf ]]
+2015-04-04 14:17:41.662 | ++ awk -v matchgroup=post-config '
+2015-04-04 14:17:41.662 |         /^\[\[.+\|.*\]\]/ {
+2015-04-04 14:17:41.662 |             gsub("[][]", "", $1);
+2015-04-04 14:17:41.662 |             split($1, a, "|");
+2015-04-04 14:17:41.662 |             if (a[1] == matchgroup)
+2015-04-04 14:17:41.662 |                 print a[2]
+2015-04-04 14:17:41.662 |         }
+2015-04-04 14:17:41.662 |     ' /home/ubuntu/devstack/local.conf
+2015-04-04 14:17:41.665 | + is_service_enabled s-proxy
+2015-04-04 14:17:41.668 | woof
+2015-04-04 14:17:41.668 | 
+2015-04-04 14:17:41.669 | q-svc,q-agt,q-dhcp,q-l3,q-meta
+2015-04-04 14:17:41.669 | + return 1
+2015-04-04 14:17:41.669 | + is_service_enabled glance
+2015-04-04 14:17:41.672 | woof
+2015-04-04 14:17:41.673 | 
+2015-04-04 14:17:41.673 | q-svc,q-agt,q-dhcp,q-l3,q-meta
+2015-04-04 14:17:41.673 | + return 1
+2015-04-04 14:17:41.674 | + is_service_enabled g-reg
+2015-04-04 14:17:41.677 | woof
+2015-04-04 14:17:41.678 | 
+2015-04-04 14:17:41.678 | q-svc,q-agt,q-dhcp,q-l3,q-meta
+2015-04-04 14:17:41.678 | + return 1
+2015-04-04 14:17:41.678 | + is_service_enabled key
+2015-04-04 14:17:41.682 | woof
+2015-04-04 14:17:41.682 | 
+2015-04-04 14:17:41.682 | q-svc,q-agt,q-dhcp,q-l3,q-meta
+2015-04-04 14:17:41.682 | + return 1
+2015-04-04 14:17:41.683 | + is_service_enabled nova
+2015-04-04 14:17:41.686 | woof
+2015-04-04 14:17:41.686 | 
+2015-04-04 14:17:41.686 | q-svc,q-agt,q-dhcp,q-l3,q-meta
+2015-04-04 14:17:41.687 | + return 1
+2015-04-04 14:17:41.687 | + is_service_enabled zeromq
+2015-04-04 14:17:41.690 | woof
+2015-04-04 14:17:41.690 | 
+2015-04-04 14:17:41.690 | q-svc,q-agt,q-dhcp,q-l3,q-meta
+2015-04-04 14:17:41.691 | + return 1
+2015-04-04 14:17:41.691 | + is_service_enabled n-api
+2015-04-04 14:17:41.694 | woof
+2015-04-04 14:17:41.694 | 
+2015-04-04 14:17:41.694 | q-svc,q-agt,q-dhcp,q-l3,q-meta
+2015-04-04 14:17:41.695 | + return 1
+2015-04-04 14:17:41.695 | + is_service_enabled q-svc
+2015-04-04 14:17:41.699 | woof
+2015-04-04 14:17:41.699 | 
+2015-04-04 14:17:41.699 | q-svc,q-agt,q-dhcp,q-l3,q-meta
+2015-04-04 14:17:41.700 | + return 0
+2015-04-04 14:17:41.700 | + echo_summary 'Starting Neutron'
+2015-04-04 14:17:41.700 | + [[ -t 3 ]]
+2015-04-04 14:17:41.700 | + echo -e Starting Neutron
+2015-04-04 14:17:41.700 | + start_neutron_service_and_check
+2015-04-04 14:17:41.701 | ++ determine_config_files neutron-server
+2015-04-04 14:17:41.701 | ++ local opts=
+2015-04-04 14:17:41.701 | ++ case "$1" in
+2015-04-04 14:17:41.702 | +++ _determine_config_server
+2015-04-04 14:17:41.702 | +++ local cfg_file
+2015-04-04 14:17:41.702 | +++ local 'opts=--config-file /etc/neutron/neutron.conf --config-file /etc/neutron/plugins/ml2/ml2_conf.ini'
+2015-04-04 14:17:41.702 | +++ echo '--config-file /etc/neutron/neutron.conf --config-file /etc/neutron/plugins/ml2/ml2_conf.ini'
+2015-04-04 14:17:41.703 | ++ opts='--config-file /etc/neutron/neutron.conf --config-file /etc/neutron/plugins/ml2/ml2_conf.ini'
+2015-04-04 14:17:41.703 | ++ '[' -z '--config-file /etc/neutron/neutron.conf --config-file /etc/neutron/plugins/ml2/ml2_conf.ini' ']'
+2015-04-04 14:17:41.703 | ++ echo '--config-file /etc/neutron/neutron.conf --config-file /etc/neutron/plugins/ml2/ml2_conf.ini'
+2015-04-04 14:17:41.703 | + local 'cfg_file_options=--config-file /etc/neutron/neutron.conf --config-file /etc/neutron/plugins/ml2/ml2_conf.ini'
+2015-04-04 14:17:41.703 | + local service_port=9696
+2015-04-04 14:17:41.703 | + local service_protocol=http
+2015-04-04 14:17:41.704 | + is_service_enabled tls-proxy
+2015-04-04 14:17:41.707 | woof
+2015-04-04 14:17:41.707 | 
+2015-04-04 14:17:41.707 | q-svc,q-agt,q-dhcp,q-l3,q-meta
+2015-04-04 14:17:41.708 | + return 1
+2015-04-04 14:17:41.708 | + run_process q-svc 'python /usr/local/bin/neutron-server --config-file /etc/neutron/neutron.conf --config-file /etc/neutron/plugins/ml2/ml2_conf.ini'
+2015-04-04 14:17:41.708 | + local service=q-svc
+2015-04-04 14:17:41.708 | + local 'command=python /usr/local/bin/neutron-server --config-file /etc/neutron/neutron.conf --config-file /etc/neutron/plugins/ml2/ml2_conf.ini'
+2015-04-04 14:17:41.708 | + local group=
+2015-04-04 14:17:41.708 | + is_service_enabled q-svc
+2015-04-04 14:17:41.712 | woof
+2015-04-04 14:17:41.712 | 
+2015-04-04 14:17:41.712 | q-svc,q-agt,q-dhcp,q-l3,q-meta
+2015-04-04 14:17:41.712 | + return 0
+2015-04-04 14:17:41.713 | + [[ True = \T\r\u\e ]]
+2015-04-04 14:17:41.713 | + screen_service q-svc 'python /usr/local/bin/neutron-server --config-file /etc/neutron/neutron.conf --config-file /etc/neutron/plugins/ml2/ml2_conf.ini' ''
+2015-04-04 14:17:41.713 | + local service=q-svc
+2015-04-04 14:17:41.713 | + local 'command=python /usr/local/bin/neutron-server --config-file /etc/neutron/neutron.conf --config-file /etc/neutron/plugins/ml2/ml2_conf.ini'
+2015-04-04 14:17:41.713 | + local group=
+2015-04-04 14:17:41.713 | + SCREEN_NAME=stack
+2015-04-04 14:17:41.713 | + SERVICE_DIR=/opt/stack/status
+2015-04-04 14:17:41.714 | ++ trueorfalse True True
+2015-04-04 14:17:41.718 | + USE_SCREEN=True
+2015-04-04 14:17:41.718 | + is_service_enabled q-svc
+2015-04-04 14:17:41.721 | woof
+2015-04-04 14:17:41.722 | 
+2015-04-04 14:17:41.722 | q-svc,q-agt,q-dhcp,q-l3,q-meta
+2015-04-04 14:17:41.722 | + return 0
+2015-04-04 14:17:41.722 | + screen_rc q-svc 'python /usr/local/bin/neutron-server --config-file /etc/neutron/neutron.conf --config-file /etc/neutron/plugins/ml2/ml2_conf.ini'
+2015-04-04 14:17:41.722 | + SCREEN_NAME=stack
+2015-04-04 14:17:41.723 | + SCREENRC=/home/ubuntu/devstack/stack-screenrc
+2015-04-04 14:17:41.723 | + [[ ! -e /home/ubuntu/devstack/stack-screenrc ]]
+2015-04-04 14:17:41.723 | + echo 'sessionname stack'
+2015-04-04 14:17:41.723 | + echo 'hardstatus alwayslastline '\''%{= .} %-Lw%{= .}%> %n%f %t*%{= .}%+Lw%< %-=%{g}(%{d}%H/%l%{g})'\'''
+2015-04-04 14:17:41.723 | + echo 'setenv PROMPT_COMMAND /bin/true'
+2015-04-04 14:17:41.723 | + echo 'screen -t shell bash'
+2015-04-04 14:17:41.724 | + grep q-svc /home/ubuntu/devstack/stack-screenrc
+2015-04-04 14:17:41.726 | ++ echo -ne '\015'
+2015-04-04 14:17:41.726 | + NL=$'\r'
+2015-04-04 14:17:41.726 | + echo 'screen -t q-svc bash'
+2015-04-04 14:17:41.727 | + echo 'stuff "python /usr/local/bin/neutron-server --config-file /etc/neutron/neutron.conf --config-file /etc/neutron/plugins/ml2/ml2_conf.ini"'
+2015-04-04 14:17:41.727 | + [[ -n '' ]]
+2015-04-04 14:17:41.727 | + screen -S stack -X screen -t q-svc
+2015-04-04 14:17:41.729 | + [[ -n '' ]]
+2015-04-04 14:17:41.729 | + sleep 3
+2015-04-04 14:17:44.732 | ++ echo -ne '\015'
+2015-04-04 14:17:44.733 | + NL=$'\r'
+2015-04-04 14:17:44.733 | + [[ -n '' ]]
+2015-04-04 14:17:44.733 | + screen -S stack -p q-svc -X stuff 'python /usr/local/bin/neutron-server --config-file /etc/neutron/neutron.conf --config-file /etc/neutron/plugins/ml2/ml2_conf.ini & echo $! >/opt/stack/status/stack/q-svc.pid; fg || echo "q-svc failed to start" | tee "/opt/stack/status/stack/q-svc.failure"'
+2015-04-04 14:17:44.736 | + echo 'Waiting for Neutron to start...'
+2015-04-04 14:17:44.736 | Waiting for Neutron to start...
+2015-04-04 14:17:44.736 | + is_ssl_enabled_service neutron
+2015-04-04 14:17:44.736 | + local services=neutron
+2015-04-04 14:17:44.737 | + local service=
+2015-04-04 14:17:44.737 | + '[' False == False ']'
+2015-04-04 14:17:44.737 | + return 1
+2015-04-04 14:17:44.737 | + timeout 60 sh -c 'while ! wget  --no-proxy -q -O- http://10.0.11.157:9696; do sleep 1; done'
+2015-04-04 14:18:44.740 | + die 643 'Neutron did not start'
+2015-04-04 14:18:44.740 | + local exitcode=0
+2015-04-04 14:18:44.740 | [Call Trace]
+2015-04-04 14:18:44.740 | ./stack.sh:1254:start_neutron_service_and_check
+2015-04-04 14:18:44.740 | /home/ubuntu/devstack/lib/neutron:643:die
+2015-04-04 14:18:44.744 | [ERROR] /home/ubuntu/devstack/lib/neutron:643 Neutron did not start
+2015-04-04 14:18:45.746 | Error on exit
