@@ -15,7 +15,6 @@ iptables
 ebtables
 sqlite3
 sudo
-qemu-kvm # NOPRIME
 qemu # dist:wheezy,jessie NOPRIME
 libvirt-bin # NOPRIME
 libvirt-dev # NOPRIME

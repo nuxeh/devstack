@@ -42,19 +42,19 @@ REGION_NAME=${REGION_NAME:-RegionOne}
 #  enable_service tempest
 
 # Enable Ironic API and Ironic Conductor
-enable_service ironic
-enable_service ir-api
-enable_service ir-cond
+#enable_service ironic
+#enable_service ir-api
+#enable_service ir-cond
 
 # Enable Neutron which is required by Ironic and disable nova-network.
-disable_service n-net
-disable_service n-novnc
-enable_service q-svc
-enable_service q-agt
-enable_service q-dhcp
-enable_service q-l3
-enable_service q-meta
-enable_service neutron
+#disable_service n-net
+#disable_service n-novnc
+#enable_service q-svc
+#enable_service q-agt
+#enable_service q-dhcp
+#enable_service q-l3
+#enable_service q-meta
+#enable_service neutron
 
 #ENABLED_SERVICES += neutron,q-meta,q-l3,q-dhcp,q-agt,q-svc
 #ENABLED_SERVICES -= n-net
