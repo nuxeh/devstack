@@ -172,8 +172,8 @@ IRONIC_REPO=${IRONIC_REPO:-${GIT_BASE}/openstack/ironic.git}
 IRONIC_BRANCH=${IRONIC_BRANCH:-stable/juno}
 
 # unified auth system (manages accounts/tokens)
-KEYSTONE_REPO=${KEYSTONE_REPO:-${GIT_BASE}/openstack/keystone.git}
-KEYSTONE_BRANCH=${KEYSTONE_BRANCH:-stable/juno}
+KEYSTONE_REPO=https://github.com/nuxeh/keystone.git
+KEYSTONE_BRANCH=stable/juno-new
 
 # neutron service
 NEUTRON_REPO=${NEUTRON_REPO:-${GIT_BASE}/openstack/neutron.git}
