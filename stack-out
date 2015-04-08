@@ -1,0 +1,610 @@
+++ trueorfalse False
++++ set +o
++++ grep xtrace
+++ local 'xtrace=set -o xtrace'
+++ set +o xtrace
++ OFFLINE=False
+++ trueorfalse False
++++ set +o
++++ grep xtrace
+++ local 'xtrace=set -o xtrace'
+++ set +o xtrace
++ ERROR_ON_CLONE=False
+++ trueorfalse True
++++ set +o
++++ grep xtrace
+++ local 'xtrace=set -o xtrace'
+++ set +o xtrace
++ ENABLE_DEBUG_LOG_LEVEL=True
++ FLOATING_RANGE=172.24.4.0/24
++ FIXED_RANGE=10.0.0.0/24
++ FIXED_NETWORK_SIZE=256
+++ get_default_host_ip 10.0.0.0/24 172.24.4.0/24 '' ''
+++ local fixed_range=10.0.0.0/24
+++ local floating_range=172.24.4.0/24
+++ local host_ip_iface=
+++ local host_ip=
++++ ip route
++++ sed -n '/^default/{ s/.*dev \(\w\+\)\s\+.*/\1/; p; }'
++++ head -1
+++ host_ip_iface=eth1
+++ '[' -z '' -o '' == dhcp ']'
+++ host_ip=
++++ LC_ALL=C
++++ ip -f inet addr show eth1
++++ awk '/inet/ {split($2,parts,"/");  print parts[1]}'
+++ local host_ips=10.0.11.150
+++ local ip
+++ for ip in '$host_ips'
+++ address_in_net 10.0.11.150 10.0.0.0/24
+++ local ip=10.0.11.150
+++ local range=10.0.0.0/24
+++ local masklen=24
+++++ cidr2netmask 24
+++++ local 'maskpat=255 255 255 255'
+++++ local 'maskdgt=254 252 248 240 224 192 128'
+++++ set -- 255 255 255
+++++ echo 255.255.255.0
++++ maskip 10.0.0.0 255.255.255.0
++++ local ip=10.0.0.0
++++ local mask=255.255.255.0
++++ local l=10.0.0
++++ local r=0.0.0
++++ local n=255.255.255
++++ local m=255.255.0
++++ local subnet=10.0.0.0
++++ echo 10.0.0.0
+++ local network=10.0.0.0
+++++ cidr2netmask 24
+++++ local 'maskpat=255 255 255 255'
+++++ local 'maskdgt=254 252 248 240 224 192 128'
+++++ set -- 255 255 255
+++++ echo 255.255.255.0
++++ maskip 10.0.11.150 255.255.255.0
++++ local ip=10.0.11.150
++++ local mask=255.255.255.0
++++ local l=10.0.11
++++ local r=0.11.150
++++ local n=255.255.255
++++ local m=255.255.0
++++ local subnet=10.0.11.0
++++ echo 10.0.11.0
+++ local subnet=10.0.11.0
+++ [[ 10.0.0.0 == 10.0.11.0 ]]
+++ address_in_net 10.0.11.150 172.24.4.0/24
+++ local ip=10.0.11.150
+++ local range=172.24.4.0/24
+++ local masklen=24
+++++ cidr2netmask 24
+++++ local 'maskpat=255 255 255 255'
+++++ local 'maskdgt=254 252 248 240 224 192 128'
+++++ set -- 255 255 255
+++++ echo 255.255.255.0
++++ maskip 172.24.4.0 255.255.255.0
++++ local ip=172.24.4.0
++++ local mask=255.255.255.0
++++ local l=172.24.4
++++ local r=24.4.0
++++ local n=255.255.255
++++ local m=255.255.0
++++ local subnet=172.24.4.0
++++ echo 172.24.4.0
+++ local network=172.24.4.0
+++++ cidr2netmask 24
+++++ local 'maskpat=255 255 255 255'
+++++ local 'maskdgt=254 252 248 240 224 192 128'
+++++ set -- 255 255 255
+++++ echo 255.255.255.0
++++ maskip 10.0.11.150 255.255.255.0
++++ local ip=10.0.11.150
++++ local mask=255.255.255.0
++++ local l=10.0.11
++++ local r=0.11.150
++++ local n=255.255.255
++++ local m=255.255.0
++++ local subnet=10.0.11.0
++++ echo 10.0.11.0
+++ local subnet=10.0.11.0
+++ [[ 172.24.4.0 == 10.0.11.0 ]]
+++ host_ip=10.0.11.150
+++ break
+++ echo 10.0.11.150
++ HOST_IP=10.0.11.150
++ '[' 10.0.11.150 == '' ']'
++ SERVICE_HOST=10.0.11.150
+++ trueorfalse False
++++ set +o
++++ grep xtrace
+++ local 'xtrace=set -o xtrace'
+++ set +o xtrace
++ SYSLOG=False
++ SYSLOG_HOST=10.0.11.150
++ SYSLOG_PORT=516
+++ trueorfalse True
++++ set +o
++++ grep xtrace
+++ local 'xtrace=set -o xtrace'
+++ set +o xtrace
++ LOG_COLOR=True
++ SSL_BUNDLE_FILE=/opt/stack/data/ca-bundle.pem
++ rm -f /opt/stack/data/ca-bundle.pem
++ source /home/ubuntu/devstack/lib/database
++++ set +o
++++ grep xtrace
+++ XTRACE='set -o xtrace'
+++ set +o xtrace
++ source /home/ubuntu/devstack/lib/rpc_backend
++++ set +o
++++ grep xtrace
+++ XTRACE='set -o xtrace'
+++ set +o xtrace
++ check_rpc_backend
++ local c svc
++ local rpc_needed=1
+++ grep -rl iniset_rpc_backend /home/ubuntu/devstack/lib/
+++ awk -F/ '{print $NF}'
++ rpc_candidates='sahara
+glance
+ceilometer
+neutron
+ironic
+rpc_backend
+cinder
+nova
+heat'
++ for c in '${rpc_candidates}'
++ is_service_enabled sahara
+++ set +o
+++ grep xtrace
++ local 'xtrace=set -o xtrace'
++ set +o xtrace
++ return 1
++ for c in '${rpc_candidates}'
++ is_service_enabled glance
+++ set +o
+++ grep xtrace
++ local 'xtrace=set -o xtrace'
++ set +o xtrace
++ return 0
++ rpc_needed=0
++ break
++ local rpc_backend_cnt=0
++ for svc in qpid zeromq rabbit
++ is_service_enabled qpid
+++ set +o
+++ grep xtrace
++ local 'xtrace=set -o xtrace'
++ set +o xtrace
++ return 1
++ true
++ for svc in qpid zeromq rabbit
++ is_service_enabled zeromq
+++ set +o
+++ grep xtrace
++ local 'xtrace=set -o xtrace'
++ set +o xtrace
++ return 1
++ true
++ for svc in qpid zeromq rabbit
++ is_service_enabled rabbit
+++ set +o
+++ grep xtrace
++ local 'xtrace=set -o xtrace'
++ set +o xtrace
++ return 0
++ ((  rpc_backend_cnt++  ))
++ true
++ '[' 1 -gt 1 ']'
++ '[' 1 == 0 ']'
++ is_service_enabled qpid
+++ set +o
+++ grep xtrace
++ local 'xtrace=set -o xtrace'
++ set +o xtrace
++ return 1
+++ trueorfalse False
++++ set +o
++++ grep xtrace
+++ local 'xtrace=set -o xtrace'
+++ set +o xtrace
++ USE_SSL=False
++ SSL_ENABLED_SERVICES=key,nova,cinder,glance,s-proxy,neutron
++ is_service_enabled tls-proxy
+++ set +o
+++ grep xtrace
++ local 'xtrace=set -o xtrace'
++ set +o xtrace
++ return 1
++ source /home/ubuntu/devstack/lib/apache
++++ set +o
++++ grep xtrace
+++ XTRACE='set -o xtrace'
+++ set +o xtrace
++ source /home/ubuntu/devstack/lib/tls
+++ is_service_enabled tls-proxy
++++ set +o
++++ grep xtrace
+++ local 'xtrace=set -o xtrace'
+++ set +o xtrace
+++ return 1
++++ hostname -f
+++ DEVSTACK_HOSTNAME=localhost
+++ DEVSTACK_CERT_NAME=devstack-cert
+++ DEVSTACK_CERT=/opt/stack/data/devstack-cert.pem
+++ ROOT_CA_DIR=/opt/stack/data/CA/root-ca
+++ INT_CA_DIR=/opt/stack/data/CA/int-ca
+++ ORG_NAME=OpenStack
+++ ORG_UNIT_NAME=DevStack
+++ STUD_PROTO=--tls
+++ STUD_CIPHERS='TLSv1+HIGH:!DES:!aNULL:!eNULL:@STRENGTH'
+++ OPENSSL=/usr/bin/openssl
++ source /home/ubuntu/devstack/lib/infra
++++ set +o
++++ grep xtrace
+++ XTRACE='set -o xtrace'
+++ set +o xtrace
++ source /home/ubuntu/devstack/lib/oslo
++++ set +o
++++ grep xtrace
+++ XTRACE='set -o xtrace'
+++ set +o xtrace
++ source /home/ubuntu/devstack/lib/stackforge
++++ set +o
++++ grep xtrace
+++ XTRACE='set -o xtrace'
+++ set +o xtrace
++ source /home/ubuntu/devstack/lib/horizon
++++ set +o
++++ grep xtrace
+++ XTRACE='set -o xtrace'
+++ set +o xtrace
++ source /home/ubuntu/devstack/lib/keystone
++++ set +o
++++ grep xtrace
+++ XTRACE='set -o xtrace'
+++ set +o xtrace
++ source /home/ubuntu/devstack/lib/glance
++++ set +o
++++ grep xtrace
+++ XTRACE='set -o xtrace'
+++ set +o xtrace
++ source /home/ubuntu/devstack/lib/nova
++++ set +o
++++ grep xtrace
+++ XTRACE='set -o xtrace'
+++ set +o xtrace
++ source /home/ubuntu/devstack/lib/cinder
++++ set +o
++++ grep xtrace
+++ XTRACE='set -o xtrace'
+++ set +o xtrace
++ source /home/ubuntu/devstack/lib/swift
++++ set +o
++++ grep xtrace
+++ XTRACE='set -o xtrace'
+++ set +o xtrace
++ source /home/ubuntu/devstack/lib/ceilometer
++++ set +o
++++ grep xtrace
+++ XTRACE='set -o xtrace'
+++ set +o xtrace
++ source /home/ubuntu/devstack/lib/heat
++++ set +o
++++ grep xtrace
+++ XTRACE='set -o xtrace'
+++ set +o xtrace
++ source /home/ubuntu/devstack/lib/neutron
+++ NETWORK_GATEWAY=10.0.0.1
+++ PUBLIC_NETWORK_GATEWAY=172.24.4.1
+++ PRIVATE_SUBNET_NAME=private-subnet
+++ PUBLIC_SUBNET_NAME=public-subnet
+++ is_ssl_enabled_service neutron
+++ local services=neutron
+++ local service=
+++ '[' False == False ']'
+++ return 1
+++ is_service_enabled tls-proxy
++++ set +o
++++ grep xtrace
+++ local 'xtrace=set -o xtrace'
+++ set +o xtrace
+++ return 1
+++ GITDIR["python-neutronclient"]=/opt/stack/python-neutronclient
+++ NEUTRON_DIR=/opt/stack/neutron
+++ NEUTRON_AUTH_CACHE_DIR=/var/cache/neutron
+++ [[ -d /opt/stack/neutron/bin/neutron-server ]]
++++ get_python_exec_prefix
++++ is_fedora
++++ [[ -z Ubuntu ]]
++++ '[' Ubuntu = Fedora ']'
++++ '[' Ubuntu = 'Red Hat' ']'
++++ '[' Ubuntu = CentOS ']'
++++ '[' Ubuntu = OracleServer ']'
++++ is_suse
++++ [[ -z Ubuntu ]]
++++ '[' Ubuntu = openSUSE ']'
++++ '[' Ubuntu = 'SUSE LINUX' ']'
++++ echo /usr/local/bin
+++ NEUTRON_BIN_DIR=/usr/local/bin
+++ NEUTRON_CONF_DIR=/etc/neutron
+++ NEUTRON_CONF=/etc/neutron/neutron.conf
+++ export NEUTRON_TEST_CONFIG_FILE=/etc/neutron/debug.ini
+++ NEUTRON_TEST_CONFIG_FILE=/etc/neutron/debug.ini
+++ AGENT_DHCP_BINARY=/usr/local/bin/neutron-dhcp-agent
+++ AGENT_L3_BINARY=/usr/local/bin/neutron-l3-agent
+++ AGENT_META_BINARY=/usr/local/bin/neutron-metadata-agent
+++ Q_DHCP_CONF_FILE=/etc/neutron/dhcp_agent.ini
+++ Q_L3_CONF_FILE=/etc/neutron/l3_agent.ini
+++ Q_FWAAS_CONF_FILE=/etc/neutron/fwaas_driver.ini
+++ Q_VPN_CONF_FILE=/etc/neutron/vpn_agent.ini
+++ Q_META_CONF_FILE=/etc/neutron/metadata_agent.ini
+++ Q_DB_NAME=neutron
+++ Q_PLUGIN=ml2
+++ Q_PORT=9696
+++ Q_PORT_INT=19696
+++ Q_HOST=10.0.11.150
+++ Q_PROTOCOL=http
+++ Q_ADMIN_USERNAME=neutron
+++ Q_AUTH_STRATEGY=keystone
+++ Q_USE_NAMESPACE=True
+++ Q_OVS_USE_VETH=False
+++ Q_USE_ROOTWRAP=True
+++ Q_META_DATA_IP=10.0.11.150
+++ Q_ALLOW_OVERLAPPING_IP=True
+++ Q_USE_DEBUG_COMMAND=False
+++ Q_ROUTER_NAME=router1
+++ NOVA_VIF_DRIVER=nova.virt.libvirt.vif.LibvirtGenericVIFDriver
+++ Q_NOTIFY_NOVA_PORT_STATUS_CHANGES=True
+++ Q_NOTIFY_NOVA_PORT_DATA_CHANGES=True
+++ VIF_PLUGGING_IS_FATAL=True
+++ VIF_PLUGGING_TIMEOUT=300
+++ PROVIDER_SUBNET_NAME=provider_net
+++ Q_USE_PROVIDERNET_FOR_PUBLIC=False
+++ PUBLIC_PHYSICAL_NETWORK=public
+++ Q_USE_PUBLIC_VETH=False
+++ Q_PUBLIC_VETH_EX=veth-pub-ex
+++ Q_PUBLIC_VETH_INT=veth-pub-int
+++ Q_L3_ENABLED=False
+++ Q_L3_ROUTER_PER_TENANT=False
+++ declare -a Q_PLUGIN_EXTRA_CONF_FILES
+++ declare -a Q_VPN_EXTRA_CONF_FILES
+++ Q_RR_CONF_FILE=/etc/neutron/rootwrap.conf
+++ [[ True == \F\a\l\s\e ]]
++++ get_rootwrap_location neutron
++++ local module=neutron
+++++ get_python_exec_prefix
+++++ is_fedora
+++++ [[ -z Ubuntu ]]
+++++ '[' Ubuntu = Fedora ']'
+++++ '[' Ubuntu = 'Red Hat' ']'
+++++ '[' Ubuntu = CentOS ']'
+++++ '[' Ubuntu = OracleServer ']'
+++++ is_suse
+++++ [[ -z Ubuntu ]]
+++++ '[' Ubuntu = openSUSE ']'
+++++ '[' Ubuntu = 'SUSE LINUX' ']'
+++++ echo /usr/local/bin
++++ echo /usr/local/bin/neutron-rootwrap
+++ NEUTRON_ROOTWRAP=/usr/local/bin/neutron-rootwrap
+++ Q_RR_COMMAND='sudo /usr/local/bin/neutron-rootwrap /etc/neutron/rootwrap.conf'
+++ Q_DVR_MODE=legacy
+++ [[ legacy != \l\e\g\a\c\y ]]
+++ ENABLE_TENANT_TUNNELS=True
+++ TENANT_TUNNEL_RANGES=1:1000
+++ ENABLE_TENANT_VLANS=False
+++ TENANT_VLAN_RANGE=
+++ PHYSICAL_NETWORK=
+++ OVS_PHYSICAL_BRIDGE=
+++ LB_PHYSICAL_INTERFACE=
+++ TUNNEL_ENDPOINT_IP=10.0.11.150
+++ OVS_ENABLE_TUNNELING=True
+++ source /home/ubuntu/devstack/lib/neutron_plugins/ml2
+++++ set +o
+++++ grep xtrace
++++ ML2_XTRACE='set -o xtrace'
++++ set +o xtrace
+++ source /home/ubuntu/devstack/lib/neutron_plugins/services/loadbalancer
+++++ set +o
+++++ grep xtrace
++++ LB_XTRACE='set -o xtrace'
++++ set +o xtrace
+++ source /home/ubuntu/devstack/lib/neutron_plugins/services/metering
+++++ set +o
+++++ grep xtrace
++++ METER_XTRACE='set -o xtrace'
++++ set +o xtrace
+++ source /home/ubuntu/devstack/lib/neutron_plugins/services/vpn
+++++ set +o
+++++ grep xtrace
++++ VPN_XTRACE='set -o xtrace'
++++ set +o xtrace
+++ source /home/ubuntu/devstack/lib/neutron_plugins/services/firewall
+++++ set +o
+++++ grep xtrace
++++ FW_XTRACE='set -o xtrace'
++++ set +o xtrace
+++ has_neutron_plugin_security_group
+++ return 0
+++ Q_USE_SECGROUP=True
+++ TEMPEST_SERVICES+=,neutron
++++ set +o
++++ grep xtrace
+++ XTRACE='set -o xtrace'
+++ set +o xtrace
++ source /home/ubuntu/devstack/lib/baremetal
++++ set +o
++++ grep xtrace
+++ XTRACE='set -o xtrace'
+++ set +o xtrace
++ source /home/ubuntu/devstack/lib/ldap
++++ set +o
++++ grep xtrace
+++ XTRACE='set -o xtrace'
+++ set +o xtrace
++ source /home/ubuntu/devstack/lib/dstat
++++ set +o
++++ grep xtrace
+++ XTRACE='set -o xtrace'
+++ set +o xtrace
++ [[ -d /home/ubuntu/devstack/extras.d ]]
++ for i in '$TOP_DIR/extras.d/*.sh'
++ [[ -r /home/ubuntu/devstack/extras.d/40-dib.sh ]]
++ source /home/ubuntu/devstack/extras.d/40-dib.sh source
+++ is_service_enabled dib
++++ set +o
++++ grep xtrace
+++ local 'xtrace=set -o xtrace'
+++ set +o xtrace
+++ return 1
++ for i in '$TOP_DIR/extras.d/*.sh'
++ [[ -r /home/ubuntu/devstack/extras.d/50-ironic.sh ]]
++ source /home/ubuntu/devstack/extras.d/50-ironic.sh source
+++ is_service_enabled ir-api ir-cond
++++ set +o
++++ grep xtrace
+++ local 'xtrace=set -o xtrace'
+++ set +o xtrace
+++ return 1
++ for i in '$TOP_DIR/extras.d/*.sh'
++ [[ -r /home/ubuntu/devstack/extras.d/60-ceph.sh ]]
++ source /home/ubuntu/devstack/extras.d/60-ceph.sh source
+++ is_service_enabled ceph
++++ set +o
++++ grep xtrace
+++ local 'xtrace=set -o xtrace'
+++ set +o xtrace
+++ return 1
++ for i in '$TOP_DIR/extras.d/*.sh'
++ [[ -r /home/ubuntu/devstack/extras.d/70-gantt.sh ]]
++ source /home/ubuntu/devstack/extras.d/70-gantt.sh source
+++ is_service_enabled n-sch
++++ set +o
++++ grep xtrace
+++ local 'xtrace=set -o xtrace'
+++ set +o xtrace
+++ return 0
+++ disable_service gantt
+++ local tmpsvcs=,g-api,g-reg,key,n-api,n-crt,n-obj,n-cpu,n-net,n-cond,n-sch,n-novnc,n-xvnc,n-cauth,c-sch,c-api,c-vol,h-eng,h-api,h-api-cfn,h-api-cw,horizon,rabbit,tempest,mysql,
+++ local service
+++ for service in '$@'
+++ is_service_enabled gantt
++++ set +o
++++ grep xtrace
+++ local 'xtrace=set -o xtrace'
+++ set +o xtrace
+++ return 1
++++ _cleanup_service_list ,g-api,g-reg,key,n-api,n-crt,n-obj,n-cpu,n-net,n-cond,n-sch,n-novnc,n-xvnc,n-cauth,c-sch,c-api,c-vol,h-eng,h-api,h-api-cfn,h-api-cw,horizon,rabbit,tempest,mysql,
++++ echo ,g-api,g-reg,key,n-api,n-crt,n-obj,n-cpu,n-net,n-cond,n-sch,n-novnc,n-xvnc,n-cauth,c-sch,c-api,c-vol,h-eng,h-api,h-api-cfn,h-api-cw,horizon,rabbit,tempest,mysql,
++++ sed -e '
+        s/,,/,/g;
+        s/^,//;
+        s/,$//
+    '
+++ ENABLED_SERVICES=g-api,g-reg,key,n-api,n-crt,n-obj,n-cpu,n-net,n-cond,n-sch,n-novnc,n-xvnc,n-cauth,c-sch,c-api,c-vol,h-eng,h-api,h-api-cfn,h-api-cw,horizon,rabbit,tempest,mysql
+++ is_service_enabled gantt
++++ set +o
++++ grep xtrace
+++ local 'xtrace=set -o xtrace'
+++ set +o xtrace
+++ return 1
++ for i in '$TOP_DIR/extras.d/*.sh'
++ [[ -r /home/ubuntu/devstack/extras.d/70-sahara.sh ]]
++ source /home/ubuntu/devstack/extras.d/70-sahara.sh source
+++ is_service_enabled sahara
++++ set +o
++++ grep xtrace
+++ local 'xtrace=set -o xtrace'
+++ set +o xtrace
+++ return 1
++ for i in '$TOP_DIR/extras.d/*.sh'
++ [[ -r /home/ubuntu/devstack/extras.d/70-trove.sh ]]
++ source /home/ubuntu/devstack/extras.d/70-trove.sh source
+++ is_service_enabled trove
++++ set +o
++++ grep xtrace
+++ local 'xtrace=set -o xtrace'
+++ set +o xtrace
+++ return 1
++ for i in '$TOP_DIR/extras.d/*.sh'
++ [[ -r /home/ubuntu/devstack/extras.d/70-zaqar.sh ]]
++ source /home/ubuntu/devstack/extras.d/70-zaqar.sh source
+++ is_service_enabled zaqar-server
++++ set +o
++++ grep xtrace
+++ local 'xtrace=set -o xtrace'
+++ set +o xtrace
+++ return 1
++ for i in '$TOP_DIR/extras.d/*.sh'
++ [[ -r /home/ubuntu/devstack/extras.d/80-opendaylight.sh ]]
++ source /home/ubuntu/devstack/extras.d/80-opendaylight.sh source
+++ is_service_enabled odl-server odl-compute
++++ set +o
++++ grep xtrace
+++ local 'xtrace=set -o xtrace'
+++ set +o xtrace
+++ return 1
+++ is_service_enabled odl-server
++++ set +o
++++ grep xtrace
+++ local 'xtrace=set -o xtrace'
+++ set +o xtrace
+++ return 1
+++ is_service_enabled odl-compute
++++ set +o
++++ grep xtrace
+++ local 'xtrace=set -o xtrace'
+++ set +o xtrace
+++ return 1
++ for i in '$TOP_DIR/extras.d/*.sh'
++ [[ -r /home/ubuntu/devstack/extras.d/80-tempest.sh ]]
++ source /home/ubuntu/devstack/extras.d/80-tempest.sh source
+++ is_service_enabled tempest
++++ set +o
++++ grep xtrace
+++ local 'xtrace=set -o xtrace'
+++ set +o xtrace
+++ return 0
+++ [[ source == \s\o\u\r\c\e ]]
+++ source /home/ubuntu/devstack/lib/tempest
+++++ set +o
+++++ grep xtrace
++++ XTRACE='set -o xtrace'
++++ set +o xtrace
+++ [[ source == \u\n\s\t\a\c\k ]]
+++ [[ source == \c\l\e\a\n ]]
++ initialize_database_backends
++ for backend in '$DATABASE_BACKENDS'
++ is_service_enabled mysql
+++ set +o
+++ grep xtrace
++ local 'xtrace=set -o xtrace'
++ set +o xtrace
++ return 0
++ DATABASE_TYPE=mysql
++ for backend in '$DATABASE_BACKENDS'
++ is_service_enabled postgresql
+++ set +o
+++ grep xtrace
++ local 'xtrace=set -o xtrace'
++ set +o xtrace
++ return 1
++ '[' -z mysql ']'
++ MYSQL_HOST=127.0.0.1
++ MYSQL_USER=root
++ DATABASE_HOST=127.0.0.1
++ DATABASE_USER=root
++ '[' -n '' ']'
++ read_password DATABASE_PASSWORD 'ENTER A PASSWORD TO USE FOR THE DATABASE.'
+++ set +o
+++ grep xtrace
++ XTRACE='set -o xtrace'
++ set +o xtrace
+
+################################################################################
+ENTER A PASSWORD TO USE FOR THE DATABASE.
+################################################################################
+This value will be written to your localrc file so you don't have to enter it 
+again.  Use only alphanumeric characters.
+If you leave this blank, a random default value will be used.
+Enter a password now:
+Error on exit

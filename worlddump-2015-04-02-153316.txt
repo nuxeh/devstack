@@ -1,0 +1,140 @@
+
+File System Summary
+===================
+
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/sda2       110G  1.1G  103G   1% /
+none            4.0K     0  4.0K   0% /sys/fs/cgroup
+udev             32G   12K   32G   1% /dev
+tmpfs           6.3G  208K  6.3G   1% /run
+none            5.0M     0  5.0M   0% /run/lock
+none             32G     0   32G   0% /run/shm
+none            100M     0  100M   0% /run/user
+/dev/sda1       488M   64M  389M  15% /boot
+
+
+Process Listing
+===============
+
+USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root         1  0.4  0.0   4872  2768 ?        Ss   15:16   0:04 /sbin/init
+root         2  0.0  0.0      0     0 ?        S    15:16   0:00 [kthreadd]
+root         3  0.0  0.0      0     0 ?        S    15:16   0:00 [ksoftirqd/0]
+root         4  0.0  0.0      0     0 ?        S    15:16   0:00 [kworker/0:0]
+root         5  0.0  0.0      0     0 ?        S<   15:16   0:00 [kworker/0:0H]
+root         6  0.0  0.0      0     0 ?        S    15:16   0:00 [kworker/u16:0]
+root         7  0.0  0.0      0     0 ?        S    15:16   0:00 [rcu_sched]
+root         8  0.0  0.0      0     0 ?        S    15:16   0:00 [rcu_bh]
+root         9  0.0  0.0      0     0 ?        S    15:16   0:00 [migration/0]
+root        10  0.0  0.0      0     0 ?        S    15:16   0:00 [watchdog/0]
+root        11  0.0  0.0      0     0 ?        S    15:16   0:00 [watchdog/1]
+root        12  0.6  0.0      0     0 ?        S    15:16   0:06 [migration/1]
+root        13  0.0  0.0      0     0 ?        S    15:16   0:00 [ksoftirqd/1]
+root        14  0.0  0.0      0     0 ?        S    15:16   0:00 [kworker/1:0]
+root        15  0.0  0.0      0     0 ?        S<   15:16   0:00 [kworker/1:0H]
+root        16  0.0  0.0      0     0 ?        S    15:16   0:00 [watchdog/2]
+root        17  0.0  0.0      0     0 ?        S    15:16   0:00 [migration/2]
+root        18  0.0  0.0      0     0 ?        S    15:16   0:00 [ksoftirqd/2]
+root        19  0.0  0.0      0     0 ?        S    15:16   0:00 [kworker/2:0]
+root        20  0.0  0.0      0     0 ?        S<   15:16   0:00 [kworker/2:0H]
+root        21  0.0  0.0      0     0 ?        S    15:16   0:00 [watchdog/3]
+root        22  0.0  0.0      0     0 ?        S    15:16   0:00 [migration/3]
+root        23  0.0  0.0      0     0 ?        S    15:16   0:00 [ksoftirqd/3]
+root        24  0.0  0.0      0     0 ?        S    15:16   0:00 [kworker/3:0]
+root        25  0.0  0.0      0     0 ?        S<   15:16   0:00 [kworker/3:0H]
+root        26  0.0  0.0      0     0 ?        S    15:16   0:00 [watchdog/4]
+root        27  0.0  0.0      0     0 ?        S    15:16   0:00 [migration/4]
+root        28  0.0  0.0      0     0 ?        S    15:16   0:00 [ksoftirqd/4]
+root        29  0.0  0.0      0     0 ?        S    15:16   0:00 [kworker/4:0]
+root        30  0.0  0.0      0     0 ?        S<   15:16   0:00 [kworker/4:0H]
+root        31  0.0  0.0      0     0 ?        S    15:16   0:00 [watchdog/5]
+root        32  0.0  0.0      0     0 ?        S    15:16   0:00 [migration/5]
+root        33  0.0  0.0      0     0 ?        S    15:16   0:00 [ksoftirqd/5]
+root        35  0.0  0.0      0     0 ?        S<   15:16   0:00 [kworker/5:0H]
+root        36  0.0  0.0      0     0 ?        S    15:16   0:00 [watchdog/6]
+root        37  0.0  0.0      0     0 ?        S    15:16   0:00 [migration/6]
+root        38  0.0  0.0      0     0 ?        R    15:16   0:00 [ksoftirqd/6]
+root        39  0.0  0.0      0     0 ?        S    15:16   0:00 [kworker/6:0]
+root        40  0.0  0.0      0     0 ?        S<   15:16   0:00 [kworker/6:0H]
+root        41  0.0  0.0      0     0 ?        S    15:16   0:00 [watchdog/7]
+root        42  0.0  0.0      0     0 ?        S    15:16   0:00 [migration/7]
+root        43  0.0  0.0      0     0 ?        S    15:16   0:00 [ksoftirqd/7]
+root        44  0.0  0.0      0     0 ?        S    15:16   0:00 [kworker/7:0]
+root        45  0.0  0.0      0     0 ?        S<   15:16   0:00 [kworker/7:0H]
+root        46  0.0  0.0      0     0 ?        S<   15:16   0:00 [khelper]
+root        47  0.0  0.0      0     0 ?        S    15:16   0:00 [kdevtmpfs]
+root        48  0.0  0.0      0     0 ?        S<   15:16   0:00 [netns]
+root        49  0.0  0.0      0     0 ?        S<   15:16   0:00 [writeback]
+root        50  0.0  0.0      0     0 ?        S<   15:16   0:00 [kintegrityd]
+root        51  0.0  0.0      0     0 ?        S<   15:16   0:00 [bioset]
+root        52  0.0  0.0      0     0 ?        S<   15:16   0:00 [kblockd]
+root        53  0.0  0.0      0     0 ?        S<   15:16   0:00 [ata_sff]
+root        54  0.0  0.0      0     0 ?        S<   15:16   0:00 [md]
+root        55  0.0  0.0      0     0 ?        S<   15:16   0:00 [devfreq_wq]
+root        56  0.0  0.0      0     0 ?        S    15:16   0:00 [kworker/0:1]
+root        57  0.0  0.0      0     0 ?        S    15:16   0:00 [kworker/1:1]
+root        58  0.0  0.0      0     0 ?        S<   15:16   0:00 [kvm_arch_timer]
+root        59  0.0  0.0      0     0 ?        S    15:16   0:00 [khungtaskd]
+root        60  0.0  0.0      0     0 ?        S    15:16   0:00 [kswapd0]
+root        61  0.0  0.0      0     0 ?        S    15:16   0:00 [fsnotify_mark]
+root        62  0.0  0.0      0     0 ?        S    15:16   0:00 [ecryptfs-kthrea]
+root        63  0.0  0.0      0     0 ?        S<   15:16   0:00 [crypto]
+root        75  0.0  0.0      0     0 ?        S<   15:16   0:00 [kthrotld]
+root        76  0.0  0.0      0     0 ?        S    15:16   0:00 [kworker/2:1]
+root        84  0.0  0.0      0     0 ?        S    15:16   0:00 [kworker/3:1]
+root        97  0.0  0.0      0     0 ?        S<   15:16   0:00 [deferwq]
+root        98  0.0  0.0      0     0 ?        S<   15:16   0:00 [charger_manager]
+root       122  0.0  0.0      0     0 ?        S    15:16   0:00 [kworker/6:1]
+root       130  0.0  0.0      0     0 ?        S    15:16   0:00 [kworker/4:1]
+root       131  0.0  0.0      0     0 ?        S    15:16   0:00 [kworker/5:1]
+root       132  0.0  0.0      0     0 ?        S    15:16   0:00 [kworker/7:1]
+root       150  0.0  0.0      0     0 ?        S<   15:16   0:00 [mlx4]
+root       158  0.0  0.0      0     0 ?        S    15:16   0:00 [scsi_eh_0]
+root       159  0.0  0.0      0     0 ?        S    15:16   0:00 [scsi_eh_1]
+root       166  0.0  0.0      0     0 ?        S<   15:16   0:00 [mlx4_en]
+root       209  0.0  0.0      0     0 ?        S    15:16   0:00 [jbd2/sda2-8]
+root       210  0.0  0.0      0     0 ?        S<   15:16   0:00 [ext4-rsv-conver]
+root       350  0.0  0.0      0     0 ?        S    15:16   0:00 [jbd2/sda1-8]
+root       351  0.0  0.0      0     0 ?        S<   15:16   0:00 [ext4-rsv-conver]
+root       496  0.0  0.0      0     0 ?        Z    15:16   0:00 [upstart-udev-br] <defunct>
+root       585  0.0  0.0      0     0 ?        S<   15:16   0:00 [kworker/0:1H]
+root       587  0.0  0.0      0     0 ?        S    15:16   0:00 [kworker/5:2]
+root       732  0.0  0.0   5488  2528 ?        Ss   15:16   0:00 dhclient -1 -v -pf /run/dhclient.eth0.pid -lf /var/lib/dhcp/dhclient.eth0.leases eth0
+root       813  0.0  0.0   5488  2524 ?        Ss   15:16   0:00 dhclient -1 -v -pf /run/dhclient.eth1.pid -lf /var/lib/dhcp/dhclient.eth1.leases eth1
+message+   913  0.0  0.0   4520   996 ?        Ss   15:16   0:00 dbus-daemon --system --fork
+root       964  0.0  0.0   4952  1668 ?        Ss   15:16   0:00 /lib/systemd/systemd-logind
+root      1041  0.0  0.0      0     0 ?        S<   15:16   0:00 [kworker/5:1H]
+root      1184  0.0  0.0      0     0 ?        Zs   15:16   0:00 [acpid] <defunct>
+root      1302  0.0  0.0      0     0 ?        S<   15:17   0:00 [kworker/4:1H]
+root      1304  0.0  0.0      0     0 ?        S    15:17   0:00 [kauditd]
+root      1307  0.0  0.0      0     0 ?        S<   15:17   0:00 [kworker/1:1H]
+root      1308  0.0  0.0      0     0 ?        S<   15:17   0:00 [kworker/7:1H]
+root      1426  0.0  0.0      0     0 ?        S    15:27   0:00 [kworker/u16:1]
+root      1466  0.0  0.0      0     0 ?        S<   15:29   0:00 [kworker/2:1H]
+root      1514  0.0  0.0      0     0 ?        S<   15:29   0:00 [kworker/3:1H]
+root      2510  0.0  0.0      0     0 ?        S<   15:30   0:00 [kworker/6:1H]
+ubuntu    2993  0.2  0.0   8140  6968 ?        S    15:31   0:00 bash ./stack.sh
+root      3473  0.0  0.0   1852   584 ?        Ss   15:33   0:00 /bin/sh -e /proc/self/fd/9
+root      3474  0.0  0.0   1852   572 ?        Ss   15:33   0:00 /bin/sh -e /proc/self/fd/9
+root      3475  0.0  0.0   1768   308 ?        Rs   15:33   0:00 hwclock --rtc=/dev/rtc0 --systohc --utc --noadjfile
+ubuntu    3484  0.0  0.0   9500  5608 ?        S    15:33   0:00 python /home/ubuntu/devstack/tools/worlddump.py
+root      3488  0.0  0.0   1852   564 ?        S    15:33   0:00 /bin/sh /bin/running-in-container
+root      3489  0.0  0.0   2640   704 ?        S    15:33   0:00 status plymouth-shutdown
+root      3491  0.0  0.0   2640   700 ?        S    15:33   0:00 status container-detect
+root      3492  0.0  0.0   2256   596 ?        S    15:33   0:00 grep -q start
+root      3493  0.0  0.0      0     0 ?        Zs   15:33   0:00 [startpar-upstar] <defunct>
+root      3494  0.0  0.0      0     0 ?        Zs   15:33   0:00 [startpar-upstar] <defunct>
+root      3495  0.0  0.0      0     0 ?        Zs   15:33   0:00 [startpar-upstar] <defunct>
+root      3496  0.0  0.0      0     0 ?        Zs   15:33   0:00 [startpar-upstar] <defunct>
+root      3497  0.0  0.0      0     0 ?        Zs   15:33   0:00 [startpar-upstar] <defunct>
+root      3498  0.0  0.0      0     0 ?        Zs   15:33   0:00 [startpar-upstar] <defunct>
+root      3499  0.0  0.0      0     0 ?        Zs   15:33   0:00 [startpar-upstar] <defunct>
+root      3500  0.0  0.0      0     0 ?        Zs   15:33   0:00 [startpar-upstar] <defunct>
+root      3501  0.0  0.0      0     0 ?        Zs   15:33   0:00 [startpar-upstar] <defunct>
+root      3504  0.0  0.0      0     0 ?        Zs   15:33   0:00 [startpar-upstar] <defunct>
+ubuntu    3505  0.0  0.0   1852   560 ?        S    15:33   0:00 sh -c ps auxw
+root      3506  0.0  0.0      0     0 ?        Zs   15:33   0:00 [startpar-upstar] <defunct>
+ubuntu    3507  0.0  0.0   3072  1040 ?        R    15:33   0:00 ps auxw
+root      3508  0.0  0.0      0     0 ?        Zs   15:33   0:00 [startpar-upstar] <defunct>
+
+World dumping... see ./worlddump-2015-04-02-153316.txt for details
