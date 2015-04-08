@@ -1,0 +1,4 @@
+WARNING: this script has not been tested on utopic
+You are already running a stack.sh session.
+To rejoin this session type 'screen -x stack'.
+To destroy this session, type './unstack.sh'.

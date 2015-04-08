@@ -1,0 +1,834 @@
+WARNING: this script has not been tested on utopic
+2015-04-02 16:38:24.533 | ++ trueorfalse False
+2015-04-02 16:38:24.534 | + OFFLINE=False
+2015-04-02 16:38:24.534 | ++ trueorfalse False
+2015-04-02 16:38:24.534 | + ERROR_ON_CLONE=False
+2015-04-02 16:38:24.534 | ++ trueorfalse True
+2015-04-02 16:38:24.534 | + ENABLE_DEBUG_LOG_LEVEL=True
+2015-04-02 16:38:24.534 | + FLOATING_RANGE=172.24.4.0/24
+2015-04-02 16:38:24.534 | + FIXED_RANGE=10.0.0.0/24
+2015-04-02 16:38:24.534 | + FIXED_NETWORK_SIZE=256
+2015-04-02 16:38:24.534 | ++ get_default_host_ip 10.0.0.0/24 172.24.4.0/24 '' ''
+2015-04-02 16:38:24.534 | ++ local fixed_range=10.0.0.0/24
+2015-04-02 16:38:24.534 | ++ local floating_range=172.24.4.0/24
+2015-04-02 16:38:24.534 | ++ local host_ip_iface=
+2015-04-02 16:38:24.534 | ++ local host_ip=
+2015-04-02 16:38:24.534 | +++ ip route
+2015-04-02 16:38:24.534 | +++ sed -n '/^default/{ s/.*dev \(\w\+\)\s\+.*/\1/; p; }'
+2015-04-02 16:38:24.534 | +++ head -1
+2015-04-02 16:38:24.534 | ++ host_ip_iface=eth1
+2015-04-02 16:38:24.534 | ++ '[' -z '' -o '' == dhcp ']'
+2015-04-02 16:38:24.534 | ++ host_ip=
+2015-04-02 16:38:24.534 | +++ LC_ALL=C
+2015-04-02 16:38:24.534 | +++ ip -f inet addr show eth1
+2015-04-02 16:38:24.534 | +++ awk '/inet/ {split($2,parts,"/");  print parts[1]}'
+2015-04-02 16:38:24.534 | ++ local host_ips=10.0.11.148
+2015-04-02 16:38:24.534 | ++ local ip
+2015-04-02 16:38:24.534 | ++ for ip in '$host_ips'
+2015-04-02 16:38:24.534 | ++ address_in_net 10.0.11.148 10.0.0.0/24
+2015-04-02 16:38:24.534 | ++ local ip=10.0.11.148
+2015-04-02 16:38:24.534 | ++ local range=10.0.0.0/24
+2015-04-02 16:38:24.535 | ++ local masklen=24
+2015-04-02 16:38:24.535 | ++++ cidr2netmask 24
+2015-04-02 16:38:24.535 | ++++ local 'maskpat=255 255 255 255'
+2015-04-02 16:38:24.535 | ++++ local 'maskdgt=254 252 248 240 224 192 128'
+2015-04-02 16:38:24.535 | ++++ set -- 255 255 255
+2015-04-02 16:38:24.535 | ++++ echo 255.255.255.0
+2015-04-02 16:38:24.535 | +++ maskip 10.0.0.0 255.255.255.0
+2015-04-02 16:38:24.535 | +++ local ip=10.0.0.0
+2015-04-02 16:38:24.535 | +++ local mask=255.255.255.0
+2015-04-02 16:38:24.535 | +++ local l=10.0.0
+2015-04-02 16:38:24.535 | +++ local r=0.0.0
+2015-04-02 16:38:24.535 | +++ local n=255.255.255
+2015-04-02 16:38:24.535 | +++ local m=255.255.0
+2015-04-02 16:38:24.535 | +++ local subnet=10.0.0.0
+2015-04-02 16:38:24.535 | +++ echo 10.0.0.0
+2015-04-02 16:38:24.535 | ++ local network=10.0.0.0
+2015-04-02 16:38:24.535 | ++++ cidr2netmask 24
+2015-04-02 16:38:24.535 | ++++ local 'maskpat=255 255 255 255'
+2015-04-02 16:38:24.535 | ++++ local 'maskdgt=254 252 248 240 224 192 128'
+2015-04-02 16:38:24.535 | ++++ set -- 255 255 255
+2015-04-02 16:38:24.535 | ++++ echo 255.255.255.0
+2015-04-02 16:38:24.535 | +++ maskip 10.0.11.148 255.255.255.0
+2015-04-02 16:38:24.535 | +++ local ip=10.0.11.148
+2015-04-02 16:38:24.535 | +++ local mask=255.255.255.0
+2015-04-02 16:38:24.535 | +++ local l=10.0.11
+2015-04-02 16:38:24.535 | +++ local r=0.11.148
+2015-04-02 16:38:24.535 | +++ local n=255.255.255
+2015-04-02 16:38:24.535 | +++ local m=255.255.0
+2015-04-02 16:38:24.535 | +++ local subnet=10.0.11.0
+2015-04-02 16:38:24.536 | +++ echo 10.0.11.0
+2015-04-02 16:38:24.536 | ++ local subnet=10.0.11.0
+2015-04-02 16:38:24.536 | ++ [[ 10.0.0.0 == 10.0.11.0 ]]
+2015-04-02 16:38:24.536 | ++ address_in_net 10.0.11.148 172.24.4.0/24
+2015-04-02 16:38:24.536 | ++ local ip=10.0.11.148
+2015-04-02 16:38:24.536 | ++ local range=172.24.4.0/24
+2015-04-02 16:38:24.536 | ++ local masklen=24
+2015-04-02 16:38:24.536 | ++++ cidr2netmask 24
+2015-04-02 16:38:24.536 | ++++ local 'maskpat=255 255 255 255'
+2015-04-02 16:38:24.536 | ++++ local 'maskdgt=254 252 248 240 224 192 128'
+2015-04-02 16:38:24.536 | ++++ set -- 255 255 255
+2015-04-02 16:38:24.536 | ++++ echo 255.255.255.0
+2015-04-02 16:38:24.536 | +++ maskip 172.24.4.0 255.255.255.0
+2015-04-02 16:38:24.536 | +++ local ip=172.24.4.0
+2015-04-02 16:38:24.536 | +++ local mask=255.255.255.0
+2015-04-02 16:38:24.536 | +++ local l=172.24.4
+2015-04-02 16:38:24.536 | +++ local r=24.4.0
+2015-04-02 16:38:24.536 | +++ local n=255.255.255
+2015-04-02 16:38:24.536 | +++ local m=255.255.0
+2015-04-02 16:38:24.536 | +++ local subnet=172.24.4.0
+2015-04-02 16:38:24.536 | +++ echo 172.24.4.0
+2015-04-02 16:38:24.536 | ++ local network=172.24.4.0
+2015-04-02 16:38:24.536 | ++++ cidr2netmask 24
+2015-04-02 16:38:24.536 | ++++ local 'maskpat=255 255 255 255'
+2015-04-02 16:38:24.536 | ++++ local 'maskdgt=254 252 248 240 224 192 128'
+2015-04-02 16:38:24.536 | ++++ set -- 255 255 255
+2015-04-02 16:38:24.536 | ++++ echo 255.255.255.0
+2015-04-02 16:38:24.536 | +++ maskip 10.0.11.148 255.255.255.0
+2015-04-02 16:38:24.536 | +++ local ip=10.0.11.148
+2015-04-02 16:38:24.537 | +++ local mask=255.255.255.0
+2015-04-02 16:38:24.537 | +++ local l=10.0.11
+2015-04-02 16:38:24.537 | +++ local r=0.11.148
+2015-04-02 16:38:24.537 | +++ local n=255.255.255
+2015-04-02 16:38:24.537 | +++ local m=255.255.0
+2015-04-02 16:38:24.537 | +++ local subnet=10.0.11.0
+2015-04-02 16:38:24.537 | +++ echo 10.0.11.0
+2015-04-02 16:38:24.537 | ++ local subnet=10.0.11.0
+2015-04-02 16:38:24.537 | ++ [[ 172.24.4.0 == 10.0.11.0 ]]
+2015-04-02 16:38:24.537 | ++ host_ip=10.0.11.148
+2015-04-02 16:38:24.537 | ++ break
+2015-04-02 16:38:24.537 | ++ echo 10.0.11.148
+2015-04-02 16:38:24.537 | + HOST_IP=10.0.11.148
+2015-04-02 16:38:24.537 | + '[' 10.0.11.148 == '' ']'
+2015-04-02 16:38:24.537 | + SERVICE_HOST=10.0.11.148
+2015-04-02 16:38:24.537 | ++ trueorfalse False
+2015-04-02 16:38:24.537 | + SYSLOG=False
+2015-04-02 16:38:24.537 | + SYSLOG_HOST=10.0.11.148
+2015-04-02 16:38:24.537 | + SYSLOG_PORT=516
+2015-04-02 16:38:24.537 | ++ trueorfalse True
+2015-04-02 16:38:24.537 | + LOG_COLOR=True
+2015-04-02 16:38:24.537 | + SSL_BUNDLE_FILE=/opt/stack/data/ca-bundle.pem
+2015-04-02 16:38:24.537 | + rm -f /opt/stack/data/ca-bundle.pem
+2015-04-02 16:38:24.538 | + source /home/ubuntu/devstack/lib/database
+2015-04-02 16:38:24.538 | + source /home/ubuntu/devstack/lib/rpc_backend
+2015-04-02 16:38:24.538 | + check_rpc_backend
+2015-04-02 16:38:24.538 | + local c svc
+2015-04-02 16:38:24.538 | + local rpc_needed=1
+2015-04-02 16:38:24.538 | ++ grep -rl iniset_rpc_backend /home/ubuntu/devstack/lib/
+2015-04-02 16:38:24.538 | ++ awk -F/ '{print $NF}'
+2015-04-02 16:38:24.540 | + rpc_candidates='ironic
+2015-04-02 16:38:24.540 | ceilometer
+2015-04-02 16:38:24.540 | glance
+2015-04-02 16:38:24.540 | cinder
+2015-04-02 16:38:24.541 | rpc_backend
+2015-04-02 16:38:24.541 | heat
+2015-04-02 16:38:24.541 | neutron
+2015-04-02 16:38:24.541 | sahara
+2015-04-02 16:38:24.541 | nova'
+2015-04-02 16:38:24.541 | + for c in '${rpc_candidates}'
+2015-04-02 16:38:24.541 | + is_service_enabled ironic
+2015-04-02 16:38:24.544 | + return 1
+2015-04-02 16:38:24.544 | + for c in '${rpc_candidates}'
+2015-04-02 16:38:24.544 | + is_service_enabled ceilometer
+2015-04-02 16:38:24.547 | + return 1
+2015-04-02 16:38:24.547 | + for c in '${rpc_candidates}'
+2015-04-02 16:38:24.547 | + is_service_enabled glance
+2015-04-02 16:38:24.550 | + return 0
+2015-04-02 16:38:24.550 | + rpc_needed=0
+2015-04-02 16:38:24.550 | + break
+2015-04-02 16:38:24.550 | + local rpc_backend_cnt=0
+2015-04-02 16:38:24.550 | + for svc in qpid zeromq rabbit
+2015-04-02 16:38:24.550 | + is_service_enabled qpid
+2015-04-02 16:38:24.553 | + return 1
+2015-04-02 16:38:24.553 | + true
+2015-04-02 16:38:24.553 | + for svc in qpid zeromq rabbit
+2015-04-02 16:38:24.553 | + is_service_enabled zeromq
+2015-04-02 16:38:24.556 | + return 1
+2015-04-02 16:38:24.556 | + true
+2015-04-02 16:38:24.556 | + for svc in qpid zeromq rabbit
+2015-04-02 16:38:24.556 | + is_service_enabled rabbit
+2015-04-02 16:38:24.559 | + return 0
+2015-04-02 16:38:24.559 | + ((  rpc_backend_cnt++  ))
+2015-04-02 16:38:24.559 | + true
+2015-04-02 16:38:24.559 | + '[' 1 -gt 1 ']'
+2015-04-02 16:38:24.559 | + '[' 1 == 0 ']'
+2015-04-02 16:38:24.559 | + is_service_enabled qpid
+2015-04-02 16:38:24.562 | + return 1
+2015-04-02 16:38:24.563 | ++ trueorfalse False
+2015-04-02 16:38:24.566 | + USE_SSL=False
+2015-04-02 16:38:24.566 | + SSL_ENABLED_SERVICES=key,nova,cinder,glance,s-proxy,neutron
+2015-04-02 16:38:24.566 | + is_service_enabled tls-proxy
+2015-04-02 16:38:24.569 | + return 1
+2015-04-02 16:38:24.570 | + source /home/ubuntu/devstack/lib/apache
+2015-04-02 16:38:24.577 | + source /home/ubuntu/devstack/lib/tls
+2015-04-02 16:38:24.577 | ++ is_service_enabled tls-proxy
+2015-04-02 16:38:24.580 | ++ return 1
+2015-04-02 16:38:24.581 | +++ hostname -f
+2015-04-02 16:38:24.583 | ++ DEVSTACK_HOSTNAME=localhost
+2015-04-02 16:38:24.583 | ++ DEVSTACK_CERT_NAME=devstack-cert
+2015-04-02 16:38:24.583 | ++ DEVSTACK_CERT=/opt/stack/data/devstack-cert.pem
+2015-04-02 16:38:24.583 | ++ ROOT_CA_DIR=/opt/stack/data/CA/root-ca
+2015-04-02 16:38:24.583 | ++ INT_CA_DIR=/opt/stack/data/CA/int-ca
+2015-04-02 16:38:24.583 | ++ ORG_NAME=OpenStack
+2015-04-02 16:38:24.583 | ++ ORG_UNIT_NAME=DevStack
+2015-04-02 16:38:24.583 | ++ STUD_PROTO=--tls
+2015-04-02 16:38:24.583 | ++ STUD_CIPHERS='TLSv1+HIGH:!DES:!aNULL:!eNULL:@STRENGTH'
+2015-04-02 16:38:24.583 | ++ OPENSSL=/usr/bin/openssl
+2015-04-02 16:38:24.586 | + source /home/ubuntu/devstack/lib/infra
+2015-04-02 16:38:24.589 | + source /home/ubuntu/devstack/lib/oslo
+2015-04-02 16:38:24.593 | + source /home/ubuntu/devstack/lib/stackforge
+2015-04-02 16:38:24.596 | + source /home/ubuntu/devstack/lib/horizon
+2015-04-02 16:38:24.601 | + source /home/ubuntu/devstack/lib/keystone
+2015-04-02 16:38:24.614 | + source /home/ubuntu/devstack/lib/glance
+2015-04-02 16:38:24.625 | + source /home/ubuntu/devstack/lib/nova
+2015-04-02 16:38:24.658 | + source /home/ubuntu/devstack/lib/cinder
+2015-04-02 16:38:24.684 | + source /home/ubuntu/devstack/lib/swift
+2015-04-02 16:38:24.706 | + source /home/ubuntu/devstack/lib/ceilometer
+2015-04-02 16:38:24.717 | + source /home/ubuntu/devstack/lib/heat
+2015-04-02 16:38:24.731 | + source /home/ubuntu/devstack/lib/neutron
+2015-04-02 16:38:24.731 | ++ NETWORK_GATEWAY=10.0.0.1
+2015-04-02 16:38:24.731 | ++ PUBLIC_NETWORK_GATEWAY=172.24.4.1
+2015-04-02 16:38:24.731 | ++ PRIVATE_SUBNET_NAME=private-subnet
+2015-04-02 16:38:24.731 | ++ PUBLIC_SUBNET_NAME=public-subnet
+2015-04-02 16:38:24.731 | ++ is_ssl_enabled_service neutron
+2015-04-02 16:38:24.731 | ++ local services=neutron
+2015-04-02 16:38:24.732 | ++ local service=
+2015-04-02 16:38:24.732 | ++ '[' False == False ']'
+2015-04-02 16:38:24.732 | ++ return 1
+2015-04-02 16:38:24.732 | ++ is_service_enabled tls-proxy
+2015-04-02 16:38:24.735 | ++ return 1
+2015-04-02 16:38:24.735 | ++ GITDIR["python-neutronclient"]=/opt/stack/python-neutronclient
+2015-04-02 16:38:24.735 | ++ NEUTRON_DIR=/opt/stack/neutron
+2015-04-02 16:38:24.735 | ++ NEUTRON_AUTH_CACHE_DIR=/var/cache/neutron
+2015-04-02 16:38:24.735 | ++ [[ -d /opt/stack/neutron/bin/neutron-server ]]
+2015-04-02 16:38:24.736 | +++ get_python_exec_prefix
+2015-04-02 16:38:24.736 | +++ is_fedora
+2015-04-02 16:38:24.736 | +++ [[ -z Ubuntu ]]
+2015-04-02 16:38:24.736 | +++ '[' Ubuntu = Fedora ']'
+2015-04-02 16:38:24.736 | +++ '[' Ubuntu = 'Red Hat' ']'
+2015-04-02 16:38:24.736 | +++ '[' Ubuntu = CentOS ']'
+2015-04-02 16:38:24.736 | +++ '[' Ubuntu = OracleServer ']'
+2015-04-02 16:38:24.736 | +++ is_suse
+2015-04-02 16:38:24.736 | +++ [[ -z Ubuntu ]]
+2015-04-02 16:38:24.736 | +++ '[' Ubuntu = openSUSE ']'
+2015-04-02 16:38:24.736 | +++ '[' Ubuntu = 'SUSE LINUX' ']'
+2015-04-02 16:38:24.736 | +++ echo /usr/local/bin
+2015-04-02 16:38:24.737 | ++ NEUTRON_BIN_DIR=/usr/local/bin
+2015-04-02 16:38:24.737 | ++ NEUTRON_CONF_DIR=/etc/neutron
+2015-04-02 16:38:24.737 | ++ NEUTRON_CONF=/etc/neutron/neutron.conf
+2015-04-02 16:38:24.737 | ++ export NEUTRON_TEST_CONFIG_FILE=/etc/neutron/debug.ini
+2015-04-02 16:38:24.737 | ++ NEUTRON_TEST_CONFIG_FILE=/etc/neutron/debug.ini
+2015-04-02 16:38:24.737 | ++ AGENT_DHCP_BINARY=/usr/local/bin/neutron-dhcp-agent
+2015-04-02 16:38:24.737 | ++ AGENT_L3_BINARY=/usr/local/bin/neutron-l3-agent
+2015-04-02 16:38:24.737 | ++ AGENT_META_BINARY=/usr/local/bin/neutron-metadata-agent
+2015-04-02 16:38:24.737 | ++ Q_DHCP_CONF_FILE=/etc/neutron/dhcp_agent.ini
+2015-04-02 16:38:24.737 | ++ Q_L3_CONF_FILE=/etc/neutron/l3_agent.ini
+2015-04-02 16:38:24.737 | ++ Q_FWAAS_CONF_FILE=/etc/neutron/fwaas_driver.ini
+2015-04-02 16:38:24.737 | ++ Q_VPN_CONF_FILE=/etc/neutron/vpn_agent.ini
+2015-04-02 16:38:24.737 | ++ Q_META_CONF_FILE=/etc/neutron/metadata_agent.ini
+2015-04-02 16:38:24.737 | ++ Q_DB_NAME=neutron
+2015-04-02 16:38:24.737 | ++ Q_PLUGIN=ml2
+2015-04-02 16:38:24.737 | ++ Q_PORT=9696
+2015-04-02 16:38:24.737 | ++ Q_PORT_INT=19696
+2015-04-02 16:38:24.737 | ++ Q_HOST=10.0.11.148
+2015-04-02 16:38:24.737 | ++ Q_PROTOCOL=http
+2015-04-02 16:38:24.737 | ++ Q_ADMIN_USERNAME=neutron
+2015-04-02 16:38:24.737 | ++ Q_AUTH_STRATEGY=keystone
+2015-04-02 16:38:24.737 | ++ Q_USE_NAMESPACE=True
+2015-04-02 16:38:24.737 | ++ Q_OVS_USE_VETH=False
+2015-04-02 16:38:24.737 | ++ Q_USE_ROOTWRAP=True
+2015-04-02 16:38:24.737 | ++ Q_META_DATA_IP=10.0.11.148
+2015-04-02 16:38:24.738 | ++ Q_ALLOW_OVERLAPPING_IP=True
+2015-04-02 16:38:24.738 | ++ Q_USE_DEBUG_COMMAND=False
+2015-04-02 16:38:24.738 | ++ Q_ROUTER_NAME=router1
+2015-04-02 16:38:24.738 | ++ NOVA_VIF_DRIVER=nova.virt.libvirt.vif.LibvirtGenericVIFDriver
+2015-04-02 16:38:24.738 | ++ Q_NOTIFY_NOVA_PORT_STATUS_CHANGES=True
+2015-04-02 16:38:24.738 | ++ Q_NOTIFY_NOVA_PORT_DATA_CHANGES=True
+2015-04-02 16:38:24.738 | ++ VIF_PLUGGING_IS_FATAL=True
+2015-04-02 16:38:24.738 | ++ VIF_PLUGGING_TIMEOUT=300
+2015-04-02 16:38:24.738 | ++ PROVIDER_SUBNET_NAME=provider_net
+2015-04-02 16:38:24.738 | ++ Q_USE_PROVIDERNET_FOR_PUBLIC=False
+2015-04-02 16:38:24.738 | ++ PUBLIC_PHYSICAL_NETWORK=public
+2015-04-02 16:38:24.738 | ++ Q_USE_PUBLIC_VETH=False
+2015-04-02 16:38:24.738 | ++ Q_PUBLIC_VETH_EX=veth-pub-ex
+2015-04-02 16:38:24.738 | ++ Q_PUBLIC_VETH_INT=veth-pub-int
+2015-04-02 16:38:24.738 | ++ Q_L3_ENABLED=False
+2015-04-02 16:38:24.738 | ++ Q_L3_ROUTER_PER_TENANT=False
+2015-04-02 16:38:24.738 | ++ declare -a Q_PLUGIN_EXTRA_CONF_FILES
+2015-04-02 16:38:24.738 | ++ declare -a Q_VPN_EXTRA_CONF_FILES
+2015-04-02 16:38:24.738 | ++ Q_RR_CONF_FILE=/etc/neutron/rootwrap.conf
+2015-04-02 16:38:24.738 | ++ [[ True == \F\a\l\s\e ]]
+2015-04-02 16:38:24.739 | +++ get_rootwrap_location neutron
+2015-04-02 16:38:24.739 | +++ local module=neutron
+2015-04-02 16:38:24.739 | ++++ get_python_exec_prefix
+2015-04-02 16:38:24.740 | ++++ is_fedora
+2015-04-02 16:38:24.740 | ++++ [[ -z Ubuntu ]]
+2015-04-02 16:38:24.740 | ++++ '[' Ubuntu = Fedora ']'
+2015-04-02 16:38:24.740 | ++++ '[' Ubuntu = 'Red Hat' ']'
+2015-04-02 16:38:24.740 | ++++ '[' Ubuntu = CentOS ']'
+2015-04-02 16:38:24.740 | ++++ '[' Ubuntu = OracleServer ']'
+2015-04-02 16:38:24.740 | ++++ is_suse
+2015-04-02 16:38:24.740 | ++++ [[ -z Ubuntu ]]
+2015-04-02 16:38:24.740 | ++++ '[' Ubuntu = openSUSE ']'
+2015-04-02 16:38:24.741 | ++++ '[' Ubuntu = 'SUSE LINUX' ']'
+2015-04-02 16:38:24.741 | ++++ echo /usr/local/bin
+2015-04-02 16:38:24.741 | +++ echo /usr/local/bin/neutron-rootwrap
+2015-04-02 16:38:24.742 | ++ NEUTRON_ROOTWRAP=/usr/local/bin/neutron-rootwrap
+2015-04-02 16:38:24.742 | ++ Q_RR_COMMAND='sudo /usr/local/bin/neutron-rootwrap /etc/neutron/rootwrap.conf'
+2015-04-02 16:38:24.742 | ++ Q_DVR_MODE=legacy
+2015-04-02 16:38:24.742 | ++ [[ legacy != \l\e\g\a\c\y ]]
+2015-04-02 16:38:24.742 | ++ ENABLE_TENANT_TUNNELS=True
+2015-04-02 16:38:24.742 | ++ TENANT_TUNNEL_RANGES=1:1000
+2015-04-02 16:38:24.742 | ++ ENABLE_TENANT_VLANS=False
+2015-04-02 16:38:24.742 | ++ TENANT_VLAN_RANGE=
+2015-04-02 16:38:24.742 | ++ PHYSICAL_NETWORK=
+2015-04-02 16:38:24.742 | ++ OVS_PHYSICAL_BRIDGE=
+2015-04-02 16:38:24.742 | ++ LB_PHYSICAL_INTERFACE=
+2015-04-02 16:38:24.742 | ++ TUNNEL_ENDPOINT_IP=10.0.11.148
+2015-04-02 16:38:24.742 | ++ OVS_ENABLE_TUNNELING=True
+2015-04-02 16:38:24.742 | ++ source /home/ubuntu/devstack/lib/neutron_plugins/ml2
+2015-04-02 16:38:24.755 | ++ source /home/ubuntu/devstack/lib/neutron_plugins/services/loadbalancer
+2015-04-02 16:38:24.759 | ++ source /home/ubuntu/devstack/lib/neutron_plugins/services/metering
+2015-04-02 16:38:24.762 | ++ source /home/ubuntu/devstack/lib/neutron_plugins/services/vpn
+2015-04-02 16:38:24.765 | ++ source /home/ubuntu/devstack/lib/neutron_plugins/services/firewall
+2015-04-02 16:38:24.768 | ++ has_neutron_plugin_security_group
+2015-04-02 16:38:24.769 | ++ return 0
+2015-04-02 16:38:24.769 | ++ Q_USE_SECGROUP=True
+2015-04-02 16:38:24.769 | ++ TEMPEST_SERVICES+=,neutron
+2015-04-02 16:38:24.814 | + source /home/ubuntu/devstack/lib/baremetal
+2015-04-02 16:38:24.832 | + source /home/ubuntu/devstack/lib/ldap
+2015-04-02 16:38:24.836 | + source /home/ubuntu/devstack/lib/dstat
+2015-04-02 16:38:24.840 | + [[ -d /home/ubuntu/devstack/extras.d ]]
+2015-04-02 16:38:24.840 | + for i in '$TOP_DIR/extras.d/*.sh'
+2015-04-02 16:38:24.840 | + [[ -r /home/ubuntu/devstack/extras.d/40-dib.sh ]]
+2015-04-02 16:38:24.840 | + source /home/ubuntu/devstack/extras.d/40-dib.sh source
+2015-04-02 16:38:24.840 | ++ is_service_enabled dib
+2015-04-02 16:38:24.843 | ++ return 1
+2015-04-02 16:38:24.844 | + for i in '$TOP_DIR/extras.d/*.sh'
+2015-04-02 16:38:24.844 | + [[ -r /home/ubuntu/devstack/extras.d/50-ironic.sh ]]
+2015-04-02 16:38:24.844 | + source /home/ubuntu/devstack/extras.d/50-ironic.sh source
+2015-04-02 16:38:24.844 | ++ is_service_enabled ir-api ir-cond
+2015-04-02 16:38:24.848 | ++ return 1
+2015-04-02 16:38:24.848 | + for i in '$TOP_DIR/extras.d/*.sh'
+2015-04-02 16:38:24.848 | + [[ -r /home/ubuntu/devstack/extras.d/60-ceph.sh ]]
+2015-04-02 16:38:24.848 | + source /home/ubuntu/devstack/extras.d/60-ceph.sh source
+2015-04-02 16:38:24.848 | ++ is_service_enabled ceph
+2015-04-02 16:38:24.851 | ++ return 1
+2015-04-02 16:38:24.852 | + for i in '$TOP_DIR/extras.d/*.sh'
+2015-04-02 16:38:24.852 | + [[ -r /home/ubuntu/devstack/extras.d/70-gantt.sh ]]
+2015-04-02 16:38:24.852 | + source /home/ubuntu/devstack/extras.d/70-gantt.sh source
+2015-04-02 16:38:24.852 | ++ is_service_enabled n-sch
+2015-04-02 16:38:24.855 | ++ return 0
+2015-04-02 16:38:24.855 | ++ disable_service gantt
+2015-04-02 16:38:24.855 | ++ local tmpsvcs=,g-api,g-reg,key,n-api,n-crt,n-obj,n-cpu,n-net,n-cond,n-sch,n-novnc,n-xvnc,n-cauth,c-sch,c-api,c-vol,h-eng,h-api,h-api-cfn,h-api-cw,horizon,rabbit,tempest,mysql,
+2015-04-02 16:38:24.855 | ++ local service
+2015-04-02 16:38:24.855 | ++ for service in '$@'
+2015-04-02 16:38:24.855 | ++ is_service_enabled gantt
+2015-04-02 16:38:24.859 | ++ return 1
+2015-04-02 16:38:24.859 | +++ _cleanup_service_list ,g-api,g-reg,key,n-api,n-crt,n-obj,n-cpu,n-net,n-cond,n-sch,n-novnc,n-xvnc,n-cauth,c-sch,c-api,c-vol,h-eng,h-api,h-api-cfn,h-api-cw,horizon,rabbit,tempest,mysql,
+2015-04-02 16:38:24.860 | +++ echo ,g-api,g-reg,key,n-api,n-crt,n-obj,n-cpu,n-net,n-cond,n-sch,n-novnc,n-xvnc,n-cauth,c-sch,c-api,c-vol,h-eng,h-api,h-api-cfn,h-api-cw,horizon,rabbit,tempest,mysql,
+2015-04-02 16:38:24.860 | +++ sed -e '
+2015-04-02 16:38:24.860 |         s/,,/,/g;
+2015-04-02 16:38:24.860 |         s/^,//;
+2015-04-02 16:38:24.860 |         s/,$//
+2015-04-02 16:38:24.860 |     '
+2015-04-02 16:38:24.862 | ++ ENABLED_SERVICES=g-api,g-reg,key,n-api,n-crt,n-obj,n-cpu,n-net,n-cond,n-sch,n-novnc,n-xvnc,n-cauth,c-sch,c-api,c-vol,h-eng,h-api,h-api-cfn,h-api-cw,horizon,rabbit,tempest,mysql
+2015-04-02 16:38:24.863 | ++ is_service_enabled gantt
+2015-04-02 16:38:24.866 | ++ return 1
+2015-04-02 16:38:24.866 | + for i in '$TOP_DIR/extras.d/*.sh'
+2015-04-02 16:38:24.866 | + [[ -r /home/ubuntu/devstack/extras.d/70-sahara.sh ]]
+2015-04-02 16:38:24.866 | + source /home/ubuntu/devstack/extras.d/70-sahara.sh source
+2015-04-02 16:38:24.866 | ++ is_service_enabled sahara
+2015-04-02 16:38:24.870 | ++ return 1
+2015-04-02 16:38:24.870 | + for i in '$TOP_DIR/extras.d/*.sh'
+2015-04-02 16:38:24.870 | + [[ -r /home/ubuntu/devstack/extras.d/70-trove.sh ]]
+2015-04-02 16:38:24.870 | + source /home/ubuntu/devstack/extras.d/70-trove.sh source
+2015-04-02 16:38:24.870 | ++ is_service_enabled trove
+2015-04-02 16:38:24.874 | ++ return 1
+2015-04-02 16:38:24.874 | + for i in '$TOP_DIR/extras.d/*.sh'
+2015-04-02 16:38:24.874 | + [[ -r /home/ubuntu/devstack/extras.d/70-zaqar.sh ]]
+2015-04-02 16:38:24.874 | + source /home/ubuntu/devstack/extras.d/70-zaqar.sh source
+2015-04-02 16:38:24.874 | ++ is_service_enabled zaqar-server
+2015-04-02 16:38:24.878 | ++ return 1
+2015-04-02 16:38:24.878 | + for i in '$TOP_DIR/extras.d/*.sh'
+2015-04-02 16:38:24.878 | + [[ -r /home/ubuntu/devstack/extras.d/80-opendaylight.sh ]]
+2015-04-02 16:38:24.878 | + source /home/ubuntu/devstack/extras.d/80-opendaylight.sh source
+2015-04-02 16:38:24.878 | ++ is_service_enabled odl-server odl-compute
+2015-04-02 16:38:24.882 | ++ return 1
+2015-04-02 16:38:24.882 | ++ is_service_enabled odl-server
+2015-04-02 16:38:24.885 | ++ return 1
+2015-04-02 16:38:24.886 | ++ is_service_enabled odl-compute
+2015-04-02 16:38:24.889 | ++ return 1
+2015-04-02 16:38:24.889 | + for i in '$TOP_DIR/extras.d/*.sh'
+2015-04-02 16:38:24.889 | + [[ -r /home/ubuntu/devstack/extras.d/80-tempest.sh ]]
+2015-04-02 16:38:24.889 | + source /home/ubuntu/devstack/extras.d/80-tempest.sh source
+2015-04-02 16:38:24.890 | ++ is_service_enabled tempest
+2015-04-02 16:38:24.893 | ++ return 0
+2015-04-02 16:38:24.893 | ++ [[ source == \s\o\u\r\c\e ]]
+2015-04-02 16:38:24.893 | ++ source /home/ubuntu/devstack/lib/tempest
+2015-04-02 16:38:24.911 | ++ [[ source == \u\n\s\t\a\c\k ]]
+2015-04-02 16:38:24.911 | ++ [[ source == \c\l\e\a\n ]]
+2015-04-02 16:38:24.912 | + initialize_database_backends
+2015-04-02 16:38:24.912 | + for backend in '$DATABASE_BACKENDS'
+2015-04-02 16:38:24.912 | + is_service_enabled mysql
+2015-04-02 16:38:24.916 | + return 0
+2015-04-02 16:38:24.916 | + DATABASE_TYPE=mysql
+2015-04-02 16:38:24.916 | + for backend in '$DATABASE_BACKENDS'
+2015-04-02 16:38:24.916 | + is_service_enabled postgresql
+2015-04-02 16:38:24.920 | + return 1
+2015-04-02 16:38:24.920 | + '[' -z mysql ']'
+2015-04-02 16:38:24.920 | + MYSQL_HOST=127.0.0.1
+2015-04-02 16:38:24.920 | + MYSQL_USER=root
+2015-04-02 16:38:24.920 | + DATABASE_HOST=127.0.0.1
+2015-04-02 16:38:24.920 | + DATABASE_USER=root
+2015-04-02 16:38:24.920 | + '[' -n stackdb ']'
+2015-04-02 16:38:24.920 | + DATABASE_PASSWORD=stackdb
+2015-04-02 16:38:24.921 | ++ get_database_type
+2015-04-02 16:38:24.921 | ++ [[ -n '' ]]
+2015-04-02 16:38:24.921 | ++ echo mysql
+2015-04-02 16:38:24.922 | + BASE_SQL_CONN=mysql://root:stackdb@127.0.0.1
+2015-04-02 16:38:24.922 | + return 0
+2015-04-02 16:38:24.922 | + echo 'Using mysql database backend'
+2015-04-02 16:38:24.922 | Using mysql database backend
+2015-04-02 16:38:24.922 | + is_service_enabled rabbit
+2015-04-02 16:38:24.926 | + return 0
+2015-04-02 16:38:24.926 | + RABBIT_HOST=10.0.11.148
+2015-04-02 16:38:24.926 | + read_password RABBIT_PASSWORD 'ENTER A PASSWORD TO USE FOR RABBIT.'
+2015-04-02 16:38:24.929 | + is_service_enabled key
+2015-04-02 16:38:24.933 | + return 0
+2015-04-02 16:38:24.933 | + read_password SERVICE_TOKEN 'ENTER A SERVICE_TOKEN TO USE FOR THE SERVICE ADMIN TOKEN.'
+2015-04-02 16:38:24.937 | + read_password SERVICE_PASSWORD 'ENTER A SERVICE_PASSWORD TO USE FOR THE SERVICE AUTHENTICATION.'
+2015-04-02 16:38:24.940 | + read_password ADMIN_PASSWORD 'ENTER A PASSWORD TO USE FOR HORIZON AND KEYSTONE (20 CHARS OR LESS).'
+2015-04-02 16:38:24.944 | + is_service_enabled ldap
+2015-04-02 16:38:24.948 | + return 1
+2015-04-02 16:38:24.948 | + is_service_enabled s-proxy
+2015-04-02 16:38:24.952 | + return 1
+2015-04-02 16:38:24.952 | + echo_summary 'Installing package prerequisites'
+2015-04-02 16:38:24.952 | + [[ -t 3 ]]
+2015-04-02 16:38:24.952 | + echo -e Installing package prerequisites
+2015-04-02 16:38:24.952 | + source /home/ubuntu/devstack/tools/install_prereqs.sh
+2015-04-02 16:38:24.952 | ++ [[ -n '' ]]
+2015-04-02 16:38:24.952 | ++ [[ -z /home/ubuntu/devstack ]]
+2015-04-02 16:38:24.952 | ++ PREREQ_RERUN_MARKER=/home/ubuntu/devstack/.prereqs
+2015-04-02 16:38:24.952 | ++ PREREQ_RERUN_HOURS=2
+2015-04-02 16:38:24.953 | ++ PREREQ_RERUN_SECONDS=7200
+2015-04-02 16:38:24.953 | +++ date +%s
+2015-04-02 16:38:24.955 | ++ NOW=1427992704
+2015-04-02 16:38:24.956 | +++ head -1 /home/ubuntu/devstack/.prereqs
+2015-04-02 16:38:24.958 | ++ LAST_RUN=1427987056
+2015-04-02 16:38:24.958 | ++ DELTA=5648
+2015-04-02 16:38:24.958 | ++ [[ 5648 -lt 7200 ]]
+2015-04-02 16:38:24.958 | ++ [[ -z '' ]]
+2015-04-02 16:38:24.958 | ++ echo 'Re-run time has not expired (1552 seconds remaining) '
+2015-04-02 16:38:24.958 | Re-run time has not expired (1552 seconds remaining) 
+2015-04-02 16:38:24.958 | ++ echo 'and FORCE_PREREQ not set; exiting...'
+2015-04-02 16:38:24.958 | and FORCE_PREREQ not set; exiting...
+2015-04-02 16:38:24.958 | ++ return 0
+2015-04-02 16:38:24.959 | + [[ False != \T\r\u\e ]]
+2015-04-02 16:38:24.959 | + PYPI_ALTERNATIVE_URL=
+2015-04-02 16:38:24.959 | + /home/ubuntu/devstack/tools/install_pip.sh
+2015-04-02 16:38:24.962 | +++ dirname /home/ubuntu/devstack/tools/install_pip.sh
+2015-04-02 16:38:24.963 | ++ cd /home/ubuntu/devstack/tools
+2015-04-02 16:38:24.964 | ++ pwd
+2015-04-02 16:38:24.964 | + TOOLS_DIR=/home/ubuntu/devstack/tools
+2015-04-02 16:38:24.964 | ++ cd /home/ubuntu/devstack/tools/..
+2015-04-02 16:38:24.964 | ++ pwd
+2015-04-02 16:38:24.964 | + TOP_DIR=/home/ubuntu/devstack
+2015-04-02 16:38:24.965 | + cd /home/ubuntu/devstack
+2015-04-02 16:38:24.965 | + source /home/ubuntu/devstack/functions
+2015-04-02 16:38:24.966 | ++++ dirname /home/ubuntu/devstack/functions
+2015-04-02 16:38:24.967 | +++ cd /home/ubuntu/devstack
+2015-04-02 16:38:24.967 | +++ pwd
+2015-04-02 16:38:24.967 | ++ FUNC_DIR=/home/ubuntu/devstack
+2015-04-02 16:38:24.967 | ++ source /home/ubuntu/devstack/functions-common
+2015-04-02 16:38:24.993 | + FILES=/home/ubuntu/devstack/files
+2015-04-02 16:38:24.993 | + PIP_GET_PIP_URL=https://bootstrap.pypa.io/get-pip.py
+2015-04-02 16:38:24.993 | ++ basename https://bootstrap.pypa.io/get-pip.py
+2015-04-02 16:38:24.994 | + LOCAL_PIP=/home/ubuntu/devstack/files/get-pip.py
+2015-04-02 16:38:24.994 | + GetDistro
+2015-04-02 16:38:24.994 | + GetOSVersion
+2015-04-02 16:38:24.995 | ++ which sw_vers
+2015-04-02 16:38:24.997 | + [[ -x '' ]]
+2015-04-02 16:38:24.997 | ++ which lsb_release
+2015-04-02 16:38:24.999 | + [[ -x /usr/bin/lsb_release ]]
+2015-04-02 16:38:24.999 | ++ lsb_release -i -s
+2015-04-02 16:38:25.104 | + os_VENDOR=Ubuntu
+2015-04-02 16:38:25.104 | ++ lsb_release -r -s
+2015-04-02 16:38:25.208 | + os_RELEASE=14.10
+2015-04-02 16:38:25.208 | + os_UPDATE=
+2015-04-02 16:38:25.208 | + os_PACKAGE=rpm
+2015-04-02 16:38:25.208 | + [[ Debian,Ubuntu,LinuxMint =~ Ubuntu ]]
+2015-04-02 16:38:25.208 | + os_PACKAGE=deb
+2015-04-02 16:38:25.209 | ++ lsb_release -c -s
+2015-04-02 16:38:25.312 | + os_CODENAME=utopic
+2015-04-02 16:38:25.312 | + export os_VENDOR os_RELEASE os_UPDATE os_PACKAGE os_CODENAME
+2015-04-02 16:38:25.312 | + [[ Ubuntu =~ (Ubuntu) ]]
+2015-04-02 16:38:25.312 | + DISTRO=utopic
+2015-04-02 16:38:25.313 | + export DISTRO
+2015-04-02 16:38:25.313 | + echo 'Distro: utopic'
+2015-04-02 16:38:25.313 | Distro: utopic
+2015-04-02 16:38:25.313 | + get_versions
+2015-04-02 16:38:25.314 | ++ which pip
+2015-04-02 16:38:25.316 | + PIP=/usr/local/bin/pip
+2015-04-02 16:38:25.316 | + [[ -n /usr/local/bin/pip ]]
+2015-04-02 16:38:25.316 | ++ /usr/local/bin/pip --version
+2015-04-02 16:38:25.317 | ++ awk '{ print $2}'
+2015-04-02 16:38:25.986 | + PIP_VERSION=6.0.8
+2015-04-02 16:38:25.986 | + echo 'pip: 6.0.8'
+2015-04-02 16:38:25.989 | pip: 6.0.8
+2015-04-02 16:38:25.989 | + uninstall_package python-pip
+2015-04-02 16:38:25.989 | + is_ubuntu
+2015-04-02 16:38:25.989 | + [[ -z deb ]]
+2015-04-02 16:38:25.989 | + '[' deb = deb ']'
+2015-04-02 16:38:25.989 | + apt_get purge python-pip
+2015-04-02 16:38:25.991 | + sudo DEBIAN_FRONTEND=noninteractive http_proxy= https_proxy= no_proxy= apt-get --option Dpkg::Options::=--force-confold --assume-yes purge python-pip
+2015-04-02 16:38:26.013 | Reading package lists...
+2015-04-02 16:38:26.293 | Building dependency tree...
+2015-04-02 16:38:26.295 | Reading state information...
+2015-04-02 16:38:26.600 | Package 'python-pip' is not installed, so not removed
+2015-04-02 16:38:26.600 | 0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+2015-04-02 16:38:26.602 | + install_get_pip
+2015-04-02 16:38:26.602 | + [[ ! -r /home/ubuntu/devstack/files/get-pip.py ]]
+2015-04-02 16:38:26.602 | + sudo -H -E python /home/ubuntu/devstack/files/get-pip.py
+2015-04-02 16:38:31.219 | Requirement already up-to-date: pip in /usr/local/lib/python2.7/dist-packages
+2015-04-02 16:38:31.285 | + [[ -n '' ]]
+2015-04-02 16:38:31.285 | + pip_install -U setuptools
+2015-04-02 16:38:31.290 | + sudo -H PIP_DOWNLOAD_CACHE=/var/cache/pip http_proxy= https_proxy= no_proxy= /usr/local/bin/pip install -U setuptools
+2015-04-02 16:38:32.494 | DEPRECATION: --download-cache has been deprecated and will be removed in the future. Pip now automatically uses and configures its cache.
+2015-04-02 16:38:33.627 | Requirement already up-to-date: setuptools in /usr/local/lib/python2.7/dist-packages
+2015-04-02 16:38:33.682 | + [[ '' == \T\r\u\e ]]
+2015-04-02 16:38:33.682 | + get_versions
+2015-04-02 16:38:33.682 | ++ which pip
+2015-04-02 16:38:33.685 | + PIP=/usr/local/bin/pip
+2015-04-02 16:38:33.685 | + [[ -n /usr/local/bin/pip ]]
+2015-04-02 16:38:33.685 | ++ /usr/local/bin/pip --version
+2015-04-02 16:38:33.686 | ++ awk '{ print $2}'
+2015-04-02 16:38:34.360 | + PIP_VERSION=6.0.8
+2015-04-02 16:38:34.361 | + echo 'pip: 6.0.8'
+2015-04-02 16:38:34.361 | pip: 6.0.8
+2015-04-02 16:38:34.361 | + source /home/ubuntu/devstack/tools/fixup_stuff.sh
+2015-04-02 16:38:34.361 | ++ [[ -z /home/ubuntu/devstack ]]
+2015-04-02 16:38:34.361 | ++ keystone_ports=35357,35358
+2015-04-02 16:38:34.363 | +++ sysctl net.ipv4.ip_local_reserved_ports
+2015-04-02 16:38:34.363 | +++ awk -F= '{print $2;}'
+2015-04-02 16:38:34.363 | +++ sed 's/^ //'
+2015-04-02 16:38:34.367 | ++ reserved_ports=35357-35358
+2015-04-02 16:38:34.367 | ++ [[ -z 35357-35358 ]]
+2015-04-02 16:38:34.367 | ++ sudo sysctl -w net.ipv4.ip_local_reserved_ports=35357,35358,35357-35358
+2015-04-02 16:38:34.375 | net.ipv4.ip_local_reserved_ports = 35357,35358,35357-35358
+2015-04-02 16:38:34.377 | ++ pip_install 'prettytable>=0.7'
+2015-04-02 16:38:34.383 | ++ sudo -H PIP_DOWNLOAD_CACHE=/var/cache/pip http_proxy= https_proxy= no_proxy= /usr/local/bin/pip install 'prettytable>=0.7'
+2015-04-02 16:38:35.540 | DEPRECATION: --download-cache has been deprecated and will be removed in the future. Pip now automatically uses and configures its cache.
+2015-04-02 16:38:36.051 | Requirement already satisfied (use --upgrade to upgrade): prettytable>=0.7 in /usr/local/lib/python2.7/dist-packages
+2015-04-02 16:38:36.095 | ++ [[ False == \T\r\u\e ]]
+2015-04-02 16:38:36.096 | +++ get_package_path prettytable
+2015-04-02 16:38:36.096 | +++ local package=prettytable
+2015-04-02 16:38:36.101 | ++++ python -c 'import os; import prettytable; print(os.path.split(os.path.realpath(prettytable.__file__))[0])'
+2015-04-02 16:38:36.191 | +++ echo /usr/local/lib/python2.7/dist-packages
+2015-04-02 16:38:36.192 | ++ PACKAGE_DIR=/usr/local/lib/python2.7/dist-packages
+2015-04-02 16:38:36.193 | +++ echo /usr/local/lib/python2.7/dist-packages/prettytable-0.7.2-py2.7.egg-info
+2015-04-02 16:38:36.194 | ++ dir=/usr/local/lib/python2.7/dist-packages/prettytable-0.7.2-py2.7.egg-info
+2015-04-02 16:38:36.194 | ++ [[ -d /usr/local/lib/python2.7/dist-packages/prettytable-0.7.2-py2.7.egg-info ]]
+2015-04-02 16:38:36.194 | ++ sudo chmod +r /usr/local/lib/python2.7/dist-packages/prettytable-0.7.2-py2.7.egg-info/PKG-INFO /usr/local/lib/python2.7/dist-packages/prettytable-0.7.2-py2.7.egg-info/SOURCES.txt /usr/local/lib/python2.7/dist-packages/prettytable-0.7.2-py2.7.egg-info/dependency_links.txt /usr/local/lib/python2.7/dist-packages/prettytable-0.7.2-py2.7.egg-info/installed-files.txt /usr/local/lib/python2.7/dist-packages/prettytable-0.7.2-py2.7.egg-info/top_level.txt
+2015-04-02 16:38:36.204 | ++ pip_install httplib2
+2015-04-02 16:38:36.211 | ++ sudo -H PIP_DOWNLOAD_CACHE=/var/cache/pip http_proxy= https_proxy= no_proxy= /usr/local/bin/pip install httplib2
+2015-04-02 16:38:37.369 | DEPRECATION: --download-cache has been deprecated and will be removed in the future. Pip now automatically uses and configures its cache.
+2015-04-02 16:38:37.879 | Requirement already satisfied (use --upgrade to upgrade): httplib2 in /usr/local/lib/python2.7/dist-packages
+2015-04-02 16:38:37.923 | ++ [[ False == \T\r\u\e ]]
+2015-04-02 16:38:37.923 | +++ get_package_path httplib2
+2015-04-02 16:38:37.923 | +++ local package=httplib2
+2015-04-02 16:38:37.924 | ++++ python -c 'import os; import httplib2; print(os.path.split(os.path.realpath(httplib2.__file__))[0])'
+2015-04-02 16:38:38.037 | +++ echo /usr/local/lib/python2.7/dist-packages/httplib2
+2015-04-02 16:38:38.039 | ++ PACKAGE_DIR=/usr/local/lib/python2.7/dist-packages/httplib2
+2015-04-02 16:38:38.039 | +++ echo '/usr/local/lib/python2.7/dist-packages/httplib2-0.8*'
+2015-04-02 16:38:38.041 | ++ dir='/usr/local/lib/python2.7/dist-packages/httplib2-0.8*'
+2015-04-02 16:38:38.041 | ++ [[ -d /usr/local/lib/python2.7/dist-packages/httplib2-0.8* ]]
+2015-04-02 16:38:38.041 | ++ is_fedora
+2015-04-02 16:38:38.041 | ++ [[ -z Ubuntu ]]
+2015-04-02 16:38:38.041 | ++ '[' Ubuntu = Fedora ']'
+2015-04-02 16:38:38.041 | ++ '[' Ubuntu = 'Red Hat' ']'
+2015-04-02 16:38:38.041 | ++ '[' Ubuntu = CentOS ']'
+2015-04-02 16:38:38.041 | ++ '[' Ubuntu = OracleServer ']'
+2015-04-02 16:38:38.041 | ++ [[ utopic =~ (rhel6) ]]
+2015-04-02 16:38:38.042 | + [[ -d /home/ubuntu/devstack/extras.d ]]
+2015-04-02 16:38:38.042 | + for i in '$TOP_DIR/extras.d/*.sh'
+2015-04-02 16:38:38.042 | + [[ -r /home/ubuntu/devstack/extras.d/40-dib.sh ]]
+2015-04-02 16:38:38.042 | + source /home/ubuntu/devstack/extras.d/40-dib.sh stack pre-install
+2015-04-02 16:38:38.042 | ++ is_service_enabled dib
+2015-04-02 16:38:38.047 | ++ return 1
+2015-04-02 16:38:38.047 | + for i in '$TOP_DIR/extras.d/*.sh'
+2015-04-02 16:38:38.047 | + [[ -r /home/ubuntu/devstack/extras.d/50-ironic.sh ]]
+2015-04-02 16:38:38.047 | + source /home/ubuntu/devstack/extras.d/50-ironic.sh stack pre-install
+2015-04-02 16:38:38.047 | ++ is_service_enabled ir-api ir-cond
+2015-04-02 16:38:38.052 | ++ return 1
+2015-04-02 16:38:38.052 | + for i in '$TOP_DIR/extras.d/*.sh'
+2015-04-02 16:38:38.052 | + [[ -r /home/ubuntu/devstack/extras.d/60-ceph.sh ]]
+2015-04-02 16:38:38.052 | + source /home/ubuntu/devstack/extras.d/60-ceph.sh stack pre-install
+2015-04-02 16:38:38.052 | ++ is_service_enabled ceph
+2015-04-02 16:38:38.057 | ++ return 1
+2015-04-02 16:38:38.057 | + for i in '$TOP_DIR/extras.d/*.sh'
+2015-04-02 16:38:38.057 | + [[ -r /home/ubuntu/devstack/extras.d/70-gantt.sh ]]
+2015-04-02 16:38:38.057 | + source /home/ubuntu/devstack/extras.d/70-gantt.sh stack pre-install
+2015-04-02 16:38:38.057 | ++ is_service_enabled n-sch
+2015-04-02 16:38:38.060 | ++ return 0
+2015-04-02 16:38:38.061 | ++ disable_service gantt
+2015-04-02 16:38:38.061 | ++ local tmpsvcs=,g-api,g-reg,key,n-api,n-crt,n-obj,n-cpu,n-net,n-cond,n-sch,n-novnc,n-xvnc,n-cauth,c-sch,c-api,c-vol,h-eng,h-api,h-api-cfn,h-api-cw,horizon,rabbit,tempest,mysql,
+2015-04-02 16:38:38.061 | ++ local service
+2015-04-02 16:38:38.061 | ++ for service in '$@'
+2015-04-02 16:38:38.061 | ++ is_service_enabled gantt
+2015-04-02 16:38:38.066 | ++ return 1
+2015-04-02 16:38:38.067 | +++ _cleanup_service_list ,g-api,g-reg,key,n-api,n-crt,n-obj,n-cpu,n-net,n-cond,n-sch,n-novnc,n-xvnc,n-cauth,c-sch,c-api,c-vol,h-eng,h-api,h-api-cfn,h-api-cw,horizon,rabbit,tempest,mysql,
+2015-04-02 16:38:38.067 | +++ echo ,g-api,g-reg,key,n-api,n-crt,n-obj,n-cpu,n-net,n-cond,n-sch,n-novnc,n-xvnc,n-cauth,c-sch,c-api,c-vol,h-eng,h-api,h-api-cfn,h-api-cw,horizon,rabbit,tempest,mysql,
+2015-04-02 16:38:38.068 | +++ sed -e '
+2015-04-02 16:38:38.068 |         s/,,/,/g;
+2015-04-02 16:38:38.068 |         s/^,//;
+2015-04-02 16:38:38.068 |         s/,$//
+2015-04-02 16:38:38.068 |     '
+2015-04-02 16:38:38.070 | ++ ENABLED_SERVICES=g-api,g-reg,key,n-api,n-crt,n-obj,n-cpu,n-net,n-cond,n-sch,n-novnc,n-xvnc,n-cauth,c-sch,c-api,c-vol,h-eng,h-api,h-api-cfn,h-api-cw,horizon,rabbit,tempest,mysql
+2015-04-02 16:38:38.070 | ++ is_service_enabled gantt
+2015-04-02 16:38:38.074 | ++ return 1
+2015-04-02 16:38:38.075 | + for i in '$TOP_DIR/extras.d/*.sh'
+2015-04-02 16:38:38.075 | + [[ -r /home/ubuntu/devstack/extras.d/70-sahara.sh ]]
+2015-04-02 16:38:38.075 | + source /home/ubuntu/devstack/extras.d/70-sahara.sh stack pre-install
+2015-04-02 16:38:38.075 | ++ is_service_enabled sahara
+2015-04-02 16:38:38.079 | ++ return 1
+2015-04-02 16:38:38.079 | + for i in '$TOP_DIR/extras.d/*.sh'
+2015-04-02 16:38:38.079 | + [[ -r /home/ubuntu/devstack/extras.d/70-trove.sh ]]
+2015-04-02 16:38:38.079 | + source /home/ubuntu/devstack/extras.d/70-trove.sh stack pre-install
+2015-04-02 16:38:38.080 | ++ is_service_enabled trove
+2015-04-02 16:38:38.084 | ++ return 1
+2015-04-02 16:38:38.084 | + for i in '$TOP_DIR/extras.d/*.sh'
+2015-04-02 16:38:38.084 | + [[ -r /home/ubuntu/devstack/extras.d/70-zaqar.sh ]]
+2015-04-02 16:38:38.084 | + source /home/ubuntu/devstack/extras.d/70-zaqar.sh stack pre-install
+2015-04-02 16:38:38.084 | ++ is_service_enabled zaqar-server
+2015-04-02 16:38:38.088 | ++ return 1
+2015-04-02 16:38:38.088 | + for i in '$TOP_DIR/extras.d/*.sh'
+2015-04-02 16:38:38.089 | + [[ -r /home/ubuntu/devstack/extras.d/80-opendaylight.sh ]]
+2015-04-02 16:38:38.089 | + source /home/ubuntu/devstack/extras.d/80-opendaylight.sh stack pre-install
+2015-04-02 16:38:38.089 | ++ is_service_enabled odl-server odl-compute
+2015-04-02 16:38:38.093 | ++ return 1
+2015-04-02 16:38:38.093 | ++ is_service_enabled odl-server
+2015-04-02 16:38:38.097 | ++ return 1
+2015-04-02 16:38:38.098 | ++ is_service_enabled odl-compute
+2015-04-02 16:38:38.102 | ++ return 1
+2015-04-02 16:38:38.102 | + for i in '$TOP_DIR/extras.d/*.sh'
+2015-04-02 16:38:38.102 | + [[ -r /home/ubuntu/devstack/extras.d/80-tempest.sh ]]
+2015-04-02 16:38:38.102 | + source /home/ubuntu/devstack/extras.d/80-tempest.sh stack pre-install
+2015-04-02 16:38:38.102 | ++ is_service_enabled tempest
+2015-04-02 16:38:38.106 | ++ return 0
+2015-04-02 16:38:38.106 | ++ [[ stack == \s\o\u\r\c\e ]]
+2015-04-02 16:38:38.106 | ++ [[ stack == \s\t\a\c\k ]]
+2015-04-02 16:38:38.107 | ++ [[ pre-install == \i\n\s\t\a\l\l ]]
+2015-04-02 16:38:38.107 | ++ [[ stack == \s\t\a\c\k ]]
+2015-04-02 16:38:38.107 | ++ [[ pre-install == \p\o\s\t\-\c\o\n\f\i\g ]]
+2015-04-02 16:38:38.107 | ++ [[ stack == \s\t\a\c\k ]]
+2015-04-02 16:38:38.107 | ++ [[ pre-install == \e\x\t\r\a ]]
+2015-04-02 16:38:38.107 | ++ [[ stack == \s\t\a\c\k ]]
+2015-04-02 16:38:38.107 | ++ [[ pre-install == \p\o\s\t\-\e\x\t\r\a ]]
+2015-04-02 16:38:38.107 | ++ [[ stack == \u\n\s\t\a\c\k ]]
+2015-04-02 16:38:38.107 | ++ [[ stack == \c\l\e\a\n ]]
+2015-04-02 16:38:38.107 | + install_rpc_backend
+2015-04-02 16:38:38.107 | + '[' '' == AMQP1 ']'
+2015-04-02 16:38:38.107 | + is_service_enabled rabbit
+2015-04-02 16:38:38.111 | + return 0
+2015-04-02 16:38:38.111 | + install_package rabbitmq-server
+2015-04-02 16:38:38.111 | + update_package_repo
+2015-04-02 16:38:38.111 | + [[ '' = \T\r\u\e ]]
+2015-04-02 16:38:38.111 | + is_ubuntu
+2015-04-02 16:38:38.111 | + [[ -z deb ]]
+2015-04-02 16:38:38.111 | + '[' deb = deb ']'
+2015-04-02 16:38:38.156 | E: Could not get lock /var/lib/apt/lists/lock - open (11: Resource temporarily unavailable)
+2015-04-02 16:38:38.156 | E: Unable to lock directory /var/lib/apt/lists/
+2015-04-02 16:38:38.160 | + real_install_package rabbitmq-server
+2015-04-02 16:38:38.160 | + is_ubuntu
+2015-04-02 16:38:38.160 | + [[ -z deb ]]
+2015-04-02 16:38:38.160 | + '[' deb = deb ']'
+2015-04-02 16:38:38.160 | + apt_get install rabbitmq-server
+2015-04-02 16:38:38.166 | + sudo DEBIAN_FRONTEND=noninteractive http_proxy= https_proxy= no_proxy= apt-get --option Dpkg::Options::=--force-confold --assume-yes install rabbitmq-server
+2015-04-02 16:38:40.387 | Reading package lists...
+2015-04-02 16:38:40.398 | E: Problem renaming the file /var/cache/apt/pkgcache.bin.LLmMbm to /var/cache/apt/pkgcache.bin - rename (2: No such file or directory)
+2015-04-02 16:38:40.398 | W: You may want to run apt-get update to correct these problems
+2015-04-02 16:38:40.401 | + RETRY_UPDATE=True
+2015-04-02 16:38:40.401 | + update_package_repo
+2015-04-02 16:38:40.401 | + [[ '' = \T\r\u\e ]]
+2015-04-02 16:38:40.401 | + is_ubuntu
+2015-04-02 16:38:40.401 | + [[ -z deb ]]
+2015-04-02 16:38:40.401 | + '[' deb = deb ']'
+2015-04-02 16:38:40.433 | E: Could not get lock /var/lib/apt/lists/lock - open (11: Resource temporarily unavailable)
+2015-04-02 16:38:40.433 | E: Unable to lock directory /var/lib/apt/lists/
+2015-04-02 16:38:40.437 | + real_install_package rabbitmq-server
+2015-04-02 16:38:40.437 | + is_ubuntu
+2015-04-02 16:38:40.437 | + [[ -z deb ]]
+2015-04-02 16:38:40.437 | + '[' deb = deb ']'
+2015-04-02 16:38:40.437 | + apt_get install rabbitmq-server
+2015-04-02 16:38:40.442 | + sudo DEBIAN_FRONTEND=noninteractive http_proxy= https_proxy= no_proxy= apt-get --option Dpkg::Options::=--force-confold --assume-yes install rabbitmq-server
+2015-04-02 16:38:43.494 | Reading package lists...
+2015-04-02 16:38:43.505 | E: Problem renaming the file /var/cache/apt/pkgcache.bin.gFU5tF to /var/cache/apt/pkgcache.bin - rename (2: No such file or directory)
+2015-04-02 16:38:43.505 | W: You may want to run apt-get update to correct these problems
+2015-04-02 16:38:43.507 | + exit_trap
+2015-04-02 16:38:43.507 | + local r=100
+2015-04-02 16:38:43.508 | ++ jobs -p
+2015-04-02 16:38:43.509 | + jobs=
+2015-04-02 16:38:43.509 | + [[ -n '' ]]
+2015-04-02 16:38:43.509 | + kill_spinner
+2015-04-02 16:38:43.509 | + '[' '!' -z '' ']'
+2015-04-02 16:38:43.509 | + [[ 100 -ne 0 ]]
+2015-04-02 16:38:43.509 | + echo 'Error on exit'
+2015-04-02 16:38:43.509 | Error on exit
+2015-04-02 16:38:43.509 | + [[ -z /opt/stack/logs ]]
+2015-04-02 16:38:43.509 | + /home/ubuntu/devstack/tools/worlddump.py -d /opt/stack/logs
+2015-04-02 16:38:43.598 | + exit 100
+es [1951 B]
+2015-04-02 16:38:35.527 | Hit http://ports.ubuntu.com utopic/main Translation-en
+2015-04-02 16:38:35.530 | Hit http://archive.ubuntu.com utopic-backports/main Sources
+2015-04-02 16:38:35.539 | Hit http://archive.ubuntu.com utopic-backports/restricted Sources
+2015-04-02 16:38:35.540 | Hit http://ports.ubuntu.com utopic/main Translation-en_GB
+2015-04-02 16:38:35.554 | Hit http://ports.ubuntu.com utopic/multiverse Translation-en
+2015-04-02 16:38:35.600 | Hit http://archive.ubuntu.com utopic-backports/universe Sources
+2015-04-02 16:38:35.613 | Hit http://archive.ubuntu.com utopic-backports/multiverse Sources
+2015-04-02 16:38:35.621 | Hit http://ports.ubuntu.com utopic/multiverse Translation-en_GB
+2015-04-02 16:38:35.634 | Hit http://ports.ubuntu.com utopic/restricted Translation-en
+2015-04-02 16:38:35.648 | Hit http://ports.ubuntu.com utopic/restricted Translation-en_GB
+2015-04-02 16:38:35.662 | Hit http://ports.ubuntu.com utopic/universe Translation-en
+2015-04-02 16:38:35.676 | Hit http://ports.ubuntu.com utopic/universe Translation-en_GB
+2015-04-02 16:38:35.689 | Hit http://ports.ubuntu.com utopic-updates/main arm64 Packages
+2015-04-02 16:38:35.703 | Hit http://ports.ubuntu.com utopic-updates/restricted arm64 Packages
+2015-04-02 16:38:35.717 | Hit http://ports.ubuntu.com utopic-updates/universe arm64 Packages
+2015-04-02 16:38:35.730 | Hit http://ports.ubuntu.com utopic-updates/multiverse arm64 Packages
+2015-04-02 16:38:35.744 | Hit http://ports.ubuntu.com utopic-updates/main Translation-en
+2015-04-02 16:38:35.758 | Hit http://ports.ubuntu.com utopic-updates/multiverse Translation-en
+2015-04-02 16:38:35.772 | Hit http://ports.ubuntu.com utopic-updates/restricted Translation-en
+2015-04-02 16:38:35.786 | Hit http://ports.ubuntu.com utopic-updates/universe Translation-en
+2015-04-02 16:38:35.799 | Hit http://ports.ubuntu.com utopic-backports/main arm64 Packages
+2015-04-02 16:38:35.813 | Hit http://ports.ubuntu.com utopic-backports/restricted arm64 Packages
+2015-04-02 16:38:35.827 | Hit http://ports.ubuntu.com utopic-backports/universe arm64 Packages
+2015-04-02 16:38:35.841 | Hit http://ports.ubuntu.com utopic-backports/multiverse arm64 Packages
+2015-04-02 16:38:35.908 | Hit http://ports.ubuntu.com utopic-backports/main Translation-en
+2015-04-02 16:38:35.922 | Hit http://ports.ubuntu.com utopic-backports/multiverse Translation-en
+2015-04-02 16:38:35.935 | Hit http://ports.ubuntu.com utopic-backports/restricted Translation-en
+2015-04-02 16:38:35.949 | Hit http://ports.ubuntu.com utopic-backports/universe Translation-en
+2015-04-02 16:38:35.963 | Hit http://ports.ubuntu.com utopic-security/main Sources
+2015-04-02 16:38:35.977 | Hit http://ports.ubuntu.com utopic-security/restricted Sources
+2015-04-02 16:38:35.991 | Hit http://ports.ubuntu.com utopic-security/universe Sources
+2015-04-02 16:38:36.004 | Hit http://ports.ubuntu.com utopic-security/multiverse Sources
+2015-04-02 16:38:36.018 | Hit http://ports.ubuntu.com utopic-security/main arm64 Packages
+2015-04-02 16:38:36.032 | Hit http://ports.ubuntu.com utopic-security/restricted arm64 Packages
+2015-04-02 16:38:36.046 | Hit http://ports.ubuntu.com utopic-security/universe arm64 Packages
+2015-04-02 16:38:36.060 | Hit http://ports.ubuntu.com utopic-security/multiverse arm64 Packages
+2015-04-02 16:38:36.074 | Hit http://ports.ubuntu.com utopic-security/main Translation-en
+2015-04-02 16:38:36.088 | Hit http://ports.ubuntu.com utopic-security/multiverse Translation-en
+2015-04-02 16:38:36.101 | Hit http://ports.ubuntu.com utopic-security/restricted Translation-en
+2015-04-02 16:38:36.115 | Hit http://ports.ubuntu.com utopic-security/universe Translation-en
+2015-04-02 16:38:38.905 | Fetched 177 kB in 3s (49.1 kB/s)
+2015-04-02 16:38:38.905 | E: Could not get lock /var/lib/dpkg/lock - open (11: Resource temporarily unavailable)
+2015-04-02 16:38:38.905 | E: Unable to lock the administration directory (/var/lib/dpkg/), is another process using it?
+2015-04-02 16:38:38.909 | + real_install_package rabbitmq-server
+2015-04-02 16:38:38.909 | + is_ubuntu
+2015-04-02 16:38:38.909 | + [[ -z deb ]]
+2015-04-02 16:38:38.909 | + '[' deb = deb ']'
+2015-04-02 16:38:38.909 | + apt_get install rabbitmq-server
+2015-04-02 16:38:38.916 | + sudo DEBIAN_FRONTEND=noninteractive http_proxy= https_proxy= no_proxy= apt-get --option Dpkg::Options::=--force-confold --assume-yes install rabbitmq-server
+2015-04-02 16:38:38.928 | E: Could not get lock /var/lib/dpkg/lock - open (11: Resource temporarily unavailable)
+2015-04-02 16:38:38.928 | E: Unable to lock the administration directory (/var/lib/dpkg/), is another process using it?
+2015-04-02 16:38:38.930 | + RETRY_UPDATE=True
+2015-04-02 16:38:38.930 | + update_package_repo
+2015-04-02 16:38:38.930 | + [[ '' = \T\r\u\e ]]
+2015-04-02 16:38:38.930 | + is_ubuntu
+2015-04-02 16:38:38.930 | + [[ -z deb ]]
+2015-04-02 16:38:38.930 | + '[' deb = deb ']'
+2015-04-02 16:38:39.019 | Ign http://ports.ubuntu.com utopic InRelease
+2015-04-02 16:38:39.034 | Ign http://ports.ubuntu.com utopic-updates InRelease
+2015-04-02 16:38:39.048 | Ign http://ports.ubuntu.com utopic-backports InRelease
+2015-04-02 16:38:39.062 | Ign http://ports.ubuntu.com utopic-security InRelease
+2015-04-02 16:38:39.076 | Hit http://ports.ubuntu.com utopic Release.gpg
+2015-04-02 16:38:39.089 | Hit http://ports.ubuntu.com utopic-updates Release.gpg
+2015-04-02 16:38:39.103 | Hit http://ports.ubuntu.com utopic-backports Release.gpg
+2015-04-02 16:38:39.117 | Hit http://ports.ubuntu.com utopic-security Release.gpg
+2015-04-02 16:38:39.117 | Ign http://archive.ubuntu.com utopic InRelease
+2015-04-02 16:38:39.139 | Hit http://ports.ubuntu.com utopic Release
+2015-04-02 16:38:39.145 | Hit http://ports.ubuntu.com utopic-updates Release
+2015-04-02 16:38:39.159 | Hit http://ports.ubuntu.com utopic-backports Release
+2015-04-02 16:38:39.173 | Hit http://ports.ubuntu.com utopic-security Release
+2015-04-02 16:38:39.185 | Ign http://archive.ubuntu.com utopic-updates InRelease
+2015-04-02 16:38:39.194 | Hit http://ports.ubuntu.com utopic/main arm64 Packages
+2015-04-02 16:38:39.201 | Hit http://ports.ubuntu.com utopic/restricted arm64 Packages
+2015-04-02 16:38:39.215 | Hit http://ports.ubuntu.com utopic/universe arm64 Packages
+2015-04-02 16:38:39.229 | Hit http://ports.ubuntu.com utopic/multiverse arm64 Packages
+2015-04-02 16:38:39.242 | Hit http://ports.ubuntu.com utopic/main Translation-en
+2015-04-02 16:38:39.253 | Ign http://archive.ubuntu.com utopic-backports InRelease
+2015-04-02 16:38:39.256 | Hit http://ports.ubuntu.com utopic/main Translation-en_GB
+2015-04-02 16:38:39.270 | Hit http://ports.ubuntu.com utopic/multiverse Translation-en
+2015-04-02 16:38:39.321 | Hit http://archive.ubuntu.com utopic Release.gpg
+2015-04-02 16:38:39.336 | Hit http://ports.ubuntu.com utopic/multiverse Translation-en_GB
+2015-04-02 16:38:39.350 | Hit http://ports.ubuntu.com utopic/restricted Translation-en
+2015-04-02 16:38:39.364 | Hit http://ports.ubuntu.com utopic/restricted Translation-en_GB
+2015-04-02 16:38:39.377 | Hit http://ports.ubuntu.com utopic/universe Translation-en
+2015-04-02 16:38:39.389 | Hit http://archive.ubuntu.com utopic-updates Release.gpg
+2015-04-02 16:38:39.391 | Hit http://ports.ubuntu.com utopic/universe Translation-en_GB
+2015-04-02 16:38:39.405 | Hit http://ports.ubuntu.com utopic-updates/main arm64 Packages
+2015-04-02 16:38:39.419 | Hit http://ports.ubuntu.com utopic-updates/restricted arm64 Packages
+2015-04-02 16:38:39.432 | Hit http://ports.ubuntu.com utopic-updates/universe arm64 Packages
+2015-04-02 16:38:39.447 | Hit http://ports.ubuntu.com utopic-updates/multiverse arm64 Packages
+2015-04-02 16:38:39.457 | Hit http://archive.ubuntu.com utopic-backports Release.gpg
+2015-04-02 16:38:39.461 | Hit http://ports.ubuntu.com utopic-updates/main Translation-en
+2015-04-02 16:38:39.475 | Hit http://ports.ubuntu.com utopic-updates/multiverse Translation-en
+2015-04-02 16:38:39.489 | Hit http://ports.ubuntu.com utopic-updates/restricted Translation-en
+2015-04-02 16:38:39.502 | Hit http://ports.ubuntu.com utopic-updates/universe Translation-en
+2015-04-02 16:38:39.516 | Hit http://ports.ubuntu.com utopic-backports/main arm64 Packages
+2015-04-02 16:38:39.525 | Hit http://archive.ubuntu.com utopic Release
+2015-04-02 16:38:39.530 | Hit http://ports.ubuntu.com utopic-backports/restricted arm64 Packages
+2015-04-02 16:38:39.544 | Hit http://ports.ubuntu.com utopic-backports/universe arm64 Packages
+2015-04-02 16:38:39.558 | Hit http://ports.ubuntu.com utopic-backports/multiverse arm64 Packages
+2015-04-02 16:38:39.593 | Hit http://archive.ubuntu.com utopic-updates Release
+2015-04-02 16:38:39.624 | Hit http://ports.ubuntu.com utopic-backports/main Translation-en
+2015-04-02 16:38:39.637 | Hit http://ports.ubuntu.com utopic-backports/multiverse Translation-en
+2015-04-02 16:38:39.651 | Hit http://ports.ubuntu.com utopic-backports/restricted Translation-en
+2015-04-02 16:38:39.661 | Hit http://archive.ubuntu.com utopic-backports Release
+2015-04-02 16:38:39.665 | Hit http://ports.ubuntu.com utopic-backports/universe Translation-en
+2015-04-02 16:38:39.679 | Hit http://ports.ubuntu.com utopic-security/main Sources
+2015-04-02 16:38:39.694 | Hit http://ports.ubuntu.com utopic-security/restricted Sources
+2015-04-02 16:38:39.708 | Hit http://ports.ubuntu.com utopic-security/universe Sources
+2015-04-02 16:38:39.722 | Hit http://ports.ubuntu.com utopic-security/multiverse Sources
+2015-04-02 16:38:39.728 | Hit http://archive.ubuntu.com utopic/main Sources
+2015-04-02 16:38:39.737 | Hit http://ports.ubuntu.com utopic-security/main arm64 Packages
+2015-04-02 16:38:39.750 | Hit http://ports.ubuntu.com utopic-security/restricted arm64 Packages
+2015-04-02 16:38:39.764 | Hit http://ports.ubuntu.com utopic-security/universe arm64 Packages
+2015-04-02 16:38:39.778 | Hit http://ports.ubuntu.com utopic-security/multiverse arm64 Packages
+2015-04-02 16:38:39.792 | Hit http://ports.ubuntu.com utopic-security/main Translation-en
+2015-04-02 16:38:39.796 | Hit http://archive.ubuntu.com utopic/restricted Sources
+2015-04-02 16:38:39.806 | Hit http://ports.ubuntu.com utopic-security/multiverse Translation-en
+2015-04-02 16:38:39.819 | Hit http://ports.ubuntu.com utopic-security/restricted Translation-en
+2015-04-02 16:38:39.833 | Hit http://ports.ubuntu.com utopic-security/universe Translation-en
+2015-04-02 16:38:39.864 | Hit http://archive.ubuntu.com utopic/universe Sources
+2015-04-02 16:38:39.932 | Hit http://archive.ubuntu.com utopic/multiverse Sources
+2015-04-02 16:38:40.000 | Hit http://archive.ubuntu.com utopic-updates/main Sources
+2015-04-02 16:38:40.068 | Hit http://archive.ubuntu.com utopic-updates/restricted Sources
+2015-04-02 16:38:40.135 | Hit http://archive.ubuntu.com utopic-updates/universe Sources
+2015-04-02 16:38:40.203 | Hit http://archive.ubuntu.com utopic-updates/multiverse Sources
+2015-04-02 16:38:40.271 | Hit http://archive.ubuntu.com utopic-backports/main Sources
+2015-04-02 16:38:40.339 | Hit http://archive.ubuntu.com utopic-backports/restricted Sources
+2015-04-02 16:38:40.514 | Hit http://archive.ubuntu.com utopic-backports/universe Sources
+2015-04-02 16:38:40.582 | Hit http://archive.ubuntu.com utopic-backports/multiverse Sources
+2015-04-02 16:38:42.722 | E: Could not get lock /var/lib/dpkg/lock - open (11: Resource temporarily unavailable)
+2015-04-02 16:38:42.722 | E: Unable to lock the administration directory (/var/lib/dpkg/), is another process using it?
+2015-04-02 16:38:42.727 | + real_install_package rabbitmq-server
+2015-04-02 16:38:42.727 | + is_ubuntu
+2015-04-02 16:38:42.727 | + [[ -z deb ]]
+2015-04-02 16:38:42.727 | + '[' deb = deb ']'
+2015-04-02 16:38:42.727 | + apt_get install rabbitmq-server
+2015-04-02 16:38:42.733 | + sudo DEBIAN_FRONTEND=noninteractive http_proxy= https_proxy= no_proxy= apt-get --option Dpkg::Options::=--force-confold --assume-yes install rabbitmq-server
+2015-04-02 16:38:42.746 | E: Could not get lock /var/lib/dpkg/lock - open (11: Resource temporarily unavailable)
+2015-04-02 16:38:42.746 | E: Unable to lock the administration directory (/var/lib/dpkg/), is another process using it?
+2015-04-02 16:38:42.748 | + exit_trap
+2015-04-02 16:38:42.748 | + local r=100
+2015-04-02 16:38:42.748 | ++ jobs -p
+2015-04-02 16:38:42.749 | + jobs=
+2015-04-02 16:38:42.749 | + [[ -n '' ]]
+2015-04-02 16:38:42.749 | + kill_spinner
+2015-04-02 16:38:42.749 | + '[' '!' -z '' ']'
+2015-04-02 16:38:42.749 | + [[ 100 -ne 0 ]]
+2015-04-02 16:38:42.749 | + echo 'Error on exit'
+2015-04-02 16:38:42.749 | Error on exit
+2015-04-02 16:38:42.750 | + [[ -z /opt/stack/logs ]]
+2015-04-02 16:38:42.750 | + /home/ubuntu/devstack/tools/worlddump.py -d /opt/stack/logs
+2015-04-02 16:38:42.844 | + exit 100
