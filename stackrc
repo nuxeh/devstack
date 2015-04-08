@@ -425,7 +425,7 @@ SPICE_BRANCH=${SPICE_BRANCH:-master}
 # drop back to **qemu** if we are unable to load the kvm module.  ``stack.sh`` can
 # also install an **LXC**, **OpenVZ** or **XenAPI** based system.  If xenserver-core
 # is installed, the default will be XenAPI
-DEFAULT_VIRT_DRIVER=libvirt
+DEFAULT_VIRT_DRIVER=ironic
 is_package_installed xenserver-core && DEFAULT_VIRT_DRIVER=xenserver
 VIRT_DRIVER=${VIRT_DRIVER:-$DEFAULT_VIRT_DRIVER}
 case "$VIRT_DRIVER" in
